@@ -4,7 +4,7 @@ import { Container } from '../components/Container'
 import { GridPattern } from '../components/GridPattern'
 import { StarRating } from '../components/StarRating'
 
-export function Testimonial({ id, author, children }) {
+export function CallToAction({ id, about, children }) {
   return (
     <aside
       id={id}
@@ -12,7 +12,7 @@ export function Testimonial({ id, author, children }) {
       className="relative py-16 bg-slate-100 sm:py-32"
     >
       <h3 id={`${id}-title`} className="sr-only">
-        Testimonial of {author.name}
+        Cairns Height Safety training courses and services
       </h3>
       <div className="text-slate-900/10">
         <GridPattern x="50%" patternTransform="translate(0 80)" />
@@ -31,12 +31,8 @@ export function Testimonial({ id, author, children }) {
                 href="#"
                 className="inline-flex items-center px-5 py-3 mt-8 text-base font-medium leading-6 tracking-tight transition duration-300 ease-in-out bg-white border rounded-full shadow hover:bg-t border-slate-300 text-slate-900 hover:bg-slate-700 hover:text-white"
               >
-                Request a free quote
+                {about.name}
               </a>
-              {/* <div className="text-base font-medium leading-6 tracking-tight text-slate-900">
-                {author.name}
-              </div>
-              <div className="mt-1 text-sm text-slate-600">{author.role}</div> */}
             </div>
           </figcaption>
         </figure>

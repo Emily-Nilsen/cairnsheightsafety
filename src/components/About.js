@@ -1,14 +1,14 @@
 import Image from 'next/image'
 
-import { GridPattern } from '../components/GridPattern'
-import { SectionHeading } from '../components/SectionHeading'
-import authorImage from '../images/avatars/author.png'
+import { GridPattern } from './GridPattern'
+import { SectionHeading } from './SectionHeading'
+import aboutImage from '../images/avatars/about.png'
 
-export function Author() {
+export function About() {
   return (
     <section
-      id="author"
-      aria-labelledby="author-title"
+      id="about"
+      aria-labelledby="about-title"
       className="relative pt-8 pb-3 scroll-mt-14 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
     >
       <div className="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
@@ -18,13 +18,15 @@ export function Author() {
         <div className="pt-px bg-slate-50 sm:rounded-6xl">
           <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image
-              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657143762/Cairns%20Height%20Safety/david_kww1b0.jpg"
+              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657538782/Cairns%20Height%20Safety/France_May_15_023_3_vrnpkq.jpg"
               layout="fill"
               alt="Dave Whitfield"
+              objectFit="cover"
+              objectPosition="center"
             />
           </div>
           <div className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
-            <SectionHeading number="5" id="author-title">
+            <SectionHeading number="5" id="about-title">
               About Us
             </SectionHeading>
             <p className="mt-8 text-5xl font-extrabold tracking-tight font-display text-slate-900 sm:text-6xl">

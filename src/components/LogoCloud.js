@@ -32,22 +32,22 @@ export function LogoCloud() {
           <div className="flex justify-center col-span-1 px-8 py-8 bg-slate-50">
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
-              alt="Laravel"
+              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657531808/Cairns%20Height%20Safety/Courthouse_guj7fr.svg"
+              alt="Cairns Courthouse"
             />
           </div>
           <div className="flex justify-center col-span-1 px-8 py-8 bg-slate-50">
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-              alt="StaticKit"
+              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657531208/Cairns%20Height%20Safety/mantra_gzdlrq.svg"
+              alt="Mantra"
             />
           </div>
           <div className="flex justify-center col-span-1 px-8 py-8 bg-slate-50">
             <img
               className="max-h-12"
-              src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
-              alt="Statamic"
+              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657531206/Cairns%20Height%20Safety/peppers_tlhvuv.svg"
+              alt="Peppers"
             />
           </div>
         </div>

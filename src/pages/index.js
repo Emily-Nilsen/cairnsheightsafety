@@ -1,17 +1,17 @@
 import Head from 'next/head'
 
-import { Author } from '../components/Author'
+import { About } from '../components/About'
 import { LogoCloud } from '../components/LogoCloud'
 import { Footer } from '../components/Footer'
 import { FreeChapters } from '../components/FreeChapters'
 import { Hero } from '../components/Hero'
 import { Introduction } from '../components/Introduction'
 import { NavBar } from '../components/NavBar'
-import { Pricing } from '../components/Pricing'
-import { Resources } from '../components/Resources'
+import { Contact } from '../components/Contact'
+import { Cableway } from '../components/Cableway'
 import { Services } from '../components/Services'
-import { TableOfContents } from '../components/TableOfContents'
-import { Testimonial } from '../components/Testimonial'
+import { Courses } from '../components/Courses'
+import { CallToAction } from '../components/Testimonial'
 import { Testimonials } from '../components/Testimonials'
 import avatarImage1 from '../images/avatars/avatar-1.png'
 import avatarImage2 from '../images/avatars/avatar-2.png'
@@ -32,37 +32,33 @@ export default function Home() {
       <LogoCloud />
       <Introduction />
       <NavBar />
-      <TableOfContents />
-      <Testimonial
-        id="tommy-stroman-testimonial-1"
-        author={{
-          name: 'Tommy Stroman',
-          role: 'Front-end developer',
-          image: avatarImage1,
+      <Courses />
+      <CallToAction
+        id="courses-call-to-action"
+        about={{
+          name: 'Enrol today',
         }}
       >
         <p>
-          “I didn’t know a thing about icon design until I read this book. Now I
-          can create any icon I need in no time. Great resource!”
+          Are you interested in taking a 3M nationally accredited training
+          course with Cairns Height Safety?
         </p>
-      </Testimonial>
+      </CallToAction>
       <Services />
-      <Testimonial
-        id="gerardo-stark-testimonial-2"
-        author={{
+      <CallToAction
+        id="services-call-to-action"
+        about={{
           name: 'Request a free quote',
-          role: 'Creator of Pandemicons',
-          image: avatarImage2,
         }}
       >
         <p>Need to do work at heights?</p>
         <p>Contact Cairns Height Safety today.</p>
-      </Testimonial>
-      <Resources />
+      </CallToAction>
+      <Cableway />
       <FreeChapters />
-      <Pricing />
+      <Contact />
       <Testimonials />
-      <Author />
+      <About />
       <Footer />
     </>
   )

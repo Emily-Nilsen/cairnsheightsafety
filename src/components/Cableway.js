@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import { ButtonLink } from '../components/Button'
-import { Container } from '../components/Container'
-import { SectionHeading } from '../components/SectionHeading'
+import { ButtonLink } from './Button'
+import { Container } from './Container'
+import { SectionHeading } from './SectionHeading'
 import abstractBackgroundImage from '../images/resources/abstract-background.png'
 import discordImage from '../images/resources/discord.svg'
 import figmaImage from '../images/resources/figma.svg'
@@ -54,16 +54,16 @@ const resources = [
   },
 ]
 
-export function Resources() {
+export function Cableway() {
   return (
     <section
-      id="resources"
-      aria-labelledby="resources-title"
+      id="cableway"
+      aria-labelledby="cableway-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="3" id="resources-title">
-          Resources
+        <SectionHeading number="3" id="cableway-title">
+          IMMOOS Cableway
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Tools and resources you can use to get started even faster and

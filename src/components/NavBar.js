@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 const sections = [
   {
-    id: 'table-of-contents',
+    id: 'courses',
     title: (
       <>
         <span className="hidden lg:inline">Training Courses</span>
@@ -13,9 +13,9 @@ const sections = [
     ),
   },
   { id: 'services', title: 'Services' },
-  { id: 'resources', title: 'Resources' },
-  { id: 'pricing', title: 'Pricing' },
-  { id: 'author', title: 'About Us' },
+  { id: 'cableway', title: 'IMMOOS Cableway' },
+  { id: 'contact', title: 'Contact' },
+  { id: 'about', title: 'About Us' },
 ]
 
 export function NavBar() {
