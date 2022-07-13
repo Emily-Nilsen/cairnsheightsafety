@@ -11,7 +11,7 @@ export function Introduction() {
         Introduction
       </h2>
       <Container>
-        <p className="text-4xl font-bold tracking-tight font-display text-slate-900">
+        <p className="font-display text-4xl font-bold tracking-tight text-slate-900">
           Cairns Height Safety (CHS) offers nationally accredited safety
           training courses and is a commercial and industrial safety equipment
           supplier.
@@ -27,7 +27,7 @@ export function Introduction() {
           students in the classroom and when applying their new skills in
           practice.
         </p>
-        <ul className="mt-8 space-y-3 text-lg tracking-tight text-slate-700">
+        {/* <ul className="mt-8 space-y-3 text-lg tracking-tight text-slate-700">
           {[
             'Tower Rescue',
             'Vertical Rescue',
@@ -48,7 +48,7 @@ export function Introduction() {
               <span className="ml-4">{feature}</span>
             </li>
           ))}
-        </ul>
+        </ul> */}
 
         <p className="mt-4 text-lg tracking-tight text-slate-700">
           Book your training course today to get yourself one step closer to

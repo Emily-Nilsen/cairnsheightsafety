@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
+import { PickCourses } from './PickCourses'
 
 export function ContactForm() {
   return (
-    <div className="relative mx-auto overflow-hidden max-w-7xl bg-slate-50 lg:rounded-3xl lg:drop-shadow-xl">
+    <div className="relative mx-auto max-w-7xl overflow-hidden bg-slate-50 lg:rounded-3xl lg:drop-shadow-xl">
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div>
-            <div className="relative object-cover w-full h-56 lg:absolute lg:h-full">
+            <div className="relative h-56 w-full object-cover lg:absolute lg:h-full">
               <Image
                 layout="fill"
                 objectFit="cover"
@@ -22,8 +23,8 @@ export function ContactForm() {
       </div>
       <div className="relative px-4 py-16 sm:py-24 sm:px-6 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32">
         <div className="lg:pr-8">
-          <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
-            <h2 className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
+          <div className="mx-auto max-w-md sm:max-w-lg lg:mx-0">
+            <h2 className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
               Let’s work together
             </h2>
 
@@ -39,7 +40,7 @@ export function ContactForm() {
                 <dt className="sr-only">Phone number</dt>
                 <dd className="flex items-center">
                   <PhoneIcon
-                    className="flex-shrink-0 w-6 h-6 text-slate-400"
+                    className="h-6 w-6 flex-shrink-0 text-slate-400"
                     aria-hidden="true"
                   />
                   <span className="ml-3">0412 608 241</span>
@@ -49,7 +50,7 @@ export function ContactForm() {
                 <dt className="sr-only">Email</dt>
                 <dd className="flex items-center">
                   <MailIcon
-                    className="flex-shrink-0 w-6 h-6 text-slate-400"
+                    className="h-6 w-6 flex-shrink-0 text-slate-400"
                     aria-hidden="true"
                   />
                   <span className="ml-3">cairnshs@bigpond.com</span>
@@ -58,7 +59,7 @@ export function ContactForm() {
             </dl>
             <p className="mt-6 text-base text-slate-500">
               Looking for careers?{' '}
-              <a href="#" className="font-medium underline text-slate-700">
+              <a href="#" className="font-medium text-slate-700 underline">
                 View all job openings
               </a>
               .
@@ -66,7 +67,7 @@ export function ContactForm() {
             <form
               action="#"
               method="POST"
-              className="grid grid-cols-1 mt-9 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+              className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
             >
               <div>
                 <label
@@ -183,23 +184,23 @@ export function ContactForm() {
                     name="how-can-we-help"
                     aria-describedby="how-can-we-help-description"
                     rows={4}
-                    className="block w-full border rounded-md border-slate-200 focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+                    className="block w-full rounded-md border border-slate-200 focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
                     defaultValue={''}
                   />
                 </div>
               </div>
-              <fieldset className="sm:col-span-2">
+              {/* <fieldset className="sm:col-span-2">
                 <legend className="block text-sm font-medium text-slate-700">
                   Expected budget
                 </legend>
-                <div className="grid grid-cols-1 mt-4 gap-y-4">
+                <div className="mt-4 grid grid-cols-1 gap-y-4">
                   <div className="flex items-center">
                     <input
                       id="budget-under-25k"
                       name="budget"
                       defaultValue="under_25k"
                       type="radio"
-                      className="w-4 h-4 text-orange-600 border-slate-200 focus:ring-orange-500"
+                      className="h-4 w-4 border-slate-200 text-orange-600 focus:ring-orange-500"
                     />
                     <label htmlFor="budget-under-25k" className="ml-3">
                       <span className="block text-sm text-slate-700">
@@ -213,7 +214,7 @@ export function ContactForm() {
                       name="budget"
                       defaultValue="25k-50k"
                       type="radio"
-                      className="w-4 h-4 text-orange-600 border-slate-200 focus:ring-orange-500"
+                      className="h-4 w-4 border-slate-200 text-orange-600 focus:ring-orange-500"
                     />
                     <label htmlFor="budget-25k-50k" className="ml-3">
                       <span className="block text-sm text-slate-700">
@@ -227,7 +228,7 @@ export function ContactForm() {
                       name="budget"
                       defaultValue="50k-100k"
                       type="radio"
-                      className="w-4 h-4 text-orange-600 border-slate-200 focus:ring-orange-500"
+                      className="h-4 w-4 border-slate-200 text-orange-600 focus:ring-orange-500"
                     />
                     <label htmlFor="budget-50k-100k" className="ml-3">
                       <span className="block text-sm text-slate-700">
@@ -241,7 +242,7 @@ export function ContactForm() {
                       name="budget"
                       defaultValue="over_100k"
                       type="radio"
-                      className="w-4 h-4 text-orange-600 border-slate-200 focus:ring-orange-500"
+                      className="h-4 w-4 border-slate-200 text-orange-600 focus:ring-orange-500"
                     />
                     <label htmlFor="budget-over-100k" className="ml-3">
                       <span className="block text-sm text-slate-700">
@@ -266,11 +267,12 @@ export function ContactForm() {
                     className="block w-full rounded-md border-slate-200 focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
                   />
                 </div>
-              </div>
+              </div> */}
+              <PickCourses />
               <div className="text-right sm:col-span-2">
                 <button
                   type="submit"
-                  className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-orange-600 border border-transparent rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                 >
                   Submit
                 </button>

@@ -166,13 +166,13 @@ export function Courses() {
     <section
       id="courses"
       aria-labelledby="courses-title"
-      className="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="1" id="courses-title">
           Training Courses
         </SectionHeading>
-        <p className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Take a look at all the training courses CHS offers.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
@@ -182,19 +182,19 @@ export function Courses() {
       </Container>
 
       {/* Training courses with see more */}
-      <div className="relative px-4 mt-16 bg-slate-50 sm:px-6 lg:px-8 ">
+      <div className="relative mt-16 bg-slate-50 px-4 sm:px-6 lg:px-8 ">
         <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3" />
+          <div className="h-1/3 bg-white sm:h-2/3" />
         </div>
         <div className="relative mx-auto max-w-7xl">
-          <div className="grid max-w-lg gap-5 mx-auto mt-12 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
             {posts.slice(0, isExpanded ? undefined : 3).map((post) => (
               <div
                 key={post.title}
                 className="flex flex-col overflow-hidden rounded-lg shadow-lg"
               >
                 <div className="flex-shrink-0">
-                  <div className="relative object-cover w-full h-48">
+                  <div className="relative h-48 w-full object-cover">
                     <Image
                       className=""
                       src={post.imageUrl}
@@ -205,14 +205,14 @@ export function Courses() {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col justify-between flex-1 p-6 bg-white">
+                <div className="flex flex-1 flex-col justify-between bg-white p-6">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-orange-600">
                       <a href={post.category.href} className="hover:underline">
                         {post.category.name}
                       </a>
                     </p>
-                    <a href={post.href} className="block mt-2">
+                    <a href={post.href} className="mt-2 block">
                       <p className="text-xl font-semibold text-slate-900">
                         {post.title}
                       </p>
@@ -221,11 +221,11 @@ export function Courses() {
                       </p>
                     </a>
                   </div>
-                  <div className="flex items-center mt-6">
+                  <div className="mt-6 flex items-center">
                     <div className="flex-shrink-0">
                       <a href={post.about.href}>
                         <span className="sr-only">{post.about.name}</span>
-                        <div className="relative flex items-center justify-center w-10 h-10 p-1 bg-orange-100 rounded-full">
+                        <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 p-1">
                           <Image
                             width={577}
                             height={297}
@@ -257,14 +257,14 @@ export function Courses() {
             ))}
           </div>
           {!isExpanded && (
-            <div className="flex justify-center mt-10">
+            <div className="mt-10 flex justify-center">
               <button
                 type="button"
                 className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700"
                 onClick={() => setIsExpanded(true)}
               >
                 See more courses
-                <svg aria-hidden="true" className="w-6 h-6 ml-2">
+                <svg aria-hidden="true" className="ml-2 h-6 w-6">
                   <path
                     d="m17 14-5 5-5-5M12 18.5V5"
                     fill="none"
