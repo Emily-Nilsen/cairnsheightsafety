@@ -2,7 +2,7 @@ import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html className="antialiased bg-white scroll-smooth" lang="en">
+    <Html className="scroll-smooth bg-white antialiased" lang="en">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -25,7 +25,7 @@ export default function Document() {
         />
         <link
           rel="icon"
-          href="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657159119/Cairns%20Height%20Safety/CHS_favicon_okskq6.svg"
+          href="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657676863/Cairns%20Height%20Safety/original_logo_lasdft.svg"
         />
       </Head>
       <body>

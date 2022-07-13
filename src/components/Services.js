@@ -124,31 +124,13 @@ export function Services() {
                     className="rounded-lg"
                   />
                 </div>
-                {/* <div className="absolute bottom-2 left-2 flex items-center rounded-lg bg-black/30 px-1.5 py-0.5 text-sm text-white [@supports(backdrop-filter:blur(0))]:bg-white/10 [@supports(backdrop-filter:blur(0))]:backdrop-blur">
-                  <svg
-                    aria-hidden="true"
-                    className="w-4 h-4 fill-current stroke-current"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M6.75 10.25v-4.5L10.25 8l-3.5 2.25Z" />
-                    <circle cx="8" cy="8" r="6.25" fill="none" />
-                  </svg>
-                  <time
-                    dateTime={`${service.runtime.minutes}m ${service.runtime.seconds}s`}
-                    className="ml-2"
-                  >
-                    {`${service.runtime.minutes}:${service.runtime.seconds
-                      .toString()
-                      .padStart(2, '0')}`}
-                  </time>
-                </div> */}
               </div>
               <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
                 {service.title}
               </h3>
-              {/* <p className="mt-2 text-sm text-slate-600">{service.description}</p> */}
+              <p className="mt-2 text-sm text-slate-600">
+                {service.description}
+              </p>
             </li>
           ))}
         </ol>

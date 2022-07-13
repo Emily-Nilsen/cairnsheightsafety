@@ -13,6 +13,7 @@ import { Services } from '../components/Services'
 import { Courses } from '../components/Courses'
 import { CallToAction } from '../components/Testimonial'
 import { Testimonials } from '../components/Testimonials'
+import { ContactForm } from '../components/ContactForm'
 import avatarImage1 from '../images/avatars/avatar-1.png'
 import avatarImage2 from '../images/avatars/avatar-2.png'
 
@@ -57,7 +58,8 @@ export default function Home() {
       <Cableway />
       <FreeChapters />
       <Contact />
-      <Testimonials />
+      {/* <ContactForm /> */}
+      {/* <Testimonials /> */}
       <About />
       <Footer />
     </>

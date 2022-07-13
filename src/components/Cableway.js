@@ -66,13 +66,42 @@ export function Cableway() {
           IMMOOS Cableway
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Tools and resources you can use to get started even faster and
-          progress even further.
+          Cairns Height Safety is the Australian supplier of IMMOOS cable
+          carriages.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Design assets, icon teardowns, and a community of fellow icon
-          designers where you can ask questions, get feedback, and accelerate
-          your learning.
+          As a complete rescue equipment supplier, IMMOOS delivers various cable
+          rescue carriages.
+        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+          Current regulations require every cable railway company to consider a
+          potential rescue.
+        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+          Safety equipment engineers must also consider simplicity and, above
+          all, the safety of the required tasks for rescue personnel. Only then
+          can it be possible to perform a successful rescue in time.
+        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+          IMMOOS is a company that thinks about cableway rescues every day. As
+          such, IMMOOS engineers pay special attention to ensuring that all
+          equipment is simple to handle and easy to use. The 2-roller running
+          gear results in smooth and stable running on the main cable. All
+          devices are also certified and meet the requirements of the directive
+          (EU) 2016/424 relating to “Cableway Installations”, as well as the EN
+          standard 1909 “Recovery and Evacuation”.
+        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+          However, it takes more than just good rescue equipment for a
+          trouble-free rescue, especially to rescue all people in a cableway
+          system within a specified time. Good planning, organisation, optimal
+          rescue equipment, and trained personnel strongly influence a rescue’s
+          success.
+        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+          Cairns Height Safety also provides training in the operation and
+          maintenance of IMMOOS devices. Feel free to contact us anytime for
+          more information.
         </p>
       </Container>
       <Container size="lg" className="mt-16">
