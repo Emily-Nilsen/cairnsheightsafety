@@ -14,7 +14,7 @@ const sections = [
   },
   { id: 'services', title: 'Services' },
   { id: 'cableway', title: 'IMMOOS Cableway' },
-  { id: 'contact', title: 'Contact' },
+  { id: 'contact', title: 'Contact Us' },
   { id: 'about', title: 'About Us' },
 ]
 
@@ -93,7 +93,7 @@ export function NavBar() {
                 <span className="sr-only">Toggle navigation menu</span>
                 <svg
                   aria-hidden="true"
-                  className="w-6 h-6 stroke-slate-700"
+                  className="h-6 w-6 stroke-slate-700"
                   fill="none"
                   strokeWidth="2"
                   strokeLinecap="round"
@@ -131,7 +131,7 @@ export function NavBar() {
                 ))
               }
             </Popover.Panel>
-            <div className="absolute inset-x-0 z-10 h-4 bg-white bottom-full" />
+            <div className="absolute inset-x-0 bottom-full z-10 h-4 bg-white" />
           </>
         )}
       </Popover>

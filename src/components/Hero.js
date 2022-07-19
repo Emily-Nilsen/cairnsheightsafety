@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import Link from 'next/link'
 import { ButtonLink } from '../components/Button'
 import { GridPattern } from '../components/GridPattern'
 import { StarRating } from '../components/StarRating'
@@ -68,10 +68,10 @@ export function Hero() {
               Cairns Height Safety also offers Industrial Rope Access services.
             </p>
             <div className="mt-8 flex space-x-4">
-              <ButtonLink href="#free-chapters" color="orange">
+              <ButtonLink href="#courses" color="orange">
                 Training Courses
               </ButtonLink>
-              <ButtonLink href="#pricing" variant="outline" color="orange">
+              <ButtonLink href="#services" variant="outline" color="orange">
                 Rope Access Services
               </ButtonLink>
             </div>

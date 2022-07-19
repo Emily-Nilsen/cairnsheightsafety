@@ -2,20 +2,19 @@ import Image from 'next/image'
 
 import { GridPattern } from './GridPattern'
 import { SectionHeading } from './SectionHeading'
-import aboutImage from '../images/avatars/about.png'
 
 export function About() {
   return (
     <section
       id="about"
       aria-labelledby="about-title"
-      className="relative pt-8 pb-3 scroll-mt-14 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
+      className="relative scroll-mt-14 pt-8 pb-3 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
     >
       <div className="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />
       </div>
-      <div className="relative max-w-5xl pt-16 mx-auto sm:px-6">
-        <div className="pt-px bg-slate-50 sm:rounded-6xl">
+      <div className="relative mx-auto max-w-5xl pt-16 sm:px-6">
+        <div className="bg-slate-50 pt-px sm:rounded-6xl">
           <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image
               src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657538782/Cairns%20Height%20Safety/France_May_15_023_3_vrnpkq.jpg"
@@ -29,7 +28,7 @@ export function About() {
             <SectionHeading number="5" id="about-title">
               About Us
             </SectionHeading>
-            <p className="mt-8 text-5xl font-extrabold tracking-tight font-display text-slate-900 sm:text-6xl">
+            <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
               <span className="block text-orange-600">Dave Whitfield –</span>{' '}
               Owner of Cairns Height Safety.
             </p>
@@ -58,7 +57,7 @@ export function About() {
                 <svg
                   viewBox="0 0 24 24"
                   aria-hidden="true"
-                  className="w-10 h-10 fill-current"
+                  className="h-10 w-10 fill-current"
                 >
                   <path
                     fillRule="evenodd"

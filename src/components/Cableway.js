@@ -102,8 +102,17 @@ export function Cableway() {
           equipment is simple to handle and easy to use. The 2-roller running
           gear results in smooth and stable running on the main cable. All
           devices are also certified and meet the requirements of the directive
-          (EU) 2016/424 relating to “Cableway Installations”, as well as the EN
-          standard 1909 “Recovery and Evacuation”.
+          (EU) <span className="font-medium text-slate-900">2016/424</span>{' '}
+          relating to{' '}
+          <span className="font-medium text-orange-600">
+            Cableway Installations
+          </span>
+          , and the EN standard{' '}
+          <span className="font-medium text-slate-900">1909</span>{' '}
+          <span className="font-medium text-orange-600">
+            Recovery and Evacuation
+          </span>
+          .
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
           However, it takes more than just good rescue equipment for a

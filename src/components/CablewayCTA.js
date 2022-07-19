@@ -1,16 +1,16 @@
 import Link from 'next/link'
-import { Button } from '../components/Button'
-import { Container } from '../components/Container'
-import { Pattern } from '../components/Pattern'
+import { Button } from './Button'
+import { Container } from './Container'
+import { Pattern } from './Pattern'
 
-export function FreeChapters() {
+export function CablewayCTA() {
   return (
     <section
-      id="free-chapters"
-      aria-labelledby="free-chapters-title"
+      id="cableway-cta"
+      aria-labelledby="cableway-cta-title"
       className="scroll-mt-14 bg-orange-600 sm:scroll-mt-32"
     >
-      <h2 id="free-chapters-title" className="sr-only">
+      <h2 id="cableway-cta-title" className="sr-only">
         IMMOOS Cableway Training
       </h2>
       <div className="overflow-hidden lg:relative">

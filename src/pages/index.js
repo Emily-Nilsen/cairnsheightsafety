@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { About } from '../components/About'
 import { LogoCloud } from '../components/LogoCloud'
 import { Footer } from '../components/Footer'
-import { FreeChapters } from '../components/FreeChapters'
+import { CablewayCTA } from '../components/CablewayCTA'
 import { Hero } from '../components/Hero'
 import { Introduction } from '../components/Introduction'
 import { NavBar } from '../components/NavBar'
@@ -12,10 +12,8 @@ import { Cableway } from '../components/Cableway'
 import { Services } from '../components/Services'
 import { Courses } from '../components/Courses'
 import { CallToAction } from '../components/Testimonial'
-import { Testimonials } from '../components/Testimonials'
+
 import { ContactForm } from '../components/ContactForm'
-import avatarImage1 from '../images/avatars/avatar-1.png'
-import avatarImage2 from '../images/avatars/avatar-2.png'
 
 export default function Home() {
   return (
@@ -52,14 +50,12 @@ export default function Home() {
           name: 'Request a free quote',
         }}
       >
-        <p>Need to do work at heights?</p>
+        <p>Need some work at heights done?</p>
         <p>Contact Cairns Height Safety today.</p>
       </CallToAction>
       <Cableway />
-      <FreeChapters />
+      <CablewayCTA />
       <Contact />
-      {/* <ContactForm /> */}
-      {/* <Testimonials /> */}
       <About />
       <Footer />
     </>

@@ -1,27 +1,40 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-import units from '../../assets/units'
+import services from '../../assets/services'
 
-units.map((course) => ({}))
+services.map((service) => ({}))
+
+const courses = [
+  { id: 1, name: 'Service 1' },
+  { id: 2, name: 'Service 2' },
+  { id: 3, name: 'Service 3' },
+  { id: 4, name: 'Service 4' },
+  { id: 5, name: 'Service 5' },
+  { id: 6, name: 'Service 6' },
+  { id: 7, name: 'Service 7' },
+  { id: 8, name: 'Service 8' },
+  { id: 9, name: 'Service 9' },
+  { id: 10, name: 'Service 10' },
+]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export function PickCourses({ course }) {
-  const [selected, setSelected] = useState(units[0])
+export function PickServices({ service }) {
+  const [selected, setSelected] = useState(services[0])
 
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
           <Listbox.Label className="block text-sm font-medium text-slate-700">
-            Are you interested in enrolling in a CHS course?
+            Would you like a free quote for one our rope access services?
           </Listbox.Label>
           <div className="relative mt-1">
-            <Listbox.Button className="relative w-full cursor-default rounded-md border border-slate-200 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 sm:text-sm">
-              <span className="block truncate">{selected.name}</span>
+            <Listbox.Button className="relative w-full cursor-default rounded-md border border-slate-300 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 sm:text-sm">
+              <span className="block truncate">{selected.title}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <SelectorIcon
                   className="h-5 w-5 text-slate-400"
@@ -38,16 +51,16 @@ export function PickCourses({ course }) {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {units.map((course) => (
+                {services.map((service) => (
                   <Listbox.Option
-                    key={course.name}
+                    key={service.title}
                     className={({ active }) =>
                       classNames(
                         active ? 'bg-orange-600 text-white' : 'text-slate-900',
                         'relative cursor-default select-none py-2 pl-3 pr-9'
                       )
                     }
-                    value={course}
+                    value={service}
                   >
                     {({ selected, active }) => (
                       <>
@@ -57,7 +70,7 @@ export function PickCourses({ course }) {
                             'block truncate'
                           )}
                         >
-                          {course.name}
+                          {service.title}
                         </span>
 
                         {selected ? (
