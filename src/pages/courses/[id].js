@@ -27,6 +27,16 @@ export const getStaticPaths = async () => {
 
 units.map((course) => ({}))
 
+function removeFirstWord(str) {
+  const indexOfSpace = str.indexOf(' ')
+
+  if (indexOfSpace === -1) {
+    return ''
+  }
+
+  return str.substring(indexOfSpace + 1)
+}
+
 export default function Unit({ course }) {
   const router = useRouter()
 
@@ -36,9 +46,45 @@ export default function Unit({ course }) {
         <div className="absolute top-0 bottom-0 left-3/4 hidden w-screen bg-slate-50 lg:block" />
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
           <div>
-            <h2 className="text-base font-semibold uppercase tracking-wide text-orange-600">
-              {course.code}
+            <h2 className="pb-4 text-base text-orange-600">
+              <ul role="list">
+                {course.codes.flat().map((code, i) => (
+                  <div key={i}>
+                    <li>
+                      {' '}
+                      <span className="font-semibold tracking-wide">
+                        {code.split(' ')[0]}
+                      </span>{' '}
+                      <span className="font-normal text-slate-500">
+                        {removeFirstWord(code)}
+                      </span>
+                    </li>
+                  </div>
+                ))}
+              </ul>
             </h2>
+            <div className="flex items-center rounded-lg bg-orange-50 p-6">
+              <div>
+                <p className="font-bold text-orange-600">
+                  Course prerequisites
+                </p>
+                <ul role="list">
+                  {course.prerequisites.flat().map((prerequisite, i) => (
+                    <div key={i}>
+                      <li
+                        className={
+                          course.prerequisites.length > 1
+                            ? `ml-5 list-disc text-orange-600`
+                            : `text-orange-600`
+                        }
+                      >
+                        {prerequisite}
+                      </li>
+                    </div>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
               {course.name}
             </p>
@@ -63,11 +109,21 @@ export default function Unit({ course }) {
                   </div>
                 </div>
                 <figcaption className="mt-3 flex text-sm text-slate-500">
-                  <CameraIcon
-                    className="h-5 w-5 flex-none text-slate-400"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-2">Some info here?</span>
+                  <div className="relative flex h-10 w-12 items-center justify-center rounded-full bg-orange-100 p-1">
+                    <Image
+                      width={577}
+                      height={297}
+                      src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657313516/Cairns%20Height%20Safety/3M_logo_e8twte.svg"
+                      alt="3M Australia"
+                      objectFit="contain"
+                      layout="intrinsic"
+                      objectPosition="center"
+                    />
+                  </div>
+                  <span className="ml-4 max-w-lg">
+                    On successful completion, students will receive a 3M
+                    Statement of Attainment in {course.codes.flat()}.
+                  </span>
                 </figcaption>
               </figure>
             </div>
@@ -105,20 +161,40 @@ export default function Unit({ course }) {
                   </div>
                 ))}
               </ul>
-              <h3>How we helped</h3>
+              <h3>Course assessment</h3>
               <p>
-                Tincidunt integer commodo, cursus etiam aliquam neque, et.
-                Consectetur pretium in volutpat, diam. Montes, magna cursus
-                nulla feugiat dignissim id lobortis amet. Laoreet sem est
-                phasellus eu proin massa, lectus. Diam rutrum posuere donec
-                ultricies non morbi. Mi a platea auctor mi.
+                The trainer will assess a student’s competency in this course,
+                both theoretically and practically.
               </p>
               <p>
-                Sagittis scelerisque nulla cursus in enim consectetur quam.
-                Dictum urna sed consectetur neque tristique pellentesque.
-                Blandit amet, sed aenean erat arcu morbi.
+                The theory assessment consists of multiple choice and short
+                answer questions.
               </p>
+              <p>
+                The practical assessment will require students to participate
+                in:
+              </p>
+              <ul role="list">
+                {course.courseAssessment.flat().map((aim, i) => (
+                  <div key={i}>
+                    <li>{aim}</li>
+                  </div>
+                ))}
+              </ul>
             </div>
+            <div className="mt-8 flex items-center rounded-lg bg-orange-50 p-6">
+              <div>
+                <p className="pb-4 font-bold text-orange-600">
+                  Course duration
+                </p>
+                <p className="text-orange-600">
+                  {course.hours} over {course.duration}{' '}
+                  <span aria-hidden="true">&middot;</span>
+                  <span> From ${course.cost}</span>
+                </p>
+              </div>
+            </div>
+
             {/* Buttons */}
             <div className="mx-auto mt-10 flex max-w-prose text-base lg:max-w-none">
               <div className="rounded-md">
@@ -130,7 +206,7 @@ export default function Unit({ course }) {
               </div>
               <div className="ml-4 rounded-md">
                 <Link href="/courses" passHref>
-                  <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-orange-600 shadow-sm transition duration-300 ease-in-out hover:bg-slate-50">
+                  <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-slate-100 px-5 py-3 text-base font-medium text-orange-600 shadow-sm transition duration-300 ease-in-out hover:bg-slate-50">
                     See all courses
                   </a>
                 </Link>

@@ -5,19 +5,6 @@ import services from '../../assets/services'
 
 services.map((service) => ({}))
 
-const courses = [
-  { id: 1, name: 'Service 1' },
-  { id: 2, name: 'Service 2' },
-  { id: 3, name: 'Service 3' },
-  { id: 4, name: 'Service 4' },
-  { id: 5, name: 'Service 5' },
-  { id: 6, name: 'Service 6' },
-  { id: 7, name: 'Service 7' },
-  { id: 8, name: 'Service 8' },
-  { id: 9, name: 'Service 9' },
-  { id: 10, name: 'Service 10' },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -33,8 +20,16 @@ export function PickServices({ service }) {
             Would you like a free quote for one our rope access services?
           </Listbox.Label>
           <div className="relative mt-1">
-            <Listbox.Button className="relative w-full cursor-default rounded-md border border-slate-300 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 sm:text-sm">
-              <span className="block truncate">{selected.title}</span>
+            <Listbox.Button className="relative w-full cursor-default rounded-md border border-slate-200 bg-white py-2 pl-3 pr-10 text-left focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 sm:text-sm">
+              <span
+                className={
+                  selected.title === '--No service selected--'
+                    ? 'text-slate-500'
+                    : `${'block truncate text-slate-800'}`
+                }
+              >
+                {selected.title}
+              </span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 <SelectorIcon
                   className="h-5 w-5 text-slate-400"
