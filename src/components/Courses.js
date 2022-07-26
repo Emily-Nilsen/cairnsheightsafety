@@ -57,7 +57,7 @@ export function Courses(props) {
                       />
                     </div>
                   </div>
-                  <div className="flex flex-1 flex-col justify-between bg-white p-6 transition duration-300 ease-in-out hover:bg-orange-50">
+                  <div className="flex flex-1 flex-col justify-between bg-white p-6 transition duration-300 ease-in-out hover:bg-slate-100">
                     <div className="flex-1">
                       <p className="text-sm font-medium text-orange-600">
                         <a className="hover:underline">{course.code}</a>

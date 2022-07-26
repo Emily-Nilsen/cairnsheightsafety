@@ -133,7 +133,15 @@ export default function Unit({ course }) {
               <p className="text-lg text-slate-500">
                 {course.summaryDescription}
               </p>
-              <p className="mt-5 text-slate-500">{course.courseAim}</p>
+              <ul role="list">
+                {course.courseAim
+                  ? course.courseAim.flat().map((aim, i) => (
+                      <div key={i}>
+                        <li className="mt-5 text-slate-500">{aim}</li>
+                      </div>
+                    ))
+                  : null}
+              </ul>
             </div>
             <div className="prose prose-orange mx-auto mt-5 text-slate-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
               <h3>Course objectives</h3>
@@ -171,8 +179,7 @@ export default function Unit({ course }) {
                 answer questions.
               </p>
               <p>
-                The practical assessment will require students to participate
-                in:
+                The practical assessment will require students to demonstrate:
               </p>
               <ul role="list">
                 {course.courseAssessment.flat().map((aim, i) => (

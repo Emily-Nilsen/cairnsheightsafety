@@ -38,7 +38,15 @@ export default function Courses(props) {
                   </div>
                 </figcaption>
               </figure>
+              <div className="mt-16 rounded-md">
+                <Link href="/" passHref>
+                  <a className="shadow hover:bg-t mt-8 inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-base font-medium leading-6 tracking-tight text-slate-900 transition duration-300 ease-in-out hover:bg-slate-700 hover:text-white">
+                    Back to CHS home
+                  </a>
+                </Link>
+              </div>
             </div>
+
             <dl className="mt-10 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0">
               {units.map((course) => (
                 <Link
