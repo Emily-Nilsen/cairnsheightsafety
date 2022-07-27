@@ -94,7 +94,7 @@ export default function Unit({ course }) {
           <div className="relative lg:col-start-2 lg:row-start-1">
             <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
               <figure>
-                <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
+                <div className="aspect-w-12 aspect-h-7 bg-slate-200 lg:aspect-none">
                   <div>
                     <Image
                       className="rounded-lg object-cover object-center shadow-lg"
@@ -105,6 +105,7 @@ export default function Unit({ course }) {
                       height={1376}
                       objectFit="cover"
                       objectPosition="center"
+                      unoptimized={true}
                     />
                   </div>
                 </div>

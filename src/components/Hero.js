@@ -52,7 +52,7 @@ export function Hero() {
                   objectFit="contain"
                   layout="intrinsic"
                   objectPosition="center"
-                  className=""
+                  unoptimized={true}
                 />
               </div>
             </figcaption>

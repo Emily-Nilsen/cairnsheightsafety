@@ -22,6 +22,7 @@ export function About() {
               alt="Dave Whitfield"
               objectFit="cover"
               objectPosition="center"
+              unoptimized={true}
             />
           </div>
           <div className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">

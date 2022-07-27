@@ -9,7 +9,7 @@ export function ContactForm() {
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div>
-            <div className="relative h-56 w-full object-cover lg:absolute lg:h-full">
+            <div className="relative h-56 w-full bg-orange-500 object-cover lg:absolute lg:h-full">
               <Image
                 layout="fill"
                 objectFit="cover"

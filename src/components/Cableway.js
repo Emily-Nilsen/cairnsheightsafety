@@ -13,13 +13,14 @@ const resources = [
     description: 'IMMOOS description one.',
     image: function FigmaImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(#2C313D_35%,#000)]">
+        <div className="absolute inset-0 flex items-center justify-center bg-orange-500">
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591553/Cairns%20Height%20Safety/IMMOOS/Tower_head_tn30fn.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            unoptimized={true}
           />
         </div>
       )
@@ -30,20 +31,21 @@ const resources = [
     description: 'IMMOOS description two.',
     image: function VideoPlayerImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Image
+        <div className="absolute inset-0 flex items-center justify-center bg-orange-500">
+          {/* <Image
             src={abstractBackgroundImage}
             alt=""
             layout="fill"
             objectFit="cover"
             sizes="(min-width: 1280px) 21rem, (min-width: 1024px) 33vw, (min-width: 768px) 19rem, (min-width: 640px) 50vw, 100vw"
-          />
+          /> */}
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591550/Cairns%20Height%20Safety/IMMOOS/IMG_1899_cvfenl.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            unoptimized={true}
           />
         </div>
       )
@@ -54,13 +56,14 @@ const resources = [
     description: 'IMMOOS description three.',
     image: function DiscordImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-[#6366F1]">
+        <div className="absolute inset-0 flex items-center justify-center bg-orange-500">
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591535/Cairns%20Height%20Safety/IMMOOS/IMG_2341_ajjoek.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            unoptimized={true}
           />
         </div>
       )
