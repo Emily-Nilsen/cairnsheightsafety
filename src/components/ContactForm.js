@@ -196,7 +196,7 @@ export function ContactForm() {
               <div className="text-right sm:col-span-2">
                 <button
                   type="submit"
-                  className="inline-flex justify-center rounded-md border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                  className="inline-flex justify-center rounded-full border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                 >
                   Submit
                 </button>

@@ -47,13 +47,14 @@ export function Courses(props) {
               >
                 <div className="flex cursor-pointer flex-col overflow-hidden rounded-lg shadow-lg">
                   <div className="flex-shrink-0">
-                    <div className="relative h-48 w-full object-cover">
+                    <div className="relative h-48 w-full bg-orange-500 object-cover">
                       <Image
                         src={course.imageUrl}
                         alt={course.name}
                         layout="fill"
                         objectFit="cover"
                         objectPosition="center"
+                        unoptimized={true}
                       />
                     </div>
                   </div>
@@ -84,7 +85,6 @@ export function Courses(props) {
                               objectFit="contain"
                               layout="intrinsic"
                               objectPosition="center"
-                              className=""
                             />
                           </div>
                         </a>

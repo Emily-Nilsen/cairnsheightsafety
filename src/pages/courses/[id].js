@@ -204,16 +204,16 @@ export default function Unit({ course }) {
 
             {/* Buttons */}
             <div className="mx-auto mt-10 flex max-w-prose text-base lg:max-w-none">
-              <div className="rounded-md">
+              <div className="rounded-full">
                 <Link href="/#contact" passHref>
-                  <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange-600 px-5 py-3 text-base font-medium text-white shadow-sm transition duration-300 ease-in-out hover:bg-orange-500">
+                  <a className="flex w-full items-center justify-center rounded-full border border-transparent bg-orange-600 px-5 py-2 text-base font-medium text-white shadow-sm transition duration-300 ease-in-out hover:bg-orange-500">
                     Enrol in course
                   </a>
                 </Link>
               </div>
-              <div className="ml-4 rounded-md">
+              <div className="ml-4 rounded-full">
                 <Link href="/courses" passHref>
-                  <a className="flex w-full items-center justify-center rounded-md border border-transparent bg-slate-100 px-5 py-3 text-base font-medium text-orange-600 shadow-sm transition duration-300 ease-in-out hover:bg-slate-50">
+                  <a className="flex w-full items-center justify-center rounded-full border border-orange-500 bg-white px-5 py-2 text-base font-medium text-orange-600 shadow-sm transition duration-300 ease-in-out hover:border-slate-700 hover:bg-slate-700 hover:text-white">
                     See all courses
                   </a>
                 </Link>

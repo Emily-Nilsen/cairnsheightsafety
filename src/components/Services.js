@@ -32,11 +32,11 @@ export function Services() {
           {services.slice(1, isExpanded ? undefined : 5).map((service) => (
             <li key={service.title} className="[counter-increment:video]">
               <div
-                className="relative flex h-44 items-center justify-center rounded-2xl px-6 shadow-lg"
-                style={{
-                  backgroundImage:
-                    'conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)',
-                }}
+                className="relative flex h-44 items-center justify-center rounded-2xl bg-orange-500 px-6 shadow-lg"
+                // style={{
+                //   backgroundImage:
+                //     'conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)',
+                // }}
               >
                 <div className="flex overflow-hidden rounded shadow-sm">
                   <Image
@@ -46,6 +46,7 @@ export function Services() {
                     objectFit="cover"
                     objectPosition="center"
                     className="rounded-lg"
+                    unoptimized={true}
                   />
                 </div>
               </div>
