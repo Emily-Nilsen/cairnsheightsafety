@@ -20,11 +20,13 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Everything Starts as a Square - Get lost in the world of icon design
+          Cairns Height Safety - We provide nationally accredited Height Safety
+          and Rescue training and Rope Access services
         </title>
         <meta
           name="description"
-          content="A book and video course that teaches you how to design your own icons from scratch. "
+          content="Cairns Height Safety provide nationally accredited Height Safety
+          and Rescue training and Rope Access services. "
         />
       </Head>
       <Hero />
