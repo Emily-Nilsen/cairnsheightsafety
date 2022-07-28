@@ -34,21 +34,21 @@ export function Hero() {
           <motion.div
             initial={{
               opacity: 0,
-              y: -400,
+              y: -200,
             }}
             whileInView={{
               opacity: 1,
               y: 0,
-              // y: [-150, -160, -80, -85, -40, -45, 0, -10, 0],
             }}
             // viewport={{ once: true }}
             transition={{
-              duration: 4,
+              duration: 5,
               delay: 0.7,
               type: 'spring',
               stiffness: 120,
+              ease: 'easeOut',
             }}
-            className="shadow-none relative -top-52 -left-10 z-20 mx-auto flex w-64 overflow-hidden rounded-none md:w-80 lg:absolute lg:-left-28 lg:w-auto"
+            className="shadow-none relative -top-40 -left-10 z-20 mx-auto flex w-64 overflow-hidden rounded-none md:w-80 lg:absolute lg:-left-28 lg:w-auto"
           >
             <Image
               src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1658997057/Cairns%20Height%20Safety/chs-logo-long_e4sorl.svg"
