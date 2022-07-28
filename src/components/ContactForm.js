@@ -60,7 +60,12 @@ export function ContactForm() {
             </dl>
             <p className="mt-6 text-base text-slate-500">
               Looking for careers at heights?{' '}
-              <a href="#" className="font-medium text-slate-700 underline">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.facebook.com/cairnsheightsafety/?ref=page_internal"
+                className="font-medium text-slate-700 underline"
+              >
                 View all job openings
               </a>
               .

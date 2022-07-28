@@ -237,6 +237,7 @@ const units = [
       'RIIRIS201E Conduct local risk control',
       'RIIWHS204E Work safely at heights',
     ],
+    multipleCodes: `PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control and RIIWHS204E Work safely at heights`,
     prerequisites: ['HLTAID003 Provide first aid'],
     summaryDescription:
       'This course provides students with the necessary skills to be competent as a Height Safety Supervisor under AS/NZS1891.4.',

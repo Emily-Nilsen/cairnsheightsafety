@@ -3,9 +3,9 @@ import clsx from 'clsx'
 
 const baseStyles = {
   solid:
-    'inline-flex justify-center rounded-md py-1 px-4 text-base font-semibold tracking-tight shadow-sm focus:outline-none',
+    'inline-flex justify-center rounded-full py-2 px-5 text-base font-semibold tracking-tight shadow-sm focus:outline-none leading-5 lg:text-left text-center',
   outline:
-    'inline-flex justify-center rounded-md border py-[calc(theme(spacing.1)-1px)] px-[calc(theme(spacing.4)-1px)] text-base font-semibold tracking-tight focus:outline-none',
+    'inline-flex justify-center rounded-full border py-[calc(theme(spacing.1)-1px)] px-[calc(theme(spacing.4)-1px)] text-base font-semibold tracking-tight focus:outline-none leading-5 py-2 px-5 lg:text-left text-center',
 }
 
 const variantStyles = {

@@ -3,23 +3,55 @@ import Link from 'next/link'
 import { ButtonLink } from '../components/Button'
 import { GridPattern } from '../components/GridPattern'
 import { StarRating } from '../components/StarRating'
-import coverImage from '../images/cover.png'
+import { motion } from 'framer-motion'
 
 export function Hero() {
   return (
     <header className="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
+      {/* Text svg */}
+      <div className="absolute -top-12 -left-6 z-30 w-56 overflow-hidden p-14 md:-left-0 md:w-80 lg:left-0 lg:p-8">
+        <Image
+          src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1658987037/Cairns%20Height%20Safety/chs-text_tu1pwu.svg"
+          alt="Cairns Height Safety logo"
+          layout="intrinsic"
+          width={207}
+          height={313}
+          priority
+          className="overflow-hidden"
+        />
+      </div>
       <div className="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
         <div className="relative flex items-end lg:col-span-5 lg:row-span-2">
-          <div className="absolute -top-20 -bottom-12 left-0 right-1/2 z-10 rounded-br-6xl bg-slate-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-40">
+          <div className="absolute -top-20 -bottom-12 left-0 right-1/2 z-10 rounded-br-6xl bg-slate-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-72">
             <GridPattern
               x="100%"
               y="100%"
               patternTransform="translate(112 64)"
             />
           </div>
-          <div className="shadow-none relative -top-32 -left-20 z-20 mx-auto flex w-64 overflow-hidden rounded-none md:w-80 lg:absolute lg:w-auto">
+
+          {/* Logo svg */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -400,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              // y: [-150, -160, -80, -85, -40, -45, 0, -10, 0],
+            }}
+            // viewport={{ once: true }}
+            transition={{
+              duration: 4,
+              delay: 0.7,
+              type: 'spring',
+              stiffness: 120,
+            }}
+            className="shadow-none relative -top-52 -left-10 z-20 mx-auto flex w-64 overflow-hidden rounded-none md:w-80 lg:absolute lg:-left-28 lg:w-auto"
+          >
             <Image
-              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657674143/Cairns%20Height%20Safety/CHS_logo_v4_xsnp5d.svg"
+              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1658997057/Cairns%20Height%20Safety/chs-logo-long_e4sorl.svg"
               alt="Cairns Height Safety logo"
               layout="intrinsic"
               width={414}
@@ -27,7 +59,7 @@ export function Hero() {
               priority
               className="overflow-hidden"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="relative px-4 sm:px-6 lg:col-span-7 lg:pr-0 lg:pb-14 lg:pl-16 xl:pl-20">
           <div className="hidden lg:absolute lg:bottom-0 lg:-top-32 lg:right-[-100vw] lg:left-[-100vw] lg:block lg:bg-slate-100" />

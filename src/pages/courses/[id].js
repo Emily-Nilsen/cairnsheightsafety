@@ -94,23 +94,8 @@ export default function Unit({ course }) {
           <div className="relative lg:col-start-2 lg:row-start-1">
             <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
               <figure>
-                <div className="aspect-w-12 aspect-h-7 bg-slate-200 lg:aspect-none">
-                  <div>
-                    <Image
-                      className="rounded-lg object-cover object-center shadow-lg"
-                      src={course.imageUrl}
-                      alt={course.name}
-                      layout="responsive"
-                      width={1184}
-                      height={1376}
-                      objectFit="cover"
-                      objectPosition="center"
-                      unoptimized={true}
-                    />
-                  </div>
-                </div>
-                <figcaption className="mt-3 flex text-sm text-slate-500">
-                  <div className="relative flex h-10 w-12 items-center justify-center rounded-full bg-orange-100 p-1">
+                <figcaption className="mt-3 flex pb-4 text-sm text-slate-500 md:pb-4">
+                  <div className="relative flex h-8 w-12 items-center justify-center rounded-full bg-orange-100 p-1">
                     <Image
                       width={577}
                       height={297}
@@ -123,9 +108,28 @@ export default function Unit({ course }) {
                   </div>
                   <span className="ml-4 max-w-lg">
                     On successful completion, students will receive a 3M
-                    Statement of Attainment in {course.codes.flat()}.
+                    Statement of Attainment in{' '}
+                    {course.codes.length > 1
+                      ? course.multipleCodes
+                      : course.codes.flat()}
+                    .
                   </span>
                 </figcaption>
+                <div className="aspect-w-12 aspect-h-12 bg-slate-200 lg:aspect-none">
+                  <div>
+                    <Image
+                      className="rounded-lg object-cover object-center shadow-lg"
+                      src={course.imageUrl}
+                      alt={course.name}
+                      layout="responsive"
+                      width={1184}
+                      height={1184}
+                      objectFit="cover"
+                      objectPosition="center"
+                      unoptimized={true}
+                    />
+                  </div>
+                </div>
               </figure>
             </div>
           </div>
