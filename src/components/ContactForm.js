@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { PickCourses } from './PickCourses'
 import { PickServices } from './PickServices'
+import { motion } from 'framer-motion'
 
 export function ContactForm() {
   return (
@@ -9,7 +10,16 @@ export function ContactForm() {
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div>
-            <div className="relative h-56 w-full bg-orange-500 object-cover lg:absolute lg:h-full">
+            <motion.div
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              transition={{
+                duration: 0.8,
+                type: 'fade',
+              }}
+              className="relative h-56 w-full bg-orange-500 object-cover lg:absolute lg:h-full"
+            >
               <Image
                 layout="fill"
                 objectFit="cover"
@@ -18,7 +28,7 @@ export function ContactForm() {
                 alt="Cairns Height Safety"
                 unoptimized={true}
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -39,15 +39,39 @@ export function Courses(props) {
         </div>
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-            {units.slice(1, isExpanded ? undefined : 4).map((course) => (
+            {units.slice(1, isExpanded ? undefined : 4).map((course, i) => (
               <Link
                 key={course.name}
                 href={`/courses/${slugify(course.name)}`}
                 passHref
               >
-                <div className="flex cursor-pointer flex-col overflow-hidden rounded-lg shadow-lg">
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 50,
+                  }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    initialDelay: 0.3,
+                    duration: 0.7,
+                    delay: i * 0.3,
+                    ease: 'easeOut',
+                  }}
+                  key={i}
+                  className="flex cursor-pointer flex-col overflow-hidden rounded-lg shadow-lg"
+                >
                   <div className="flex-shrink-0">
-                    <div className="relative h-48 w-full bg-orange-500 object-cover">
+                    <motion.div
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      initial={{ opacity: 0 }}
+                      transition={{
+                        duration: 0.8,
+                        type: 'fade',
+                      }}
+                      className="relative h-48 w-full bg-orange-500 object-cover"
+                    >
                       <Image
                         src={course.imageUrl}
                         alt={course.name}
@@ -56,7 +80,7 @@ export function Courses(props) {
                         objectPosition="center"
                         unoptimized={true}
                       />
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="flex flex-1 flex-col justify-between bg-white p-6 transition duration-300 ease-in-out hover:bg-slate-100">
                     <div className="flex-1">
@@ -103,7 +127,7 @@ export function Courses(props) {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </Link>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import { Container } from '../components/Container'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export function Introduction() {
   return (
@@ -33,13 +34,31 @@ export function Introduction() {
           Book your training course today to get yourself one step closer to
           your future career working at heights.
         </p>
-        <p className="mt-10">
+        <motion.p
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 1,
+            delay: 0.5,
+            type: 'spring',
+            stiffness: 100,
+            ease: 'easeOut',
+          }}
+          className="mt-10"
+        >
           <Link href="#contact" passHref>
             <a className="text-base font-medium tracking-tight text-orange-600 hover:text-orange-800">
               Get in touch with our team to enrol today &rarr;
             </a>
           </Link>
-        </p>
+        </motion.p>
       </Container>
     </section>
   )

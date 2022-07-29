@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Container } from './Container'
 import { SectionHeading } from './SectionHeading'
 import { ServicesCTA } from './ServicesCTA'
-
+import { motion } from 'framer-motion'
 import services from '../../assets/services'
 
 export function Services() {
@@ -29,16 +29,34 @@ export function Services() {
       </Container>
       <Container size="lg" className="mt-16">
         <ol className="grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4">
-          {services.slice(1, isExpanded ? undefined : 5).map((service) => (
+          {services.slice(1, isExpanded ? undefined : 5).map((service, i) => (
             <li key={service.title} className="[counter-increment:video]">
-              <div
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 50,
+                }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  initialDelay: 0.3,
+                  duration: 0.7,
+                  delay: i * 0.3,
+                  ease: 'easeOut',
+                }}
+                key={i}
                 className="relative flex h-44 items-center justify-center rounded-2xl bg-orange-500 px-6 shadow-lg"
-                // style={{
-                //   backgroundImage:
-                //     'conic-gradient(from -49.8deg at 50% 50%, #7331FF 0deg, #00A3FF 59.07deg, #4E51FF 185.61deg, #39DBFF 284.23deg, #B84FF1 329.41deg, #7331FF 360deg)',
-                // }}
               >
-                <div className="flex overflow-hidden rounded shadow-sm">
+                <motion.div
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  initial={{ opacity: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    type: 'fade',
+                  }}
+                  className="flex overflow-hidden rounded shadow-sm"
+                >
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -48,8 +66,8 @@ export function Services() {
                     className="rounded-lg"
                     unoptimized={true}
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
               <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
                 {service.title}
               </h3>

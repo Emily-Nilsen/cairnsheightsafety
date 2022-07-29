@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <header className="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
       {/* Text svg */}
-      <div className="absolute -top-12 -left-6 z-30 w-56 overflow-hidden p-14 md:-left-0 md:w-80 lg:left-0 lg:p-8">
+      <div className="absolute -top-12 -left-6 z-30 w-64 overflow-hidden p-14 md:-left-0 md:w-80 lg:left-0 lg:p-8">
         <Image
           src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1658987037/Cairns%20Height%20Safety/chs-text_tu1pwu.svg"
           alt="Cairns Height Safety logo"
@@ -22,7 +22,7 @@ export function Hero() {
       </div>
       <div className="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
         <div className="relative flex items-end lg:col-span-5 lg:row-span-2">
-          <div className="absolute -top-20 -bottom-12 left-0 right-1/2 z-10 rounded-br-6xl bg-slate-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-72">
+          <div className="absolute -top-20 -bottom-12 left-0 right-1/2 z-10 -mr-28 rounded-br-6xl bg-slate-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-72">
             <GridPattern
               x="100%"
               y="100%"
@@ -48,7 +48,7 @@ export function Hero() {
               stiffness: 120,
               ease: 'easeOut',
             }}
-            className="shadow-none relative -top-40 -left-10 z-20 mx-auto flex w-64 overflow-hidden rounded-none md:w-80 lg:absolute lg:-left-28 lg:w-auto"
+            className="shadow-none relative -top-40 left-10 z-20 mx-auto flex w-64 overflow-hidden rounded-none md:-left-0 md:w-80 lg:absolute lg:-left-28 lg:w-auto"
           >
             <Image
               src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1658997057/Cairns%20Height%20Safety/chs-logo-long_e4sorl.svg"

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-
+import { motion } from 'framer-motion'
 import { GridPattern } from './GridPattern'
 import { SectionHeading } from './SectionHeading'
 
@@ -15,7 +15,16 @@ export function About() {
       </div>
       <div className="relative mx-auto max-w-5xl pt-16 sm:px-6">
         <div className="bg-slate-50 pt-px sm:rounded-6xl">
-          <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
+          <motion.div
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            transition={{
+              duration: 0.8,
+              type: 'fade',
+            }}
+            className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72"
+          >
             <Image
               src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657538782/Cairns%20Height%20Safety/France_May_15_023_3_vrnpkq.jpg"
               layout="fill"
@@ -24,7 +33,7 @@ export function About() {
               objectPosition="center"
               unoptimized={true}
             />
-          </div>
+          </motion.div>
           <div className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
             <SectionHeading number="5" id="about-title">
               About Us

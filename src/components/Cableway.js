@@ -2,10 +2,7 @@ import Image from 'next/image'
 import { ButtonLink } from './Button'
 import { Container } from './Container'
 import { SectionHeading } from './SectionHeading'
-import abstractBackgroundImage from '../images/resources/abstract-background.png'
-import discordImage from '../images/resources/discord.svg'
-import figmaImage from '../images/resources/figma.svg'
-import videoPlayerImage from '../images/resources/video-player.svg'
+import { motion } from 'framer-motion'
 
 const resources = [
   {
@@ -13,7 +10,16 @@ const resources = [
     description: 'IMMOOS description one.',
     image: function FigmaImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-orange-500">
+        <motion.div
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            type: 'fade',
+          }}
+          className="absolute inset-0 flex items-center justify-center bg-orange-500"
+        >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591553/Cairns%20Height%20Safety/IMMOOS/Tower_head_tn30fn.jpg"
             alt=""
@@ -22,7 +28,7 @@ const resources = [
             objectPosition="center"
             unoptimized={true}
           />
-        </div>
+        </motion.div>
       )
     },
   },
@@ -31,14 +37,16 @@ const resources = [
     description: 'IMMOOS description two.',
     image: function VideoPlayerImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-orange-500">
-          {/* <Image
-            src={abstractBackgroundImage}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            sizes="(min-width: 1280px) 21rem, (min-width: 1024px) 33vw, (min-width: 768px) 19rem, (min-width: 640px) 50vw, 100vw"
-          /> */}
+        <motion.div
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            type: 'fade',
+          }}
+          className="absolute inset-0 flex items-center justify-center bg-orange-500"
+        >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591550/Cairns%20Height%20Safety/IMMOOS/IMG_1899_cvfenl.jpg"
             alt=""
@@ -47,7 +55,7 @@ const resources = [
             objectPosition="center"
             unoptimized={true}
           />
-        </div>
+        </motion.div>
       )
     },
   },
@@ -56,7 +64,16 @@ const resources = [
     description: 'IMMOOS description three.',
     image: function DiscordImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-orange-500">
+        <motion.div
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            type: 'fade',
+          }}
+          className="absolute inset-0 flex items-center justify-center bg-orange-500"
+        >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591535/Cairns%20Height%20Safety/IMMOOS/IMG_2341_ajjoek.jpg"
             alt=""
@@ -65,7 +82,7 @@ const resources = [
             objectPosition="center"
             unoptimized={true}
           />
-        </div>
+        </motion.div>
       )
     },
   },
@@ -127,9 +144,22 @@ export function Cableway() {
       </Container>
       <Container size="lg" className="mt-16">
         <ol className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20">
-          {resources.map((resource) => (
-            <li
-              key={resource.title}
+          {resources.map((resource, i) => (
+            <motion.li
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                initialDelay: 0.3,
+                duration: 0.7,
+                delay: i * 0.3,
+                ease: 'easeOut',
+              }}
+              key={i}
+              // key={resource.title}
               className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
             >
               <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
@@ -143,7 +173,7 @@ export function Cableway() {
                   {resource.description}
                 </p>
               </div>
-            </li>
+            </motion.li>
           ))}
         </ol>
       </Container>
