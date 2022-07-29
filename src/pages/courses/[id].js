@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import units from '../../../assets/units'
 import { CameraIcon } from '@heroicons/react/solid'
+import { motion } from 'framer-motion'
 
 export const getStaticProps = async ({ params }) => {
   const slugify = require('slugify')
@@ -116,7 +117,15 @@ export default function Unit({ course }) {
                   </span>
                 </figcaption>
                 <div className="aspect-w-12 aspect-h-12 bg-slate-200 lg:aspect-none">
-                  <div>
+                  <motion.div
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    initial={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.8,
+                      type: 'fade',
+                    }}
+                  >
                     <Image
                       className="rounded-lg object-cover object-center shadow-lg"
                       src={course.imageUrl}
@@ -128,7 +137,7 @@ export default function Unit({ course }) {
                       objectPosition="center"
                       unoptimized={true}
                     />
-                  </div>
+                  </motion.div>
                 </div>
               </figure>
             </div>

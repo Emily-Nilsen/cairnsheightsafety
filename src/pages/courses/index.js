@@ -48,13 +48,28 @@ export default function Courses(props) {
             </div>
 
             <dl className="mt-10 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:space-y-0 lg:col-span-2 lg:mt-0">
-              {units.map((course) => (
+              {units.map((course, i) => (
                 <Link
                   key={course.name}
                   href={`/courses/${slugify(course.name)}`}
                   passHref
                 >
-                  <div className="group cursor-pointer rounded-xl bg-slate-100 p-6 drop-shadow-md transition duration-300 ease-in-out hover:bg-slate-200 hover:drop-shadow-none">
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 50,
+                    }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      initialDelay: 0.3,
+                      duration: 0.7,
+                      delay: i * 0.3,
+                      ease: 'easeOut',
+                    }}
+                    key={i}
+                    className="group cursor-pointer rounded-xl bg-slate-100 p-6 drop-shadow-md transition duration-300 ease-in-out hover:bg-slate-200 hover:drop-shadow-none"
+                  >
                     <dt>
                       <p className="font-medium text-orange-600">
                         {course.code}
@@ -74,7 +89,7 @@ export default function Courses(props) {
                         />
                       </dd>
                     </div>
-                  </div>
+                  </motion.div>
                 </Link>
               ))}
             </dl>
