@@ -134,7 +134,7 @@ const bottomRow = [
 export function LogoCloud() {
   // Specify a number between 0 and 1
   const { ref, inView } = useInView({
-    threshold: 0.7,
+    threshold: 0.1,
     triggerOnce: true,
   })
 
@@ -147,8 +147,8 @@ export function LogoCloud() {
       topReel.start({
         x: '-300vw',
         transition: {
-          delay: 0.1,
-          duration: 29,
+          delay: 0,
+          duration: 45,
           ease: 'easeInOut',
         },
       })
@@ -164,8 +164,8 @@ export function LogoCloud() {
       bottomReel.start({
         x: '-300vw',
         transition: {
-          delay: 0.4,
-          duration: 29,
+          delay: 0.5,
+          duration: 45,
           ease: 'linear',
         },
       })
@@ -177,14 +177,14 @@ export function LogoCloud() {
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-7xl overflow-hidden px-0 py-12 lg:py-16">
+      <div
+        ref={ref}
+        className="mx-auto max-w-7xl overflow-hidden px-0 py-12 lg:py-16"
+      >
         <p className="text-center text-base font-semibold uppercase tracking-wider text-slate-600">
           Trusted by local and national businesses
         </p>
-        <div
-          ref={ref}
-          className="relative mx-auto h-60 w-screen overflow-hidden overflow-x-hidden rounded-none bg-white md:h-64"
-        >
+        <div className="relative mx-auto h-60 w-screen overflow-hidden overflow-x-hidden rounded-none bg-white md:h-64">
           <motion.div
             animate={topReel}
             viewport={{ once: true }}
