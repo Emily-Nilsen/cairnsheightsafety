@@ -30,23 +30,23 @@ export function Services() {
       <Container size="lg" className="mt-16">
         <ol className="grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4">
           {services.slice(1, isExpanded ? undefined : 5).map((service, i) => (
-            <li key={service.title} className="[counter-increment:video]">
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 50,
-                }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  initialDelay: 0.3,
-                  duration: 0.7,
-                  delay: i * 0.3,
-                  ease: 'easeOut',
-                }}
-                key={i}
-                className="relative flex h-44 items-center justify-center rounded-2xl bg-orange-500 px-6 shadow-lg"
-              >
+            <motion.li
+              initial={{
+                opacity: 0,
+                y: 100,
+              }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                initialDelay: 0.3,
+                duration: 0.7,
+                delay: i * 0.5,
+                ease: 'easeOut',
+              }}
+              key={i}
+              className="[counter-increment:video]"
+            >
+              <div className="bg-t relative flex h-44 items-center justify-center rounded-2xl px-6 shadow-lg">
                 <motion.div
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -67,14 +67,25 @@ export function Services() {
                     unoptimized={true}
                   />
                 </motion.div>
+              </div>
+              <motion.div
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.8,
+                  type: 'fade',
+                }}
+              >
+                <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  {service.description}
+                </p>
               </motion.div>
-              <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">
-                {service.description}
-              </p>
-            </li>
+            </motion.li>
           ))}
         </ol>
         {!isExpanded && (

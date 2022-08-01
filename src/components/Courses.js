@@ -48,14 +48,14 @@ export function Courses(props) {
                 <motion.div
                   initial={{
                     opacity: 0,
-                    y: 50,
+                    y: 100,
                   }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
                     initialDelay: 0.3,
-                    duration: 0.7,
-                    delay: i * 0.3,
+                    duration: 0.8,
+                    delay: i * 0.5,
                     ease: 'easeOut',
                   }}
                   key={i}
@@ -70,7 +70,7 @@ export function Courses(props) {
                         duration: 0.8,
                         type: 'fade',
                       }}
-                      className="relative h-48 w-full bg-orange-500 object-cover"
+                      className="bg-t relative h-48 w-full object-cover"
                     >
                       <Image
                         src={course.imageUrl}

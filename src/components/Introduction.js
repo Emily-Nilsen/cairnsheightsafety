@@ -7,7 +7,7 @@ export function Introduction() {
     <section
       id="introduction"
       aria-labelledby="introduction-title"
-      className="pt-20 pb-16 sm:pb-20 md:pt-36 lg:py-32"
+      className="pt-10 pb-16 sm:pb-20 md:pt-16 lg:py-20"
     >
       <h2 id="introduction-title" className="sr-only">
         Introduction

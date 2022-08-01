@@ -16,10 +16,11 @@ export function About() {
       <div className="relative mx-auto max-w-5xl pt-16 sm:px-6">
         <div className="bg-slate-50 pt-px sm:rounded-6xl">
           <motion.div
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, y: 100 }}
             transition={{
+              delay: 0.5,
               duration: 0.8,
               type: 'fade',
             }}
@@ -57,7 +58,17 @@ export function About() {
               Contact us to learn more about the course syllabus, assessment and
               training outcomes.
             </p>
-            <p className="mt-8">
+            <motion.p
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.8,
+                type: 'fade',
+              }}
+              className="mt-8"
+            >
               <a
                 href="https://www.facebook.com/cairnsheightsafety"
                 target="_blank"
@@ -77,7 +88,7 @@ export function About() {
                 </svg>
                 <span className="ml-4">Follow on Facebook</span>
               </a>
-            </p>
+            </motion.p>
           </div>
         </div>
       </div>

@@ -42,10 +42,11 @@ const resources = [
           viewport={{ once: true }}
           initial={{ opacity: 0 }}
           transition={{
+            delay: 0.5,
             duration: 0.8,
             type: 'fade',
           }}
-          className="absolute inset-0 flex items-center justify-center bg-orange-500"
+          className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591550/Cairns%20Height%20Safety/IMMOOS/IMG_1899_cvfenl.jpg"
@@ -72,7 +73,7 @@ const resources = [
             duration: 0.8,
             type: 'fade',
           }}
-          className="absolute inset-0 flex items-center justify-center bg-orange-500"
+          className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591535/Cairns%20Height%20Safety/IMMOOS/IMG_2341_ajjoek.jpg"

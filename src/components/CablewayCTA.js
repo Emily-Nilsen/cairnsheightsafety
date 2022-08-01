@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button } from './Button'
 import { Container } from './Container'
 import { Pattern } from './Pattern'
+import { motion } from 'framer-motion'
 
 export function CablewayCTA() {
   return (
@@ -31,9 +32,19 @@ export function CablewayCTA() {
           </div>
           <form className="lg:pl-16">
             <Link href="/#contact" passHref>
-              <h3 className="cursor-pointer text-base font-medium tracking-tight text-white transition duration-300 ease-in-out hover:text-orange-100">
+              <motion.h3
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.8,
+                  type: 'fade',
+                }}
+                className="cursor-pointer text-base font-medium tracking-tight text-white transition duration-300 ease-in-out hover:text-orange-100"
+              >
                 Contact us for more information &rarr;
-              </h3>
+              </motion.h3>
             </Link>
           </form>
         </Container>
