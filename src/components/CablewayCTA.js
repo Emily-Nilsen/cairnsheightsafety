@@ -37,7 +37,7 @@ export function CablewayCTA() {
                 viewport={{ once: true }}
                 initial={{ opacity: 0 }}
                 transition={{
-                  delay: 0.5,
+                  delay: 0.2,
                   duration: 0.8,
                   type: 'fade',
                 }}

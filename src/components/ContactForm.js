@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export function ContactForm() {
   return (
-    <div className="relative mx-auto max-w-7xl overflow-hidden bg-slate-100 lg:rounded-3xl lg:drop-shadow-xl">
+    <div className="relative mx-auto overflow-hidden max-w-7xl bg-slate-100 lg:rounded-3xl lg:drop-shadow-xl">
       <div className="lg:absolute lg:inset-0">
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <div>
@@ -18,7 +18,7 @@ export function ContactForm() {
                 duration: 0.8,
                 type: 'fade',
               }}
-              className="relative h-56 w-full bg-orange-500 object-cover lg:absolute lg:h-full"
+              className="relative object-cover w-full h-56 bg-orange-500 lg:absolute lg:h-full"
             >
               <Image
                 layout="fill"
@@ -34,8 +34,8 @@ export function ContactForm() {
       </div>
       <div className="relative px-4 py-16 sm:py-24 sm:px-6 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32">
         <div className="lg:pr-8">
-          <div className="mx-auto max-w-md sm:max-w-lg lg:mx-0">
-            <h2 className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+          <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
+            <h2 className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
               Let’s work together
             </h2>
 
@@ -51,7 +51,7 @@ export function ContactForm() {
                 <dt className="sr-only">Phone number</dt>
                 <dd className="flex items-center">
                   <PhoneIcon
-                    className="h-6 w-6 flex-shrink-0 text-slate-400"
+                    className="flex-shrink-0 w-6 h-6 text-slate-400"
                     aria-hidden="true"
                   />
                   <span className="ml-3">0412 608 241</span>
@@ -61,7 +61,7 @@ export function ContactForm() {
                 <dt className="sr-only">Email</dt>
                 <dd className="flex items-center">
                   <MailIcon
-                    className="h-6 w-6 flex-shrink-0 text-slate-400"
+                    className="flex-shrink-0 w-6 h-6 text-slate-400"
                     aria-hidden="true"
                   />
                   <span className="ml-3">cairnshs@bigpond.com</span>
@@ -74,7 +74,7 @@ export function ContactForm() {
                 target="_blank"
                 rel="noreferrer"
                 href="https://www.facebook.com/cairnsheightsafety/?ref=page_internal"
-                className="font-medium text-slate-700 underline"
+                className="font-medium underline text-slate-700"
               >
                 View all job openings
               </a>
@@ -82,9 +82,22 @@ export function ContactForm() {
             </p>
             <form
               action="#"
+              subject="Contact Cairns Height Security"
+              name="CHS - Contact Form"
+              data-netlify="true"
               method="POST"
-              className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+              className="grid grid-cols-1 mt-9 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
             >
+              <input
+                type="hidden"
+                name="form-name"
+                value="CHS - Contact Form"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="Contact Cairns Height Security"
+              />
               <div>
                 <label
                   htmlFor="first-name"
@@ -97,6 +110,7 @@ export function ContactForm() {
                     type="text"
                     name="first-name"
                     id="first-name"
+                    required
                     autoComplete="given-name"
                     className="block w-full rounded-md border-slate-200 focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
                   />
@@ -114,6 +128,7 @@ export function ContactForm() {
                     type="text"
                     name="last-name"
                     id="last-name"
+                    required
                     autoComplete="family-name"
                     className="block w-full rounded-md border-slate-200 focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
                   />
@@ -129,6 +144,7 @@ export function ContactForm() {
                 <div className="mt-1">
                   <input
                     id="email"
+                    required
                     name="email"
                     type="email"
                     autoComplete="email"
@@ -197,10 +213,12 @@ export function ContactForm() {
                 <div className="mt-1">
                   <textarea
                     id="how-can-we-help"
+                    required
+                    maxLength="500"
                     name="how-can-we-help"
                     aria-describedby="how-can-we-help-description"
                     rows={4}
-                    className="block w-full rounded-md border border-slate-200 focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
+                    className="block w-full border rounded-md border-slate-200 focus:border-orange-500 focus:ring-orange-500 sm:text-sm"
                     defaultValue={''}
                   />
                 </div>
@@ -211,7 +229,7 @@ export function ContactForm() {
               <div className="text-right sm:col-span-2">
                 <button
                   type="submit"
-                  className="inline-flex justify-center rounded-full border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                  className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out bg-orange-600 border border-transparent rounded-full hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                 >
                   Submit
                 </button>

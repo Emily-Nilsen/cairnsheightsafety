@@ -18,7 +18,7 @@ const resources = [
             duration: 0.8,
             type: 'fade',
           }}
-          className="absolute inset-0 flex items-center justify-center bg-orange-500"
+          className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591553/Cairns%20Height%20Safety/IMMOOS/Tower_head_tn30fn.jpg"
