@@ -1,6 +1,6 @@
 const units = [
   {
-    name: 'No course selected',
+    name: 'No',
     cost: '',
     duration: '',
     code: '',

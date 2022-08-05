@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
-import { PickCourses } from './PickCourses'
-import { PickServices } from './PickServices'
 import { motion } from 'framer-motion'
 import units from '../../assets/units'
 import services from '../../assets/services'
@@ -52,26 +50,34 @@ export function ContactForm() {
                   <p>Bungalow, QLD 4870</p>
                 </dd>
               </div>
-              <div className="mt-6">
-                <dt className="sr-only">Phone number</dt>
-                <dd className="flex items-center">
-                  <PhoneIcon
-                    className="flex-shrink-0 w-6 h-6 text-slate-400"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3">0412 608 241</span>
-                </dd>
-              </div>
-              <div className="mt-3">
-                <dt className="sr-only">Email</dt>
-                <dd className="flex items-center">
-                  <MailIcon
-                    className="flex-shrink-0 w-6 h-6 text-slate-400"
-                    aria-hidden="true"
-                  />
-                  <span className="ml-3">cairnshs@bigpond.com</span>
-                </dd>
-              </div>
+              <a href="tel:0412608241" rel="noopener noreferrer">
+                <div className="mt-6 group">
+                  <dt className="sr-only">Phone number</dt>
+                  <dd className="flex items-center">
+                    <PhoneIcon
+                      className="flex-shrink-0 w-6 h-6 transition duration-300 ease-in-out text-slate-400 group-hover:text-orange-500"
+                      aria-hidden="true"
+                    />
+                    <span className="ml-3">0412 608 241</span>
+                  </dd>
+                </div>
+              </a>
+              <a
+                href="mailto:cairnshs@bigpond.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <div className="mt-3 group">
+                  <dt className="sr-only">Email</dt>
+                  <dd className="flex items-center">
+                    <MailIcon
+                      className="flex-shrink-0 w-6 h-6 transition duration-300 ease-in-out text-slate-400 group-hover:text-orange-500"
+                      aria-hidden="true"
+                    />
+                    <span className="ml-3">cairnshs@bigpond.com</span>
+                  </dd>
+                </div>
+              </a>
             </dl>
             <p className="mt-6 text-base text-slate-500">
               Looking for careers at heights?{' '}
@@ -79,7 +85,7 @@ export function ContactForm() {
                 target="_blank"
                 rel="noreferrer"
                 href="https://www.facebook.com/cairnsheightsafety/?ref=page_internal"
-                className="font-medium underline text-slate-700"
+                className="font-medium underline transition duration-300 ease-in-out text-slate-700 hover:text-orange-500 hover:no-underline"
               >
                 View all job openings
               </a>
@@ -229,7 +235,7 @@ export function ContactForm() {
                 </div>
               </div>
 
-              {/* <PickCourses /> */}
+              {/* Select a Course */}
               <fieldset className="sm:col-span-2">
                 <legend className="block text-sm font-medium text-slate-700">
                   Are you interested in enrolling in one of our CHS courses?
@@ -242,10 +248,14 @@ export function ContactForm() {
                         name="course"
                         defaultValue={course.name}
                         type="radio"
-                        className="w-4 h-4 text-orange-600 border-slate-300 focus:ring-orange-500"
+                        // checked={course.name.includes('No') ? 'checked' : null}
+                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500 "
                       />
-                      <label htmlFor={`course-${course.name}`} className="ml-3">
-                        <span className="block text-sm text-slate-700">
+                      <label
+                        htmlFor={`course-${course.name}`}
+                        className="ml-3 cursor-pointer "
+                      >
+                        <span className="block text-sm cursor-pointer text-slate-700 ">
                           {course.name}
                         </span>
                       </label>
@@ -266,13 +276,16 @@ export function ContactForm() {
                         name="service"
                         defaultValue={service.title}
                         type="radio"
-                        className="w-4 h-4 text-orange-600 border-slate-300 focus:ring-orange-500"
+                        // checked={
+                        //   service.title.includes('No') ? 'checked' : null
+                        // }
+                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500 "
                       />
                       <label
                         htmlFor={`service-${service.title}`}
-                        className="ml-3"
+                        className="ml-3 cursor-pointer "
                       >
-                        <span className="block text-sm text-slate-700">
+                        <span className="block text-sm cursor-pointer text-slate-700 ">
                           {service.title}
                         </span>
                       </label>

@@ -3,11 +3,13 @@ import { ButtonLink } from './Button'
 import { Container } from './Container'
 import { SectionHeading } from './SectionHeading'
 import { motion } from 'framer-motion'
+import { PlayIcon } from '@heroicons/react/solid'
 
 const resources = [
   {
-    title: 'IMMOOS title one',
-    description: 'IMMOOS description one.',
+    title: 'IMMOOS cable carriages',
+    description:
+      'As a complete supplier of rescue equipment, IMMOOS delivers various types of cable rescue carriages. IMMOOS pays special attention to simple handling and efficient use in their design.',
     image: function FigmaImage() {
       return (
         <motion.div
@@ -18,35 +20,7 @@ const resources = [
             duration: 0.8,
             type: 'fade',
           }}
-          className="bg-t absolute inset-0 flex items-center justify-center"
-        >
-          <Image
-            src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591553/Cairns%20Height%20Safety/IMMOOS/Tower_head_tn30fn.jpg"
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            unoptimized={true}
-          />
-        </motion.div>
-      )
-    },
-  },
-  {
-    title: 'IMMOOS title two',
-    description: 'IMMOOS description two.',
-    image: function VideoPlayerImage() {
-      return (
-        <motion.div
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          initial={{ opacity: 0 }}
-          transition={{
-            delay: 0.5,
-            duration: 0.8,
-            type: 'fade',
-          }}
-          className="bg-t absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center bg-t"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591550/Cairns%20Height%20Safety/IMMOOS/IMG_1899_cvfenl.jpg"
@@ -61,8 +35,50 @@ const resources = [
     },
   },
   {
-    title: 'IMMOOS title three',
-    description: 'IMMOOS description three.',
+    title: 'IMMOOS self-propelled evacuation carriage Type SS1',
+    description:
+      'Watch a short film demonstrating the operation of an IMMOOS self-propelled evacuation carriage Type SS1.',
+    image: function VideoPlayerImage() {
+      return (
+        <motion.div
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+            type: 'fade',
+          }}
+          className="absolute inset-0 flex items-center justify-center bg-t"
+        >
+          <Image
+            src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591553/Cairns%20Height%20Safety/IMMOOS/Tower_head_tn30fn.jpg"
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            unoptimized={true}
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://youtu.be/WdVBxRvtQwY"
+            >
+              <PlayIcon
+                className="w-10 h-10 text-white transition duration-300 ease-in-out cursor-pointer hover:text-orange-500"
+                aria-hidden="true"
+              />
+            </a>
+          </div>
+        </motion.div>
+      )
+    },
+  },
+  {
+    title: 'IMMOOS self-driven carriage Type SS1 mGB',
+    description:
+      'Self-driven carriage with automatic centrifugal brake, dead man’s brake and hand brake.',
     image: function DiscordImage() {
       return (
         <motion.div
@@ -73,7 +89,7 @@ const resources = [
             duration: 0.8,
             type: 'fade',
           }}
-          className="bg-t absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-center bg-t"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591535/Cairns%20Height%20Safety/IMMOOS/IMG_2341_ajjoek.jpg"
@@ -94,13 +110,13 @@ export function Cableway() {
     <section
       id="cableway"
       aria-labelledby="cableway-title"
-      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="3" id="cableway-title">
           IMMOOS Cableway
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
           Cairns Height Safety is the Australian supplier of IMMOOS cable
           carriages.
         </p>
@@ -144,7 +160,7 @@ export function Cableway() {
         </p>
       </Container>
       <Container size="lg" className="mt-16">
-        <ol className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20">
+        <ol className="grid grid-cols-1 -mx-3 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20">
           {resources.map((resource, i) => (
             <motion.li
               initial={{
@@ -161,9 +177,9 @@ export function Cableway() {
               }}
               key={i}
               // key={resource.title}
-              className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
+              className="grid items-center grid-cols-1 gap-8 px-3 auto-rows-min sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
             >
-              <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
+              <div className="relative h-48 overflow-hidden shadow-lg rounded-2xl sm:h-60 lg:h-40">
                 <resource.image />
               </div>
               <div>
