@@ -3,6 +3,11 @@ import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { PickCourses } from './PickCourses'
 import { PickServices } from './PickServices'
 import { motion } from 'framer-motion'
+import units from '../../assets/units'
+import services from '../../assets/services'
+
+units.map((course) => ({}))
+services.map((service) => ({}))
 
 export function ContactForm() {
   return (
@@ -18,7 +23,7 @@ export function ContactForm() {
                 duration: 0.8,
                 type: 'fade',
               }}
-              className="relative object-cover w-full h-56 bg-orange-500 lg:absolute lg:h-full"
+              className="relative object-cover w-full h-56 bg-slate-200 lg:absolute lg:h-full"
             >
               <Image
                 layout="fill"
@@ -224,8 +229,57 @@ export function ContactForm() {
                 </div>
               </div>
 
-              <PickCourses />
-              <PickServices />
+              {/* <PickCourses /> */}
+              <fieldset className="sm:col-span-2">
+                <legend className="block text-sm font-medium text-slate-700">
+                  Are you interested in enrolling in one of our CHS courses?
+                </legend>
+                <div className="grid grid-cols-1 mt-4 gap-y-4">
+                  {units.map((course) => (
+                    <div key={course.name} className="flex items-center">
+                      <input
+                        id={`course-${course.name}`}
+                        name="course"
+                        defaultValue={course.name}
+                        type="radio"
+                        className="w-4 h-4 text-orange-600 border-slate-300 focus:ring-orange-500"
+                      />
+                      <label htmlFor={`course-${course.name}`} className="ml-3">
+                        <span className="block text-sm text-slate-700">
+                          {course.name}
+                        </span>
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </fieldset>
+              {/* <PickServices /> */}
+              <fieldset className="sm:col-span-2">
+                <legend className="block text-sm font-medium text-slate-700">
+                  Would you like a free quote for one our rope access services?
+                </legend>
+                <div className="grid grid-cols-1 mt-4 gap-y-4">
+                  {services.map((service) => (
+                    <div key={service.title} className="flex items-center">
+                      <input
+                        id={`service-${service.title}`}
+                        name="service"
+                        defaultValue={service.title}
+                        type="radio"
+                        className="w-4 h-4 text-orange-600 border-slate-300 focus:ring-orange-500"
+                      />
+                      <label
+                        htmlFor={`service-${service.title}`}
+                        className="ml-3"
+                      >
+                        <span className="block text-sm text-slate-700">
+                          {service.title}
+                        </span>
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </fieldset>
               <div className="text-right sm:col-span-2">
                 <button
                   type="submit"

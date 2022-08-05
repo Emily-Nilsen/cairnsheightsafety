@@ -1,6 +1,6 @@
 const services = [
   {
-    title: '--No service selected--',
+    title: 'No service selected',
     description: '',
     image: '/',
   },

@@ -56,6 +56,7 @@ export function PickServices({ service }) {
                       )
                     }
                     value={service}
+                    required
                   >
                     {({ selected, active }) => (
                       <>
