@@ -35,7 +35,7 @@ const resources = [
     },
   },
   {
-    title: 'IMMOOS self-propelled evacuation carriage Type SS1',
+    title: 'IMMOOS self-propelled evacuation carriage',
     description:
       'Watch a short film demonstrating the operation of an IMMOOS self-propelled evacuation carriage Type SS1.',
     image: function VideoPlayerImage() {
@@ -66,7 +66,7 @@ const resources = [
               href="https://youtu.be/WdVBxRvtQwY"
             >
               <PlayIcon
-                className="w-10 h-10 text-white transition duration-300 ease-in-out cursor-pointer hover:text-orange-500"
+                className="w-12 h-12 text-white transition duration-300 ease-in-out cursor-pointer opacity-80 hover:text-orange-500 hover:opacity-100"
                 aria-hidden="true"
               />
             </a>
