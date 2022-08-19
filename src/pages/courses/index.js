@@ -23,21 +23,21 @@ export default function Courses(props) {
         </title>
         <meta
           name="description"
-          content="CHS offers the following courses: RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, and UETTDRRF02 Perform pole top rescue . "
+          content="CHS offers the following courses: RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, and UETTDRRF02 Perform pole top rescue. "
         />
       </Head>
       <section>
         <div className="overflow-hidden bg-slate-50">
-          <div className="relative mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+          <div className="relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="relative lg:grid lg:grid-cols-3 lg:gap-x-8">
               <div className="lg:col-span-1">
                 <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                   Cairns Height Safety offers the following 3M Australia
                   nationally accredited courses.
                 </h2>
-                <figure className="relative mx-auto max-w-md text-center lg:mx-0 lg:text-left">
+                <figure className="relative max-w-md mx-auto text-center lg:mx-0 lg:text-left">
                   <figcaption className="mt-6 text-sm text-slate-500">
-                    <div className="relative flex h-10 w-40 items-center justify-center">
+                    <div className="relative flex items-center justify-center w-40 h-10">
                       <Image
                         width={577}
                         height={297}
@@ -53,7 +53,7 @@ export default function Courses(props) {
                 </figure>
                 <div className="mt-16 rounded-md">
                   <Link href="/" passHref>
-                    <a className="shadow hover:bg-t mt-8 inline-flex items-center rounded-full border border-slate-300 bg-white px-5 py-3 text-base font-medium leading-6 tracking-tight text-slate-900 transition duration-300 ease-in-out hover:bg-slate-700 hover:text-white">
+                    <a className="inline-flex items-center px-5 py-3 mt-8 text-base font-medium leading-6 tracking-tight transition duration-300 ease-in-out bg-white border rounded-full shadow hover:bg-t border-slate-300 text-slate-900 hover:bg-slate-700 hover:text-white">
                       Back to CHS home
                     </a>
                   </Link>
@@ -81,7 +81,7 @@ export default function Courses(props) {
                         ease: 'easeOut',
                       }}
                       key={i}
-                      className="group cursor-pointer rounded-xl bg-slate-100 p-6 drop-shadow-md transition duration-300 ease-in-out hover:bg-slate-200 hover:drop-shadow-none"
+                      className="p-6 transition duration-300 ease-in-out cursor-pointer group rounded-xl bg-slate-100 drop-shadow-md hover:bg-slate-200 hover:drop-shadow-none"
                     >
                       <dt>
                         <p className="font-medium text-orange-600">
@@ -97,7 +97,7 @@ export default function Courses(props) {
                         </dd>
                         <dd className="mt-2 text-base">
                           <ArrowNarrowRightIcon
-                            className="h-6 w-6 text-slate-400 group-hover:text-orange-600"
+                            className="w-6 h-6 text-slate-400 group-hover:text-orange-600"
                             aria-hidden="true"
                           />
                         </dd>
