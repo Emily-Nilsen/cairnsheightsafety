@@ -248,7 +248,6 @@ export function ContactForm() {
                         name="course"
                         defaultValue={course.name}
                         type="radio"
-                        // checked={course.name.includes('No') ? 'checked' : null}
                         className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500 "
                       />
                       <label
@@ -276,9 +275,6 @@ export function ContactForm() {
                         name="service"
                         defaultValue={service.title}
                         type="radio"
-                        // checked={
-                        //   service.title.includes('No') ? 'checked' : null
-                        // }
                         className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500 "
                       />
                       <label
@@ -294,12 +290,20 @@ export function ContactForm() {
                 </div>
               </fieldset>
               <div className="text-right sm:col-span-2">
-                <button
-                  type="submit"
-                  className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out bg-orange-600 border border-transparent rounded-full hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                >
-                  Submit
-                </button>
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    className="inline-flex justify-center px-4 py-2 mr-3 text-sm font-medium transition duration-300 ease-in-out bg-white border rounded-full border-slate-300 text-slate-800 hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out bg-orange-600 border border-transparent rounded-full hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                  >
+                    Submit
+                  </button>
+                </div>
               </div>
             </form>
           </div>

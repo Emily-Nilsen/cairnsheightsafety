@@ -1,20 +1,5 @@
 const units = [
   {
-    name: 'No',
-    cost: '',
-    duration: '',
-    code: '',
-    codes: [''],
-    prerequisites: [''],
-    summaryDescription: '',
-    courseAim: [''],
-    knowledgeAims: [],
-    skillAims: [],
-    courseAssessment: [''],
-    hours: '',
-    imageUrl: '/',
-  },
-  {
     name: 'Work Safely at Heights',
     cost: '290',
     duration: '1 day',

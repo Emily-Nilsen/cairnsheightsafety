@@ -1,10 +1,5 @@
 const services = [
   {
-    title: 'No',
-    description: '',
-    image: '/',
-  },
-  {
     title: 'Wind turbine maintenance',
     description:
       'CHS employees have undertaken GWO training and have experience repairing turbine blades.',

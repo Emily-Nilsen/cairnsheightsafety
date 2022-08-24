@@ -9,8 +9,6 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import units from '../../../assets/units'
 
-const courseUnits = units.shift()
-
 export default function Courses(props) {
   const slugify = require('slugify')
 
