@@ -1,0 +1,55 @@
+
+<script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "logo": [
+    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1657676863/Cairns%20Height%20Safety/original_logo_lasdft.svg"
+    ],
+  "image": [
+    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1661329360/Cairns%20Height%20Safety/David_Whitfield_o4k4c7-Circle_kweiq8.jpg",
+    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1657313729/Cairns%20Height%20Safety/3M_long_logo_o23jpc.svg",
+    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591399/Cairns%20Height%20Safety/Broadcast_Aust_0062_ozzu32.jpg"
+  ],
+  "@id": "https://cairnsheightsafety.com/",
+  "name": "Cairns Height Safety",
+  "alternateName": "CHS",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "18/102 Hartley St",
+    "addressLocality": "Bungalow",
+    "addressRegion": "QLD",
+    "postalCode": "4870",
+    "addressCountry": "Australia"
+  },
+
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-16.9338341",
+    "longitude": "145.76534"
+  },
+  "url": "https://cairnsheightsafety.com/",
+  "telephone": "0412608241",
+  "email": "cairnshs@bigpond.com",
+  "founder": "David Whitfield",
+  "slogan": "Industrial rope access & training",
+  "description": "Cairns Height Safety provides nationally accredited Height Safety and Rescue training and Industrial Rope Access services.",
+  "keywords": "3M Australia, RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, and UETTDRRF02 Perform pole top rescue, Mould remediation, High-pressure water blasting, window cleaning, exterior building maintenance, installation of height safety systems, minor roof and gutter repairs, qualified riggers, Cairns, Far North Queensland, FNQ, Queensland, training, courses, heights training Cairns, heights courses Cairns",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "07:00",
+    "closes": "17:00"
+  }]
+}
+  </script>
+
+  
