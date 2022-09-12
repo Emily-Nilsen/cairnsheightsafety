@@ -13,13 +13,13 @@ export function Services() {
     <section
       id="services"
       aria-labelledby="services-title"
-      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="2" id="services-title">
           Services
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
           Cairns Height Safety offers Industrial Rope Access services.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
@@ -46,7 +46,7 @@ export function Services() {
               key={i}
               className="[counter-increment:video]"
             >
-              <div className="bg-t relative flex h-44 items-center justify-center rounded-2xl px-6 shadow-lg">
+              <div className="relative flex items-center justify-center px-6 shadow-lg bg-t h-44 rounded-2xl">
                 <motion.div
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -89,14 +89,14 @@ export function Services() {
           ))}
         </ol>
         {!isExpanded && (
-          <div className="mt-16 flex justify-center">
+          <div className="flex justify-center mt-16">
             <button
               type="button"
               className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700"
               onClick={() => setIsExpanded(true)}
             >
               See more services
-              <svg aria-hidden="true" className="ml-2 h-6 w-6">
+              <svg aria-hidden="true" className="w-6 h-6 ml-2">
                 <path
                   d="m17 14-5 5-5-5M12 18.5V5"
                   fill="none"

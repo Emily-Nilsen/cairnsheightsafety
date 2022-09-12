@@ -23,6 +23,10 @@ export default function Courses(props) {
           name="description"
           content="CHS offers the following courses: RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, and UETTDRRF02 Perform pole top rescue. "
         />
+        <meta
+          name="keywords"
+          content="Cairns, FNQ, Queensland, Far North Queensland, Tablelands, RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, UETTDRRF02 Perform pole top rescue, training courses, Gordonvale, Edmonton, Northern Beaches, Atherton, Ravenshoe, Kuranda, Smithfield, Palm Cove, Mossman, Cape Tribulation, Northern Cairns, Cairns City, Esplanade"
+        ></meta>
       </Head>
       <section>
         <div className="overflow-hidden bg-slate-50">

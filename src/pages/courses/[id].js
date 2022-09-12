@@ -49,6 +49,7 @@ export default function Unit({ course }) {
           Cairns Height Safety offers {course.code} {course.name}
         </title>
         <meta name="description" content={course.summaryDescription} />
+        <meta name="keywords" content={course.name}></meta>
       </Head>
       <section className="overflow-hidden bg-white">
         <div className="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
