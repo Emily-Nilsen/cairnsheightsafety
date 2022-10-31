@@ -1,10 +1,23 @@
 # Cairns Height Safety
 
-Cairns Height Safety is a landing page built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+Cairns Height Safety is a training and services centre landing page built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org). The site lists services and courses offered, including detailed individual course descriptions.
 
-## Getting started
+Here is a link to the [Cairns Height Safety](https://cairnsheightsafety.com) website.
 
-To get started with this template, first install the npm dependencies:
+## Technologies Used
+
+The project is created with:
+
+- Next.js - version 12.1
+- Tailwind CSS - version 3.1
+- Headless UI - version 1.6
+- Framer Motion - version 6.5
+- React Intersection Observer - version 9.4
+- Slugify - version 1.6
+
+## Setup
+
+To run this project, first install the npm dependencies:
 
 ```bash
 npm install
@@ -16,12 +29,6 @@ Next, run the development server:
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+## Contact
 
-## Learn more
-
-To learn more about the technologies used in this site template, see the following three resources:
-
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
+Created by [Emily Nilsen](https://emilynilsen.com) - feel free to contact me!
