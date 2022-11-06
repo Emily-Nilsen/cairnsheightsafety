@@ -149,7 +149,8 @@ export function LogoCloud() {
         transition: {
           delay: 0,
           duration: 45,
-          ease: 'easeInOut',
+          repeat: Infinity,
+          ease: 'linear',
         },
       })
     }
@@ -165,7 +166,8 @@ export function LogoCloud() {
         x: '-300vw',
         transition: {
           delay: 0.5,
-          duration: 45,
+          duration: 50,
+          repeat: Infinity,
           ease: 'linear',
         },
       })
@@ -179,12 +181,12 @@ export function LogoCloud() {
     <div className="bg-white">
       <div
         ref={ref}
-        className="mx-auto max-w-7xl overflow-hidden px-0 py-12 lg:py-16"
+        className="px-0 py-12 mx-auto overflow-hidden max-w-7xl lg:py-16"
       >
-        <p className="text-center text-base font-semibold uppercase tracking-wider text-slate-600">
+        <p className="text-base font-semibold tracking-wider text-center uppercase text-slate-600">
           Trusted by local and national businesses
         </p>
-        <div className="relative mx-auto h-60 w-screen overflow-hidden overflow-x-hidden rounded-none bg-white md:h-64">
+        <div className="relative w-screen mx-auto overflow-hidden overflow-x-hidden bg-white rounded-none h-60 md:h-64">
           <motion.div
             animate={topReel}
             viewport={{ once: true }}
@@ -193,9 +195,18 @@ export function LogoCloud() {
             {topRow.map((logo, i) => (
               <div
                 key={i}
-                className="col-span-1 flex justify-center bg-slate-50 px-8 py-8"
+                className="flex justify-center col-span-1 px-8 py-8 bg-slate-50"
               >
-                <div className="relative max-h-12">
+                <motion.div
+                  whileInView={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  transition={{
+                    duration: 1,
+                    type: 'fade',
+                    ease: 'easeIn',
+                  }}
+                  className="relative max-h-12"
+                >
                   <Image
                     src={logo.image}
                     alt={logo.alt}
@@ -203,7 +214,7 @@ export function LogoCloud() {
                     width={200}
                     height={48}
                   />
-                </div>
+                </motion.div>
               </div>
             ))}
           </motion.div>
@@ -215,9 +226,18 @@ export function LogoCloud() {
             {bottomRow.map((logo, i) => (
               <div
                 key={i}
-                className="col-span-1 flex justify-center bg-slate-50 px-8 py-8"
+                className="flex justify-center col-span-1 px-8 py-8 bg-slate-50"
               >
-                <div className="relative max-h-12">
+                <motion.div
+                  whileInView={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  transition={{
+                    duration: 1,
+                    type: 'fade',
+                    ease: 'easeIn',
+                  }}
+                  className="relative max-h-12"
+                >
                   <Image
                     src={logo.image}
                     alt={logo.alt}
@@ -225,7 +245,7 @@ export function LogoCloud() {
                     width={200}
                     height={48}
                   />
-                </div>
+                </motion.div>
               </div>
             ))}
           </motion.div>
