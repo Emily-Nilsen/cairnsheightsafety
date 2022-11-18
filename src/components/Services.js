@@ -3,11 +3,72 @@ import { useState } from 'react'
 import { Container } from './Container'
 import { SectionHeading } from './SectionHeading'
 import { ServicesCTA } from './ServicesCTA'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import services from '../../assets/services'
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0,
+      staggerChildren: 3,
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: [0, 1, 0],
+    transition: {
+      duration: 6,
+      type: 'fade',
+      ease: 'easeOut',
+    },
+  },
+}
+const itemLast = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: [0, 1],
+    transition: {
+      duration: 1.5,
+      type: 'fade',
+      ease: 'easeIn',
+    },
+  },
+}
 
 export function Services() {
   let [isExpanded, setIsExpanded] = useState(false)
+
+  const turbineImages = [
+    {
+      image:
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657133828/Cairns%20Height%20Safety/chs_img_38_iv2ggz.jpg',
+    },
+    {
+      image:
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789460/Cairns%20Height%20Safety/image_02_fljfvj.webp',
+    },
+    {
+      image:
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789460/Cairns%20Height%20Safety/image_03_nobt89.webp',
+    },
+    {
+      image:
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789459/Cairns%20Height%20Safety/image_01_xtdfuf.webp',
+    },
+    {
+      image:
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789460/Cairns%20Height%20Safety/image_04_xlw2n6.webp',
+    },
+    {
+      image:
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789459/Cairns%20Height%20Safety/image_05_rz8yf5.webp',
+    },
+  ]
 
   return (
     <section
@@ -28,8 +89,13 @@ export function Services() {
         </p>
       </Container>
       <Container size="lg" className="mt-16">
-        <ol className="grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4">
-          {services.slice(1, isExpanded ? undefined : 5).map((service, i) => (
+        <motion.ol
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className=" relative grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
+        >
+          {services.slice(0, isExpanded ? undefined : 4).map((service, i) => (
             <motion.li
               initial={{
                 opacity: 0,
@@ -47,26 +113,69 @@ export function Services() {
               className="[counter-increment:video]"
             >
               <div className="relative flex items-center justify-center px-6 shadow-lg bg-t h-44 rounded-2xl">
-                <motion.div
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  initial={{ opacity: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    type: 'fade',
-                  }}
-                  className="flex overflow-hidden rounded shadow-sm"
-                >
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                    className="rounded-lg"
-                    unoptimized={true}
-                  />
-                </motion.div>
+                {service.image ? (
+                  <motion.div
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    initial={{ opacity: 0 }}
+                    transition={{
+                      duration: 0.8,
+                      type: 'fade',
+                    }}
+                    className="flex overflow-hidden rounded shadow-sm"
+                  >
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      className="rounded-lg"
+                      unoptimized={true}
+                    />
+                  </motion.div>
+                ) : (
+                  <>
+                    <ol>
+                      {turbineImages.map((img, i) => (
+                        <motion.li
+                          key={i}
+                          variants={item}
+                          exit={{ opacity: 1 }}
+                        >
+                          <div className="">
+                            <Image
+                              src={img.image}
+                              alt=""
+                              layout="fill"
+                              objectFit="cover"
+                              objectPosition="center"
+                              className="rounded-lg"
+                              unoptimized={true}
+                            />
+                          </div>
+                        </motion.li>
+                      ))}
+                      <motion.li
+                        key={i}
+                        variants={itemLast}
+                        exit={{ opacity: 1 }}
+                      >
+                        <div className="">
+                          <Image
+                            src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657133828/Cairns%20Height%20Safety/chs_img_38_iv2ggz.jpg"
+                            alt=""
+                            layout="fill"
+                            objectFit="cover"
+                            objectPosition="center"
+                            className="rounded-lg"
+                            unoptimized={true}
+                          />
+                        </div>
+                      </motion.li>
+                    </ol>
+                  </>
+                )}
               </div>
               <motion.div
                 whileInView={{ opacity: 1 }}
@@ -87,7 +196,7 @@ export function Services() {
               </motion.div>
             </motion.li>
           ))}
-        </ol>
+        </motion.ol>
         {!isExpanded && (
           <div className="flex justify-center mt-16">
             <button

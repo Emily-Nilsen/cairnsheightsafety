@@ -2,9 +2,8 @@ const services = [
   {
     title: 'Wind turbine maintenance',
     description:
-      'CHS employees have undertaken GWO training and have experience repairing turbine blades.',
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657133828/Cairns%20Height%20Safety/chs_img_38_iv2ggz.jpg',
+      'CHS employees have undertaken GWO training and have experience rectifying blade corrosion and repairing turbine blades.',
+    image: '',
   },
   {
     title: 'Mould remediation',
