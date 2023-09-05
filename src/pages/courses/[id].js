@@ -5,6 +5,7 @@ import Link from 'next/link'
 import units from '../../../assets/units'
 import { CameraIcon } from '@heroicons/react/solid'
 import { motion } from 'framer-motion'
+import { AstraGroupLogo } from '@/components/AstraGroupLogo'
 
 export const getStaticProps = async ({ params }) => {
   const slugify = require('slugify')
@@ -52,9 +53,9 @@ export default function Unit({ course }) {
         <meta name="keywords" content={course.name}></meta>
       </Head>
       <section className="overflow-hidden bg-white">
-        <div className="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="absolute top-0 bottom-0 hidden w-screen left-3/4 bg-slate-50 lg:block" />
-          <div className="mx-auto text-base max-w-prose lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="absolute bottom-0 left-3/4 top-0 hidden w-screen bg-slate-50 lg:block" />
+          <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
             <div>
               <h2 className="pb-4 text-base text-orange-600">
                 <ul role="list">
@@ -73,7 +74,7 @@ export default function Unit({ course }) {
                   ))}
                 </ul>
               </h2>
-              <div className="flex items-center p-6 rounded-lg bg-orange-50">
+              <div className="flex items-center rounded-lg bg-orange-50 p-6">
                 <div>
                   <p className="font-bold text-orange-600">
                     Course prerequisites
@@ -95,37 +96,29 @@ export default function Unit({ course }) {
                   </ul>
                 </div>
               </div>
-              <p className="mt-8 text-5xl font-extrabold tracking-tight font-display text-slate-900 sm:text-6xl">
+              <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
                 {course.name}
               </p>
             </div>
           </div>
           <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
             <div className="relative lg:col-start-2 lg:row-start-1">
-              <div className="relative mx-auto text-base max-w-prose lg:max-w-none">
+              <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
                 <figure>
-                  <figcaption className="flex pb-4 mt-3 text-sm text-slate-500 md:pb-4">
-                    <div className="relative flex items-center justify-center w-12 h-8 p-1 bg-orange-100 rounded-full">
-                      <Image
-                        width={577}
-                        height={297}
-                        src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657313516/Cairns%20Height%20Safety/3M_logo_e8twte.svg"
-                        alt="3M Australia"
-                        objectFit="contain"
-                        layout="intrinsic"
-                        objectPosition="center"
-                      />
+                  <figcaption className="mt-3 flex pb-4 text-sm text-slate-500 md:pb-4">
+                    <div className="relative flex h-12 w-12 items-center justify-center rounded-none p-1">
+                      <AstraGroupLogo className="h-12 w-12" />
                     </div>
-                    <span className="max-w-lg ml-4">
-                      On successful completion, students will receive a 3M
-                      Statement of Attainment in{' '}
+                    <span className="ml-4 max-w-lg">
+                      On successful completion, students will receive an ASTRA
+                      Group Services – RTO 31544 Statement of Attainment in{' '}
                       {course.codes.length > 1
                         ? course.multipleCodes
                         : course.codes.flat()}
                       .
                     </span>
                   </figcaption>
-                  <div className="aspect-w-12 aspect-h-12 bg-slate-200 lg:aspect-none">
+                  <div className="aspect-h-12 aspect-w-12 bg-slate-200 lg:aspect-none">
                     <motion.div
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
@@ -136,7 +129,7 @@ export default function Unit({ course }) {
                       }}
                     >
                       <Image
-                        className="object-cover object-center rounded-lg shadow-lg"
+                        className="rounded-lg object-cover object-center shadow-lg"
                         src={course.imageUrl}
                         alt={course.name}
                         layout="responsive"
@@ -152,7 +145,7 @@ export default function Unit({ course }) {
               </div>
             </div>
             <div className="mt-8 lg:mt-0">
-              <div className="mx-auto text-base max-w-prose lg:max-w-none">
+              <div className="mx-auto max-w-prose text-base lg:max-w-none">
                 <p className="text-lg text-slate-500">
                   {course.summaryDescription}
                 </p>
@@ -166,7 +159,7 @@ export default function Unit({ course }) {
                     : null}
                 </ul>
               </div>
-              <div className="mx-auto mt-5 prose prose-orange text-slate-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
+              <div className="prose prose-orange mx-auto mt-5 text-slate-500 lg:col-start-1 lg:row-start-1 lg:max-w-none">
                 <h3>Course objectives</h3>
                 <p>
                   By the end of the course, the student will be able to
@@ -214,7 +207,7 @@ export default function Unit({ course }) {
                   ))}
                 </ul>
               </div>
-              <div className="flex items-center p-6 mt-8 rounded-lg bg-orange-50">
+              <div className="mt-8 flex items-center rounded-lg bg-orange-50 p-6">
                 <div>
                   <p className="pb-4 font-bold text-orange-600">
                     Course duration
@@ -228,17 +221,17 @@ export default function Unit({ course }) {
               </div>
 
               {/* Buttons */}
-              <div className="flex mx-auto mt-10 text-base max-w-prose lg:max-w-none">
+              <div className="mx-auto mt-10 flex max-w-prose text-base lg:max-w-none">
                 <div className="rounded-full">
                   <Link href="/#contact" passHref>
-                    <a className="flex items-center justify-center w-full px-5 py-2 text-base font-medium text-white transition duration-300 ease-in-out bg-orange-600 border border-transparent rounded-full shadow-sm hover:bg-orange-500">
+                    <a className="flex w-full items-center justify-center rounded-full border border-transparent bg-orange-600 px-5 py-2 text-base font-medium text-white shadow-sm transition duration-300 ease-in-out hover:bg-orange-500">
                       Enrol in course
                     </a>
                   </Link>
                 </div>
                 <div className="ml-4 rounded-full">
                   <Link href="/courses" passHref>
-                    <a className="flex items-center justify-center w-full px-5 py-2 text-base font-medium text-orange-600 transition duration-300 ease-in-out bg-white border border-orange-500 rounded-full shadow-sm hover:border-slate-700 hover:bg-slate-700 hover:text-white">
+                    <a className="flex w-full items-center justify-center rounded-full border border-orange-500 bg-white px-5 py-2 text-base font-medium text-orange-600 shadow-sm transition duration-300 ease-in-out hover:border-slate-700 hover:bg-slate-700 hover:text-white">
                       See all courses
                     </a>
                   </Link>

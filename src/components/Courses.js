@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from './Container'
 import { SectionHeading } from './SectionHeading'
+import { AstraGroupLogo } from './AstraGroupLogo'
 import slugify from 'slugify'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
@@ -17,28 +18,29 @@ export function Courses(props) {
     <section
       id="courses"
       aria-labelledby="courses-title"
-      className="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="1" id="courses-title">
           Training Courses
         </SectionHeading>
-        <p className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Take a look at the full range of training courses CHS offers.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          All participants receive a 3M Australia Statement of Attainment for
-          any of our completed nationally recognised units of competency.
+          All participants receive an ASTRA Group Services – RTO 31544 Statement
+          of Attainment for any of our completed nationally recognised units of
+          competency.
         </p>
       </Container>
 
       {/* Training courses with see more */}
-      <div className="relative px-4 mt-16 bg-white sm:px-6 lg:px-8 ">
+      <div className="relative mt-16 bg-white px-4 sm:px-6 lg:px-8 ">
         <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3" />
+          <div className="h-1/3 bg-white sm:h-2/3" />
         </div>
         <div className="relative mx-auto max-w-7xl">
-          <div className="grid max-w-lg gap-5 mx-auto mt-12 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
             {units.slice(0, isExpanded ? undefined : 3).map((course, i) => (
               <Link
                 key={course.name}
@@ -59,7 +61,7 @@ export function Courses(props) {
                     ease: 'easeOut',
                   }}
                   key={i}
-                  className="flex flex-col overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                  className="flex cursor-pointer flex-col overflow-hidden rounded-lg shadow-lg"
                 >
                   <div className="flex-shrink-0">
                     <motion.div
@@ -70,7 +72,7 @@ export function Courses(props) {
                         duration: 0.8,
                         type: 'fade',
                       }}
-                      className="relative object-cover w-full h-48 bg-t"
+                      className="bg-t relative h-48 w-full object-cover"
                     >
                       <Image
                         src={course.imageUrl}
@@ -82,12 +84,12 @@ export function Courses(props) {
                       />
                     </motion.div>
                   </div>
-                  <div className="flex flex-col justify-between flex-1 p-6 transition duration-300 ease-in-out bg-white hover:bg-slate-100">
+                  <div className="flex flex-1 flex-col justify-between bg-white p-6 transition duration-300 ease-in-out hover:bg-slate-100">
                     <div className="flex-1">
                       <p className="text-sm font-medium text-orange-600">
                         <a className="hover:underline">{course.code}</a>
                       </p>
-                      <a className="block mt-2">
+                      <a className="mt-2 block">
                         <p className="text-xl font-semibold text-slate-900">
                           {course.name}
                         </p>
@@ -96,20 +98,12 @@ export function Courses(props) {
                         </p>
                       </a>
                     </div>
-                    <div className="flex items-center mt-6">
+                    <div className="mt-6 flex items-center">
                       <div className="flex-shrink-0">
                         <a href="#">
                           <span className="sr-only">{course.duration}</span>
-                          <div className="relative flex items-center justify-center w-10 h-10 p-1 bg-orange-100 rounded-full">
-                            <Image
-                              width={577}
-                              height={297}
-                              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657313516/Cairns%20Height%20Safety/3M_logo_e8twte.svg"
-                              alt="3M Australia"
-                              objectFit="contain"
-                              layout="intrinsic"
-                              objectPosition="center"
-                            />
+                          <div className="relative flex h-12 w-12 items-center justify-center p-1">
+                            <AstraGroupLogo className="h-12 w-12" />
                           </div>
                         </a>
                       </div>
@@ -132,14 +126,14 @@ export function Courses(props) {
             ))}
           </div>
           {!isExpanded && (
-            <div className="flex justify-center mt-10">
+            <div className="mt-10 flex justify-center">
               <button
                 type="button"
                 className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700"
                 onClick={() => setIsExpanded(true)}
               >
                 See more courses
-                <svg aria-hidden="true" className="w-6 h-6 ml-2">
+                <svg aria-hidden="true" className="ml-2 h-6 w-6">
                   <path
                     d="m17 14-5 5-5-5M12 18.5V5"
                     fill="none"

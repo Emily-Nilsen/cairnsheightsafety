@@ -7,16 +7,16 @@ export function Introduction() {
     <section
       id="introduction"
       aria-labelledby="introduction-title"
-      className="pt-10 pb-16 sm:pb-20 md:pt-16 lg:py-20"
+      className="pb-16 pt-10 sm:pb-20 md:pt-16 lg:py-20"
     >
       <h2 id="introduction-title" className="sr-only">
         Introduction
       </h2>
       <Container>
         <p className="font-display text-4xl font-bold tracking-tight text-slate-900">
-          Cairns Height Safety (CHS) offers nationally accredited safety
-          training courses and is a commercial and industrial safety equipment
-          supplier.
+          Cairns Height Safety (CHS) is a commercial and industrial safety
+          equipment supplier and offers nationally accredited safety training
+          courses.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
           Are you interested in getting a job working at heights? Cairns Height
@@ -24,10 +24,10 @@ export function Introduction() {
           Training industry.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          CHS offers a wide range of tailored 3M Australia nationally accredited
-          training courses to suit your requirements. We proudly support our
-          students in the classroom and when applying their new skills in
-          practice.
+          CHS offers a wide range of tailored ASTRA Group Services nationally
+          accredited training courses to suit your requirements. We proudly
+          support our students in the classroom and when applying their new
+          skills in practice.
         </p>
 
         <p className="mt-4 text-lg tracking-tight text-slate-700">
