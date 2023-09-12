@@ -45,8 +45,8 @@ export default function Home() {
         }}
       >
         <p>
-          Are you interested in taking a 3M nationally accredited training
-          course with Cairns Height Safety?
+          Are you interested in taking an ASTRA Group Services nationally
+          accredited training course with Cairns Height Safety?
         </p>
       </CallToAction>
       <Services />

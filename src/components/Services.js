@@ -54,7 +54,7 @@ export function Services() {
     },
     {
       image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789460/Cairns%20Height%20Safety/image_03_nobt89.webp',
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/CHS_replacement_2_katy6b.webp',
     },
     {
       image:
@@ -62,7 +62,7 @@ export function Services() {
     },
     {
       image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789460/Cairns%20Height%20Safety/image_04_xlw2n6.webp',
+        'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/CHS_replacement_1_u8mzsc.webp',
     },
     {
       image:
@@ -74,13 +74,13 @@ export function Services() {
     <section
       id="services"
       aria-labelledby="services-title"
-      className="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="2" id="services-title">
           Services
         </SectionHeading>
-        <p className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Cairns Height Safety offers Industrial Rope Access services.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
@@ -93,7 +93,7 @@ export function Services() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          className=" relative grid grid-cols-1 gap-y-10 gap-x-8 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
+          className=" relative grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
         >
           {services.slice(0, isExpanded ? undefined : 4).map((service, i) => (
             <motion.li
@@ -112,7 +112,7 @@ export function Services() {
               key={i}
               className="[counter-increment:video]"
             >
-              <div className="relative flex items-center justify-center px-6 shadow-lg bg-t h-44 rounded-2xl">
+              <div className="bg-t relative flex h-44 items-center justify-center rounded-2xl px-6 shadow-lg">
                 {service.image ? (
                   <motion.div
                     whileInView={{ opacity: 1 }}
@@ -198,14 +198,14 @@ export function Services() {
           ))}
         </motion.ol>
         {!isExpanded && (
-          <div className="flex justify-center mt-16">
+          <div className="mt-16 flex justify-center">
             <button
               type="button"
               className="flex items-center text-base font-medium tracking-tight text-slate-900 hover:text-slate-700"
               onClick={() => setIsExpanded(true)}
             >
               See more services
-              <svg aria-hidden="true" className="w-6 h-6 ml-2">
+              <svg aria-hidden="true" className="ml-2 h-6 w-6">
                 <path
                   d="m17 14-5 5-5-5M12 18.5V5"
                   fill="none"

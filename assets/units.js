@@ -53,7 +53,7 @@ const units = [
     codes: ['PUASAR022A Participate in a rescue operation'],
     prerequisites: [
       'HLTAID003 Provide first aid',
-      '3M Australia also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
+      'ASTRA Group Services also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
     ],
     summaryDescription:
       'This course provides candidates with the necessary skills and knowledge to perform vertical rope rescue techniques from towers, masts and structures using technical rope rescue equipment.',
@@ -105,7 +105,7 @@ const units = [
   //   codes: ['PUASAR032A Undertake vertical rescue'],
   //   prerequisites: [
   //     'PUASAR022A Participate in a rescue operation',
-  //     '3M Australia also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
+  //     'ASTRA Group Services also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
   //   ],
   //   summaryDescription:
   //     'This unit covers the competency required to undertake vertical rescue in various emergencies, including in natural and artificial environments.',
@@ -161,7 +161,7 @@ const units = [
     codes: ['PUASAR022 Participate in a rescue operation'],
     prerequisites: [
       'HLTAID003 Provide first aid',
-      '3M Australia also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
+      'ASTRA Group Services also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
     ],
     summaryDescription:
       'This course covers workers who work at heights in industrial sectors and are required to rescue workmates from an industrial structure using a pre-engineered rescue kit.',
@@ -259,48 +259,48 @@ const units = [
   //   imageUrl:
   //     'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657133830/Cairns%20Height%20Safety/chs_img_44_roaohp.jpg',
   // },
-  {
-    name: 'Height Safety Equipment Inspector',
-    cost: '360',
-    duration: '1 day',
-    code: 'MEM15004',
-    codes: ['MEM15004 Perform inspection'],
-    prerequisites: [
-      'MEM13015 Work safely and effectively in manufacturing and engineering',
-      'MEM16006 Organise and communicate information',
-      'MEM11011 Undertake manual handling',
-    ],
-    summaryDescription:
-      'This course covers inspecting products, keeping records and providing feedback on the product’s conformance to specifications.',
-    courseAim: [
-      'Product assessment applies to a range of manufacturing enterprises. It requires the application of a range of measuring equipment, devices and tools.',
-      'This course covers inspecting products, keeping records and providing feedback on the product’s conformance to specifications. Students learn to assess goods according to a site quality plan or specifications.',
-      'Students undertake the location and frequency of checks, tests and measurements according to standard operating procedures. Verification should be made as close as possible to the point of production of the feature or characteristic. Inspection may involve ‘first piece inspection’, fixed interval, or sampling. Students may access other technical units, for example, appropriate measurement units depending on the inspection process.',
-    ],
-    knowledgeAims: [
-      'Using defined procedures to check conformance to specifications.',
-      'Recordable data and the required frequency of recording.',
-      'The consequences of not keeping accurate records.',
-      'Removable non-conformant products by rework/repair per job instructions.',
-      'Hazards and control measures associated with performing basic inspection activities.',
-      'Use and application of personal protective equipment.',
-      'Safe work practices and procedures.',
-    ],
-    skillAims: [
-      'Reading, interpreting and following information on written job instructions, standard operating procedures and other applicable reference documents.',
-      'Testing products for conformance to specifications per job instructions.',
-      'Testing reworked/repaired products for conformance to specifications per job instructions.',
-      'Entering routine and familiar information onto proformas and standard workplace forms.',
-    ],
-    courseAssessment: [
-      'Inspecting height safety equipment.',
-      'Filling out inspection sheets.',
-      'Transferring information to a register followed by a presentation of the findings.',
-    ],
-    hours: '4 hours',
-    imageUrl:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657763678/Cairns%20Height%20Safety/safety_equipment_inspector_dztmwj.jpg',
-  },
+  // {
+  //   name: 'Height Safety Equipment Inspector',
+  //   cost: '360',
+  //   duration: '1 day',
+  //   code: 'MEM15004',
+  //   codes: ['MEM15004 Perform inspection'],
+  //   prerequisites: [
+  //     'MEM13015 Work safely and effectively in manufacturing and engineering',
+  //     'MEM16006 Organise and communicate information',
+  //     'MEM11011 Undertake manual handling',
+  //   ],
+  //   summaryDescription:
+  //     'This course covers inspecting products, keeping records and providing feedback on the product’s conformance to specifications.',
+  //   courseAim: [
+  //     'Product assessment applies to a range of manufacturing enterprises. It requires the application of a range of measuring equipment, devices and tools.',
+  //     'This course covers inspecting products, keeping records and providing feedback on the product’s conformance to specifications. Students learn to assess goods according to a site quality plan or specifications.',
+  //     'Students undertake the location and frequency of checks, tests and measurements according to standard operating procedures. Verification should be made as close as possible to the point of production of the feature or characteristic. Inspection may involve ‘first piece inspection’, fixed interval, or sampling. Students may access other technical units, for example, appropriate measurement units depending on the inspection process.',
+  //   ],
+  //   knowledgeAims: [
+  //     'Using defined procedures to check conformance to specifications.',
+  //     'Recordable data and the required frequency of recording.',
+  //     'The consequences of not keeping accurate records.',
+  //     'Removable non-conformant products by rework/repair per job instructions.',
+  //     'Hazards and control measures associated with performing basic inspection activities.',
+  //     'Use and application of personal protective equipment.',
+  //     'Safe work practices and procedures.',
+  //   ],
+  //   skillAims: [
+  //     'Reading, interpreting and following information on written job instructions, standard operating procedures and other applicable reference documents.',
+  //     'Testing products for conformance to specifications per job instructions.',
+  //     'Testing reworked/repaired products for conformance to specifications per job instructions.',
+  //     'Entering routine and familiar information onto proformas and standard workplace forms.',
+  //   ],
+  //   courseAssessment: [
+  //     'Inspecting height safety equipment.',
+  //     'Filling out inspection sheets.',
+  //     'Transferring information to a register followed by a presentation of the findings.',
+  //   ],
+  //   hours: '4 hours',
+  //   imageUrl:
+  //     'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657763678/Cairns%20Height%20Safety/safety_equipment_inspector_dztmwj.jpg',
+  // },
   {
     name: 'Poletop Rescue',
     cost: '320',
@@ -309,7 +309,7 @@ const units = [
     codes: ['UETTDRRF02 Perform pole top rescue'],
     prerequisites: [
       'HLTAID001 Provide cardiopulmonary resuscitation',
-      '3M Australia also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
+      'ASTRA Group Services also recommends that all students hold a Nationally Recognised Statement of Attainment in RIIWHS204D Work safely at heights, or equivalent unit',
     ],
     summaryDescription:
       'This course equips students with the necessary skills and knowledge to perform rescue techniques from pole tops using pre-engineered rescue kits.',

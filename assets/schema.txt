@@ -34,7 +34,7 @@
   "founder": "David Whitfield",
   "slogan": "Industrial rope access & training",
   "description": "Cairns Height Safety provides nationally accredited Height Safety and Rescue training and Industrial Rope Access services.",
-  "keywords": "3M Australia, RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, and UETTDRRF02 Perform pole top rescue, Mould remediation, High-pressure water blasting, window cleaning, exterior building maintenance, installation of height safety systems, minor roof and gutter repairs, qualified riggers, Cairns, Far North Queensland, FNQ, Queensland, training, courses, heights training Cairns, heights courses Cairns",
+  "keywords": "ASTRA Group Services, ASTRA Group Services - RTO 31544, RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, and UETTDRRF02 Perform pole top rescue, Mould remediation, High-pressure water blasting, window cleaning, exterior building maintenance, installation of height safety systems, minor roof and gutter repairs, qualified riggers, Cairns, Far North Queensland, FNQ, Queensland, training, courses, heights training Cairns, heights courses Cairns",
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": [
