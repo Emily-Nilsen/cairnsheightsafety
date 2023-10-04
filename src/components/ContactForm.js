@@ -63,7 +63,7 @@ export function ContactForm() {
       <div key={item.name} className="flex items-center">
         <input
           id={`${name}-${item.name}`}
-          name={name}
+          name="course-selected"
           defaultValue={item.name}
           type="radio"
           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -358,7 +358,7 @@ export function ContactForm() {
                       <div key={index} className="flex items-center">
                         <input
                           id={`course-WorkSafelyAtHeights-${course.date}`}
-                          name="course"
+                          name="course-selected"
                           value={`Work Safely at Heights - ${course.date}`}
                           type="radio"
                           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -388,7 +388,7 @@ export function ContactForm() {
                       <div key={index} className="flex items-center">
                         <input
                           id={`course-TowerRescue-${course.startDate}-${course.endDate}`}
-                          name="course"
+                          name="course-selected"
                           value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
                           type="radio"
                           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -408,71 +408,6 @@ export function ContactForm() {
                   </div>
                 </details>
               </fieldset>
-
-              {/* Add this section to the form */}
-              {/* <fieldset className="sm:col-span-2">
-                <legend className="block text-sm font-medium text-slate-700">
-                  Would you like to enrol in one of our upcoming courses?
-                </legend>
-                <div className="grid grid-cols-1 mt-4 gap-y-4">
-                  {sortedWorkSafelyAtHeights.map((course, index) => (
-                    <div key={index} className="flex items-center">
-                      <input
-                        id={`course-WorkSafelyAtHeights-${course.date}`}
-                        name="course"
-                        value={`Work Safely at Heights - ${course.date}`}
-                        type="radio"
-                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
-                      />
-                      <label
-                        htmlFor={`course-WorkSafelyAtHeights-${course.date}`}
-                        className="ml-3 cursor-pointer"
-                      >
-                        <span className="block text-sm text-slate-700">
-                          Work Safely at Heights{' '}
-                          <svg
-                            viewBox="0 0 2 2"
-                            className="mx-2 inline h-0.5 w-0.5 fill-current"
-                            aria-hidden="true"
-                          >
-                            <circle cx={1} cy={1} r={1} />
-                          </svg>{' '}
-                          {formatDate(course.date)}
-                        </span>
-                      </label>
-                    </div>
-                  ))}
-                  {sortedTowerRescueDates.map((course, index) => (
-                    <div key={index} className="flex items-center">
-                      <input
-                        id={`course-TowerRescue-${course.startDate}-${course.endDate}`}
-                        name="course"
-                        value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
-                        type="radio"
-                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
-                      />
-                      <label
-                        htmlFor={`course-TowerRescue-${course.startDate}-${course.endDate}`}
-                        className="ml-3 cursor-pointer"
-                      >
-                        <span className="block text-sm text-slate-700">
-                          Tower Rescue{' '}
-                          <svg
-                            viewBox="0 0 2 2"
-                            className="mx-2 inline h-0.5 w-0.5 fill-current"
-                            aria-hidden="true"
-                          >
-                            <circle cx={1} cy={1} r={1} />
-                          </svg>{' '}
-                          {formatDateWithoutYear(course.startDate)} -{' '}
-                          {formatDateWithoutYear(course.endDate)},{' '}
-                          {new Date(course.endDate).getFullYear()}
-                        </span>
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </fieldset> */}
 
               {/* Course Selection */}
               <fieldset id="other-courses" className="sm:col-span-2">
@@ -494,7 +429,7 @@ export function ContactForm() {
                     <div key={service.title} className="flex items-center">
                       <input
                         id={`service-${service.title}`}
-                        name="service"
+                        name="service-selected"
                         defaultValue={service.title}
                         type="radio"
                         className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500 "
