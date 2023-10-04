@@ -62,8 +62,8 @@ export function ContactForm() {
     items.map((item) => (
       <div key={item.name} className="flex items-center">
         <input
-          id={`${name}-${item.name}`}
-          name="Course Selected"
+          id="other-course-selected"
+          name="other-course-selected"
           defaultValue={item.name}
           type="radio"
           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -360,8 +360,8 @@ export function ContactForm() {
                     {sortedWorkSafelyAtHeights.map((course, index) => (
                       <div key={index} className="flex items-center">
                         <input
-                          id={`course-WorkSafelyAtHeights-${course.date}`}
-                          name="Course Selected"
+                          id="work-safely-at-heights-course-selected"
+                          name="work-safely-at-heights-course-selected"
                           value={`Work Safely at Heights - ${course.date}`}
                           type="radio"
                           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -390,8 +390,8 @@ export function ContactForm() {
                     {sortedTowerRescueDates.map((course, index) => (
                       <div key={index} className="flex items-center">
                         <input
-                          id={`course-TowerRescue-${course.startDate}-${course.endDate}`}
-                          name="Course Selected"
+                          id="tower-rescue-course-selected"
+                          name="tower-rescue-course-selected"
                           value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
                           type="radio"
                           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -431,14 +431,14 @@ export function ContactForm() {
                   {services.map((service) => (
                     <div key={service.title} className="flex items-center">
                       <input
-                        id="Service Selected Charlie"
-                        name="Service Selected"
+                        id="service-selected"
+                        name="service-selected"
                         defaultValue={service.title}
                         type="radio"
                         className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
                       />
                       <label
-                        htmlFor={`service-${service.title} SNOOX`}
+                        htmlFor={`service-${service.title}`}
                         className="ml-3 cursor-pointer "
                       >
                         <span className="block cursor-pointer text-sm text-slate-700">
