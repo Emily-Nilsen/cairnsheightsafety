@@ -433,7 +433,7 @@ export function ContactForm() {
                       <input
                         id={`service-${service.title}`}
                         name="Service Selected"
-                        defaultValue="Service Selected"
+                        defaultValue={service.title}
                         type="radio"
                         className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500 "
                       />
@@ -442,7 +442,7 @@ export function ContactForm() {
                         className="ml-3 cursor-pointer "
                       >
                         <span className="block cursor-pointer text-sm text-slate-700 ">
-                          {service.title}
+                          {service.title}TEST
                         </span>
                       </label>
                     </div>
