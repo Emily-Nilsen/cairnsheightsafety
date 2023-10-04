@@ -433,7 +433,7 @@ export function ContactForm() {
                       <input
                         id={`service-${service.title}`}
                         name="Service Selected"
-                        defaultValue={service.title}
+                        defaultValue="Service Selected"
                         type="radio"
                         className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500 "
                       />
