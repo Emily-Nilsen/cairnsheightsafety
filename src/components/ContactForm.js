@@ -431,18 +431,18 @@ export function ContactForm() {
                   {services.map((service) => (
                     <div key={service.title} className="flex items-center">
                       <input
-                        id={`service-${service.title}`}
+                        id="Service Selected Charlie"
                         name="Service Selected"
                         defaultValue={service.title}
                         type="radio"
-                        className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500 "
+                        className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
                       />
                       <label
-                        htmlFor={`service-${service.title}`}
+                        htmlFor={`service-${service.title} SNOOX`}
                         className="ml-3 cursor-pointer "
                       >
-                        <span className="block cursor-pointer text-sm text-slate-700 ">
-                          {service.title}TEST
+                        <span className="block cursor-pointer text-sm text-slate-700">
+                          {service.title}
                         </span>
                       </label>
                     </div>
