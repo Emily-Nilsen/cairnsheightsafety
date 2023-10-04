@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { Container } from './Container'
 import { SectionHeading } from './SectionHeading'
 import { AstraGroupLogo } from './AstraGroupLogo'
+import { ButtonLink } from './Button'
+
 import slugify from 'slugify'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
@@ -18,7 +20,7 @@ export function Courses(props) {
     <section
       id="courses"
       aria-labelledby="courses-title"
-      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="relative scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
         <SectionHeading number="1" id="courses-title">
@@ -32,6 +34,9 @@ export function Courses(props) {
           of Attainment for any of our completed nationally recognised units of
           competency.
         </p>
+        <div className="mt-12 flex w-full justify-center">
+          <ButtonLink href="/courses#dates">View our course dates</ButtonLink>
+        </div>
       </Container>
 
       {/* Training courses with see more */}
@@ -42,11 +47,7 @@ export function Courses(props) {
         <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
             {units.slice(0, isExpanded ? undefined : 3).map((course, i) => (
-              <Link
-                key={course.name}
-                href={`/courses/${slugify(course.name)}`}
-                passHref
-              >
+              <Link key={course.name} href={`/courses/${slugify(course.name)}`}>
                 <motion.div
                   initial={{
                     opacity: 0,

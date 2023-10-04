@@ -1,3 +1,6 @@
+import { useContext, useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/router'
+import { CourseDataContext } from './CommonParent' // Adjust the import path as needed
 import Image from 'next/image'
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { motion } from 'framer-motion'
@@ -8,6 +11,109 @@ units.map((course) => ({}))
 services.map((service) => ({}))
 
 export function ContactForm() {
+  const [isLargeScreen, setIsLargeScreen] = useState(false)
+  const [imageSrc, setImageSrc] = useState(
+    'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Contact_Form_mobile_v5nmim.webp'
+  )
+
+  useEffect(() => {
+    const updateScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024) // 1024px is the breakpoint for 'lg' in Tailwind
+    }
+
+    updateScreenSize() // Initial check
+    window.addEventListener('resize', updateScreenSize)
+
+    return () => {
+      window.removeEventListener('resize', updateScreenSize)
+    }
+  }, [])
+
+  useEffect(() => {
+    setImageSrc(
+      isLargeScreen
+        ? 'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Contact_Form_destop_HD_bx0bfi.webp'
+        : 'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Contact_Form_mobile_v5nmim.webp'
+    )
+  }, [isLargeScreen])
+
+  // for useEffect
+  const [data, setData] = useState({})
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('/api/fetchNotionData')
+      const data = await res.json()
+      if (res.ok) {
+        setData(data)
+      } else {
+        setError(data.error)
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  const { workSafelyAtHeights = [], towerRescueDates = [] } =
+    useContext(CourseDataContext) || {}
+
+  const renderRadioOptions = (items, name) =>
+    items.map((item) => (
+      <div key={item.name} className="flex items-center">
+        <input
+          id={`${name}-${item.name}`}
+          name={name}
+          defaultValue={item.name}
+          type="radio"
+          className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
+        />
+        <label htmlFor={`${name}-${item.name}`} className="ml-3 cursor-pointer">
+          <span className="block text-sm text-slate-700">{item.name}</span>
+        </label>
+      </div>
+    ))
+
+  // Helper function to format date
+  function formatDate(dateString) {
+    const date = new Date(dateString)
+    const formattedDate = date.toLocaleDateString('en-AU', {
+      month: 'short',
+      day: 'numeric',
+    })
+    const year = date.getFullYear()
+    return (
+      <>
+        <span className="font-semibold">{formattedDate}</span>, {year}
+      </>
+    )
+  }
+
+  // Helper function to format date without year
+  function formatDateWithoutYear(dateString) {
+    const date = new Date(dateString)
+    return (
+      <span className="font-semibold">
+        {date.toLocaleDateString('en-AU', { month: 'short', day: 'numeric' })}
+      </span>
+    )
+  }
+
+  const sortedWorkSafelyAtHeights = [...workSafelyAtHeights].sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+  )
+  const sortedTowerRescueDates = [...towerRescueDates].sort(
+    (a, b) => new Date(a.startDate) - new Date(b.startDate)
+  )
+
+  // Filter units to only include "Post Fall Recovery" and "Poletop Rescue"
+  const filteredUnits = units.filter(
+    (unit) =>
+      unit.name === 'Post Fall Recovery' || unit.name === 'Poletop Rescue'
+  )
+
+  const formRef = useRef(null)
+
   return (
     <div className="relative mx-auto max-w-7xl overflow-hidden bg-slate-100 lg:rounded-3xl lg:drop-shadow-xl">
       <div className="lg:absolute lg:inset-0">
@@ -27,15 +133,18 @@ export function ContactForm() {
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
-                src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657592537/Cairns%20Height%20Safety/Riley/IMG_1432_atgcs4.jpg"
+                src={imageSrc}
                 alt="Cairns Height Safety"
-                unoptimized={true}
+                unoptimized
               />
             </motion.div>
           </div>
         </div>
       </div>
-      <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32">
+      <div
+        id="enrol"
+        className="relative px-4 py-16 sm:px-6 sm:py-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32"
+      >
         <div className="lg:pr-8">
           <div className="mx-auto max-w-md sm:max-w-lg lg:mx-0">
             <h2 className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
@@ -92,8 +201,8 @@ export function ContactForm() {
               .
             </p>
             <form
+              ref={formRef}
               action="#"
-              // subject="Contact Cairns Height Security"
               name="CHS - Contact Form"
               data-netlify="true"
               method="POST"
@@ -234,36 +343,149 @@ export function ContactForm() {
                   />
                 </div>
               </div>
+              <legend className="block text-sm font-medium text-slate-700 sm:col-span-2">
+                Would you like to enrol in one of our upcoming courses?
+              </legend>
 
-              {/* Select a Course */}
+              {/* Collapsible section for Work Safely at Heights */}
               <fieldset className="sm:col-span-2">
+                <details>
+                  <summary className="cursor-pointer text-sm font-normal text-slate-700">
+                    Work Safely at Heights
+                  </summary>
+                  <div className="mt-4 grid grid-cols-1 gap-y-4">
+                    {sortedWorkSafelyAtHeights.map((course, index) => (
+                      <div key={index} className="flex items-center">
+                        <input
+                          id={`course-WorkSafelyAtHeights-${course.date}`}
+                          name="course"
+                          value={`Work Safely at Heights - ${course.date}`}
+                          type="radio"
+                          className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
+                        />
+                        <label
+                          htmlFor={`course-WorkSafelyAtHeights-${course.date}`}
+                          className="ml-3 cursor-pointer"
+                        >
+                          <span className="block text-sm text-slate-700">
+                            {formatDate(course.date)}
+                          </span>
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </details>
+              </fieldset>
+
+              {/* Collapsible section for Tower Rescue */}
+              <fieldset className="sm:col-span-2">
+                <details>
+                  <summary className="cursor-pointer text-sm font-normal text-slate-700">
+                    Tower Rescue - Advanced Operator
+                  </summary>
+                  <div className="mt-4 grid grid-cols-1 gap-y-4">
+                    {sortedTowerRescueDates.map((course, index) => (
+                      <div key={index} className="flex items-center">
+                        <input
+                          id={`course-TowerRescue-${course.startDate}-${course.endDate}`}
+                          name="course"
+                          value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
+                          type="radio"
+                          className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
+                        />
+                        <label
+                          htmlFor={`course-TowerRescue-${course.startDate}-${course.endDate}`}
+                          className="ml-3 cursor-pointer"
+                        >
+                          <span className="block text-sm text-slate-700">
+                            {formatDateWithoutYear(course.startDate)} -{' '}
+                            {formatDateWithoutYear(course.endDate)},{' '}
+                            {new Date(course.endDate).getFullYear()}
+                          </span>
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </details>
+              </fieldset>
+
+              {/* Add this section to the form */}
+              {/* <fieldset className="sm:col-span-2">
                 <legend className="block text-sm font-medium text-slate-700">
-                  Are you interested in enrolling in one of our CHS courses?
+                  Would you like to enrol in one of our upcoming courses?
                 </legend>
-                <div className="mt-4 grid grid-cols-1 gap-y-4">
-                  {units.map((course) => (
-                    <div key={course.name} className="flex items-center">
+                <div className="grid grid-cols-1 mt-4 gap-y-4">
+                  {sortedWorkSafelyAtHeights.map((course, index) => (
+                    <div key={index} className="flex items-center">
                       <input
-                        id={`course-${course.name}`}
+                        id={`course-WorkSafelyAtHeights-${course.date}`}
                         name="course"
-                        defaultValue={course.name}
+                        value={`Work Safely at Heights - ${course.date}`}
                         type="radio"
-                        className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500 "
+                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
                       />
                       <label
-                        htmlFor={`course-${course.name}`}
-                        className="ml-3 cursor-pointer "
+                        htmlFor={`course-WorkSafelyAtHeights-${course.date}`}
+                        className="ml-3 cursor-pointer"
                       >
-                        <span className="block cursor-pointer text-sm text-slate-700 ">
-                          {course.name}
+                        <span className="block text-sm text-slate-700">
+                          Work Safely at Heights{' '}
+                          <svg
+                            viewBox="0 0 2 2"
+                            className="mx-2 inline h-0.5 w-0.5 fill-current"
+                            aria-hidden="true"
+                          >
+                            <circle cx={1} cy={1} r={1} />
+                          </svg>{' '}
+                          {formatDate(course.date)}
+                        </span>
+                      </label>
+                    </div>
+                  ))}
+                  {sortedTowerRescueDates.map((course, index) => (
+                    <div key={index} className="flex items-center">
+                      <input
+                        id={`course-TowerRescue-${course.startDate}-${course.endDate}`}
+                        name="course"
+                        value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
+                        type="radio"
+                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
+                      />
+                      <label
+                        htmlFor={`course-TowerRescue-${course.startDate}-${course.endDate}`}
+                        className="ml-3 cursor-pointer"
+                      >
+                        <span className="block text-sm text-slate-700">
+                          Tower Rescue{' '}
+                          <svg
+                            viewBox="0 0 2 2"
+                            className="mx-2 inline h-0.5 w-0.5 fill-current"
+                            aria-hidden="true"
+                          >
+                            <circle cx={1} cy={1} r={1} />
+                          </svg>{' '}
+                          {formatDateWithoutYear(course.startDate)} -{' '}
+                          {formatDateWithoutYear(course.endDate)},{' '}
+                          {new Date(course.endDate).getFullYear()}
                         </span>
                       </label>
                     </div>
                   ))}
                 </div>
+              </fieldset> */}
+
+              {/* Course Selection */}
+              <fieldset id="other-courses" className="sm:col-span-2">
+                <legend className="block text-sm font-medium text-slate-700">
+                  Are you interested in enrolling in one of our other CHS
+                  courses?
+                </legend>
+                <div className="mt-4 grid grid-cols-1 gap-y-4">
+                  {renderRadioOptions(filteredUnits, 'course')}
+                </div>
               </fieldset>
               {/* <PickServices /> */}
-              <fieldset className="sm:col-span-2">
+              <fieldset id="CHS-services" className="sm:col-span-2">
                 <legend className="block text-sm font-medium text-slate-700">
                   Would you like a free quote for one our rope access services?
                 </legend>
@@ -293,10 +515,12 @@ export function ContactForm() {
                 <div className="flex justify-end">
                   <button
                     type="button"
+                    onClick={() => formRef.current.reset()}
                     className="mr-3 inline-flex justify-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 transition duration-300 ease-in-out hover:bg-slate-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                   >
                     Cancel
                   </button>
+
                   <button
                     type="submit"
                     className="inline-flex justify-center rounded-full border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"

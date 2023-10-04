@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { Container } from './Container'
+import { ButtonLink } from './Button'
 import { SectionHeading } from './SectionHeading'
 import { ServicesCTA } from './ServicesCTA'
 import { motion, AnimatePresence } from 'framer-motion'
+import calculateYearsOfExperience from '../../utils/calculateYears'
 import services from '../../assets/services'
 
 const container = {
@@ -70,6 +72,8 @@ export function Services() {
     },
   ]
 
+  const yearsOfExperience = calculateYearsOfExperience(1996)
+
   return (
     <section
       id="services"
@@ -84,8 +88,8 @@ export function Services() {
           Cairns Height Safety offers Industrial Rope Access services.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          CHS has over 25 years of experience within the Rope Access industry,
-          and we offer you the following services:
+          CHS has over {yearsOfExperience} years of experience within the Rope
+          Access industry, and we offer you the following services:
         </p>
       </Container>
       <Container size="lg" className="mt-16">
@@ -131,7 +135,7 @@ export function Services() {
                       objectFit="cover"
                       objectPosition="center"
                       className="rounded-lg"
-                      unoptimized={true}
+                      unoptimized
                     />
                   </motion.div>
                 ) : (
@@ -151,7 +155,7 @@ export function Services() {
                               objectFit="cover"
                               objectPosition="center"
                               className="rounded-lg"
-                              unoptimized={true}
+                              unoptimized
                             />
                           </div>
                         </motion.li>
@@ -169,7 +173,7 @@ export function Services() {
                             objectFit="cover"
                             objectPosition="center"
                             className="rounded-lg"
-                            unoptimized={true}
+                            unoptimized
                           />
                         </div>
                       </motion.li>

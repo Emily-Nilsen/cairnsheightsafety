@@ -11,7 +11,7 @@ import { Contact } from '../components/Contact'
 import { Cableway } from '../components/Cableway'
 import { Services } from '../components/Services'
 import { Courses } from '../components/Courses'
-import { CallToAction } from '../components/Testimonial'
+import { CallToAction } from '../components/CallToAction'
 
 import { ContactForm } from '../components/ContactForm'
 
@@ -32,6 +32,22 @@ export default function Home() {
           name="keywords"
           content="Cairns, FNQ, Queensland, Far North Queensland, Tablelands, Industrial Rope Access services, Industrial Rope Access, Rope Access services, rope services, Wind turbine maintenance, Mould remediation, High-pressure water blasting, Window cleaning, Exterior building maintenance, Installation of Height Safety Systems, Minor roof and gutter repairs, Qualified riggers, training centre, training courses, Gordonvale, Edmonton, Northern Beaches, Atherton, Ravenshoe, Kuranda, Smithfield, Palm Cove, Mossman, Cape Tribulation, Northern Cairns, Cairns City, Esplanade"
         ></meta>
+        <link
+          rel="canonical"
+          href="https://cairnsheightsafety.com/"
+          key="canonical"
+        />
+        {/* New OG meta tags */}
+        <meta property="og:title" content="Cairns Height Safety" />
+        <meta
+          property="og:description"
+          content="We provide nationally accredited Height Safety
+          and Rescue training and Rope Access services"
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Website_link_image_yomgye.webp" // Replace with the URL of your desired image
+        />
       </Head>
       <Hero />
       <LogoCloud />
@@ -39,6 +55,8 @@ export default function Home() {
       <NavBar />
       <Courses />
       <CallToAction
+        href="/#enrol"
+        passHref
         id="courses-call-to-action"
         about={{
           name: 'Enrol today',
@@ -51,6 +69,8 @@ export default function Home() {
       </CallToAction>
       <Services />
       <CallToAction
+        href="/#enrol"
+        passHref
         id="services-call-to-action"
         about={{
           name: 'Request a free quote',

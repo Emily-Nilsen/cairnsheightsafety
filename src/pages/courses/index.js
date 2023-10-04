@@ -1,7 +1,7 @@
 import Head from 'next/head'
-
 import Link from 'next/link'
-import Image from 'next/image'
+import { useContext } from 'react'
+import { CourseDataContext } from '@/components/CommonParent'
 import { Footer } from '../../components/Footer'
 import { ArrowNarrowRightIcon } from '@heroicons/react/outline'
 import slugify from 'slugify'
@@ -9,8 +9,50 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { AstraGroupLogo } from '@/components/AstraGroupLogo'
 import units from '../../../assets/units'
+import { CourseCalendarHeader } from '@/components/CourseCalendarHeader'
+import { WorkSafelyAtHeights } from '@/components/WorkSafelyAtHeights'
+import { TowerRescue } from '@/components/TowerRescue'
+import notion from '../../../utils/notion'
 
-export default function Courses(props) {
+// export async function getStaticProps() {
+//   const databaseIdWorkSafely = process.env.NOTION_WORK_SAFELY_DB_ID
+//   const databaseIdTowerRescue = process.env.NOTION_TOWER_RESCUE_DB_ID
+
+//   const responseWorkSafely = await notion.databases.query({
+//     database_id: databaseIdWorkSafely,
+//   })
+
+//   const responseTowerRescue = await notion.databases.query({
+//     database_id: databaseIdTowerRescue,
+//   })
+
+//   const workSafelyAtHeights = responseWorkSafely.results.map((entry) => {
+//     return {
+//       id: entry.id,
+//       date: entry.properties['date']?.date?.start || '',
+//       href: entry.properties['href']?.rich_text[0]?.plain_text || '',
+//     }
+//   })
+
+//   const towerRescueDates = responseTowerRescue.results.map((entry) => {
+//     return {
+//       id: entry.id,
+//       startDate: entry.properties['Start Date']?.date?.start || '',
+//       endDate: entry.properties['End Date']?.date?.start || '',
+//       href: entry.properties['href']?.rich_text[0]?.plain_text || '',
+//     }
+//   })
+
+//   return {
+//     props: {
+//       workSafelyAtHeights,
+//       towerRescueDates,
+//     },
+//   }
+// }
+
+export default function Courses() {
+  const courseData = useContext(CourseDataContext)
   const slugify = require('slugify')
 
   return (
@@ -22,12 +64,17 @@ export default function Courses(props) {
         </title>
         <meta
           name="description"
-          content="CHS offers the following courses: RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, and UETTDRRF02 Perform pole top rescue. "
+          content="CHS offers the following courses: RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, and UETTDRRF02 Perform pole top rescue. "
         />
         <meta
           name="keywords"
-          content="Cairns, FNQ, Queensland, Far North Queensland, Tablelands, RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, PUASAR032A Undertake vertical rescue, PUASAR022 Participate in a rescue operation, PUATEA001 Work in a team, PUATEA002 Work autonomously, RIIRIS201E Conduct local risk control, MEM15004 Perform inspection, UETTDRRF02 Perform pole top rescue, training courses, Gordonvale, Edmonton, Northern Beaches, Atherton, Ravenshoe, Kuranda, Smithfield, Palm Cove, Mossman, Cape Tribulation, Northern Cairns, Cairns City, Esplanade"
+          content="Cairns, FNQ, Queensland, Far North Queensland, Tablelands, RIIWHS204E Work safely at heights, PUASAR022A Participate in a rescue operation, UETTDRRF02 Perform pole top rescue, training courses, Gordonvale, Edmonton, Northern Beaches, Atherton, Ravenshoe, Kuranda, Smithfield, Palm Cove, Mossman, Cape Tribulation, Northern Cairns, Cairns City, Esplanade"
         ></meta>
+        <link
+          rel="canonical"
+          href="https://cairnsheightsafety.com/courses"
+          key="canonical"
+        />
       </Head>
       <section>
         <div className="overflow-hidden bg-slate-50">
@@ -42,16 +89,6 @@ export default function Courses(props) {
                   <figcaption className="mt-6 text-sm text-slate-500">
                     <div className="relative flex h-10 w-40 items-center justify-start">
                       <AstraGroupLogo className="h-12 w-12" />
-                      {/* <Image
-                        width={577}
-                        height={297}
-                        src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657313729/Cairns%20Height%20Safety/3M_long_logo_o23jpc.svg"
-                        alt="3M Australia"
-                        objectFit="contain"
-                        layout="intrinsic"
-                        objectPosition="center"
-                        className=""
-                      /> */}
                     </div>
                   </figcaption>
                 </figure>
@@ -74,15 +111,14 @@ export default function Courses(props) {
                     <motion.div
                       initial={{
                         opacity: 0,
-                        y: 100,
                       }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{
-                        initialDelay: 0.3,
+                        initialDelay: 0,
                         duration: 0.7,
-                        delay: i * 0.3,
-                        ease: 'easeOut',
+                        delay: i * 0.1,
+                        ease: 'easeIn',
                       }}
                       key={i}
                       className="group cursor-pointer rounded-xl bg-slate-100 p-6 drop-shadow-md transition duration-300 ease-in-out hover:bg-slate-200 hover:drop-shadow-none"
@@ -109,6 +145,53 @@ export default function Courses(props) {
                     </motion.div>
                   </Link>
                 ))}
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 100,
+                  }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.3,
+                    ease: 'easeOut',
+                  }}
+                  className="col-span-2"
+                >
+                  <CourseCalendarHeader />
+                </motion.div>
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 100,
+                  }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.4,
+                    ease: 'easeOut',
+                  }}
+                >
+                  <WorkSafelyAtHeights />
+                </motion.div>
+
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: 100,
+                  }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.5,
+                    ease: 'easeOut',
+                  }}
+                >
+                  <TowerRescue />
+                </motion.div>
               </dl>
             </div>
           </div>

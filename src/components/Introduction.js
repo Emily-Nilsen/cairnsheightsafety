@@ -1,8 +1,11 @@
 import { Container } from '../components/Container'
 import Link from 'next/link'
+import calculateYearsOfExperience from '../../utils/calculateYears'
 import { motion } from 'framer-motion'
 
 export function Introduction() {
+  const yearsOfExperience = calculateYearsOfExperience(1996)
+
   return (
     <section
       id="introduction"
@@ -20,8 +23,8 @@ export function Introduction() {
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
           Are you interested in getting a job working at heights? Cairns Height
-          Safety has over 25 years of experience within the Rope Access and
-          Training industry.
+          Safety has over {yearsOfExperience} years of experience within the
+          Rope Access and Training industry.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
           CHS offers a wide range of tailored ASTRA Group Services nationally
@@ -53,7 +56,7 @@ export function Introduction() {
           }}
           className="mt-10"
         >
-          <Link href="#contact" passHref>
+          <Link href="#contact">
             <a className="text-base font-medium tracking-tight text-orange-600 hover:text-orange-800">
               Get in touch with our team to enrol today &rarr;
             </a>

@@ -2,13 +2,16 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { GridPattern } from './GridPattern'
 import { SectionHeading } from './SectionHeading'
+import calculateYearsOfExperience from '../../utils/calculateYears'
 
 export function About() {
+  const yearsOfExperience = calculateYearsOfExperience(1996)
+
   return (
     <section
       id="about"
       aria-labelledby="about-title"
-      className="relative scroll-mt-14 pt-8 pb-3 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
+      className="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
     >
       <div className="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />
@@ -27,12 +30,12 @@ export function About() {
             className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72"
           >
             <Image
-              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657538782/Cairns%20Height%20Safety/France_May_15_023_3_vrnpkq.jpg"
+              src="https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/David_profile_large_zyofff.webp"
               layout="fill"
               alt="Dave Whitfield"
               objectFit="cover"
               objectPosition="center"
-              unoptimized={true}
+              unoptimized
             />
           </motion.div>
           <div className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
@@ -51,8 +54,8 @@ export function About() {
             </p>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
               CHS owner, Dave Whitfield, has been involved in the Height Safety
-              and Rope access industry for over 25 years, training local
-              businesses and interstate and overseas customers.
+              and Rope access industry for over {yearsOfExperience} years,
+              training local businesses and interstate and overseas customers.
             </p>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
               Contact us to learn more about the course syllabus, assessment and
@@ -86,7 +89,7 @@ export function About() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="ml-4">Follow on Facebook</span>
+                <span className="ml-4">Follow us on Facebook</span>
               </a>
             </motion.p>
           </div>

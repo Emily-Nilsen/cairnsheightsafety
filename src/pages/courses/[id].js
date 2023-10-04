@@ -42,6 +42,8 @@ function removeFirstWord(str) {
 
 export default function Unit({ course }) {
   const router = useRouter()
+  // Get the current pathname using useRouter
+  const { pathname } = useRouter()
 
   return (
     <>
@@ -51,6 +53,11 @@ export default function Unit({ course }) {
         </title>
         <meta name="description" content={course.summaryDescription} />
         <meta name="keywords" content={course.name}></meta>
+        <link
+          rel="canonical"
+          href={`https://cairnsheightsafety.com${pathname}`}
+          key="canonical"
+        />
       </Head>
       <section className="overflow-hidden bg-white">
         <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -223,14 +230,14 @@ export default function Unit({ course }) {
               {/* Buttons */}
               <div className="mx-auto mt-10 flex max-w-prose text-base lg:max-w-none">
                 <div className="rounded-full">
-                  <Link href="/#contact" passHref>
+                  <Link href="/#enrol">
                     <a className="flex w-full items-center justify-center rounded-full border border-transparent bg-orange-600 px-5 py-2 text-base font-medium text-white shadow-sm transition duration-300 ease-in-out hover:bg-orange-500">
-                      Enrol in course
+                      Enrol in a course
                     </a>
                   </Link>
                 </div>
                 <div className="ml-4 rounded-full">
-                  <Link href="/courses" passHref>
+                  <Link href="/courses">
                     <a className="flex w-full items-center justify-center rounded-full border border-orange-500 bg-white px-5 py-2 text-base font-medium text-orange-600 shadow-sm transition duration-300 ease-in-out hover:border-slate-700 hover:bg-slate-700 hover:text-white">
                       See all courses
                     </a>

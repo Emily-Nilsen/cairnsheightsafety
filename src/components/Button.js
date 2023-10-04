@@ -45,7 +45,7 @@ export function Button({
 
 export function ButtonLink({
   variant = 'solid',
-  color = 'slate',
+  color = 'orange',
   href,
   className,
   ...props
