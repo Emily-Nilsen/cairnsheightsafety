@@ -63,7 +63,7 @@ export function ContactForm() {
       <div key={item.name} className="flex items-center">
         <input
           id={`${name}-${item.name}`}
-          name="course-selected"
+          name="Course Selected"
           defaultValue={item.name}
           type="radio"
           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -346,6 +346,9 @@ export function ContactForm() {
               <legend className="block text-sm font-medium text-slate-700 sm:col-span-2">
                 Would you like to enrol in one of our upcoming courses?
               </legend>
+              <p className="-mt-5 text-sm italic text-slate-500 sm:col-span-2">
+                Payment is due on confirmation of booking.
+              </p>
 
               {/* Collapsible section for Work Safely at Heights */}
               <fieldset className="sm:col-span-2">
@@ -358,7 +361,7 @@ export function ContactForm() {
                       <div key={index} className="flex items-center">
                         <input
                           id={`course-WorkSafelyAtHeights-${course.date}`}
-                          name="course-selected"
+                          name="Course Selected"
                           value={`Work Safely at Heights - ${course.date}`}
                           type="radio"
                           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -388,7 +391,7 @@ export function ContactForm() {
                       <div key={index} className="flex items-center">
                         <input
                           id={`course-TowerRescue-${course.startDate}-${course.endDate}`}
-                          name="course-selected"
+                          name="Course Selected"
                           value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
                           type="radio"
                           className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
@@ -429,7 +432,7 @@ export function ContactForm() {
                     <div key={service.title} className="flex items-center">
                       <input
                         id={`service-${service.title}`}
-                        name="service-selected"
+                        name="Service Selected"
                         defaultValue={service.title}
                         type="radio"
                         className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500 "
