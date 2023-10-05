@@ -6,6 +6,7 @@ import units from '../../../assets/units'
 import { CameraIcon } from '@heroicons/react/solid'
 import { motion } from 'framer-motion'
 import { AstraGroupLogo } from '@/components/AstraGroupLogo'
+import { GoBackButton } from '@/components/GoBackButton'
 
 export const getStaticProps = async ({ params }) => {
   const slugify = require('slugify')
@@ -64,6 +65,9 @@ export default function Unit({ course }) {
           <div className="absolute bottom-0 left-3/4 top-0 hidden w-screen bg-slate-50 lg:block" />
           <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
             <div>
+              <div className="my-6 flex w-full justify-start">
+                <GoBackButton />
+              </div>
               <h2 className="pb-4 text-base text-orange-600">
                 <ul role="list">
                   {course.codes.flat().map((code, i) => (

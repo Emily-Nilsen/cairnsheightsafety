@@ -99,12 +99,17 @@ export function ContactForm() {
     )
   }
 
-  const sortedWorkSafelyAtHeights = [...workSafelyAtHeights].sort(
-    (a, b) => new Date(a.date) - new Date(b.date)
-  )
-  const sortedTowerRescueDates = [...towerRescueDates].sort(
-    (a, b) => new Date(a.startDate) - new Date(b.startDate)
-  )
+  const today = new Date()
+
+  // Sort and filter Work Safely at Heights courses
+  const sortedWorkSafelyAtHeights = [...workSafelyAtHeights]
+    .filter((course) => new Date(course.date) >= today)
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+
+  // Sort and filter Tower Rescue courses
+  const sortedTowerRescueDates = [...towerRescueDates]
+    .filter((course) => new Date(course.endDate) >= today)
+    .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
 
   // Filter units to only include "Post Fall Recovery" and "Poletop Rescue"
   const filteredUnits = units.filter(

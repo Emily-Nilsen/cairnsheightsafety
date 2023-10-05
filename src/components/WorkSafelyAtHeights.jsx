@@ -1,16 +1,18 @@
 import Link from 'next/link'
-import { Fragment, useContext } from 'react'
+import { useContext } from 'react'
 import { CourseDataContext } from './CommonParent'
 
 export function WorkSafelyAtHeights() {
   const { workSafelyAtHeights } = useContext(CourseDataContext)
+  const today = new Date()
 
-  // Sort by 'date' in ascending order
-  const sortedCourses = [...workSafelyAtHeights].sort((a, b) => {
-    const dateA = new Date(a.date)
-    const dateB = new Date(b.date)
-    return dateA - dateB
-  })
+  // Sort and filter courses
+  const filteredCourses = workSafelyAtHeights
+    .filter((course) => new Date(course.date || '9999-12-31') >= today) // Default far future date
+    .sort(
+      (a, b) =>
+        new Date(a.date || '9999-12-31') - new Date(b.date || '9999-12-31')
+    ) // Default far future date
 
   return (
     <div className="rounded-xl bg-white p-6 drop-shadow-md">
@@ -24,8 +26,8 @@ export function WorkSafelyAtHeights() {
             <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
               <table className="min-w-full">
                 <tbody>
-                  {sortedCourses?.map((course) => {
-                    const dateObj = new Date(course.date)
+                  {filteredCourses?.map((course) => {
+                    const dateObj = new Date(course.date || '9999-12-31') // Default far future date
                     const day = dateObj.getDate()
                     const month = dateObj.toLocaleString('en-AU', {
                       month: 'long',
@@ -36,7 +38,7 @@ export function WorkSafelyAtHeights() {
                     return (
                       <tr key={course.id} className="border-t border-gray-200">
                         <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3">
-                          {course.date ? formattedDate : 'N/A'}
+                          {course.date ? formattedDate : 'Date Coming'}
                         </td>
                         <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium">
                           <Link href="/#enrol">
