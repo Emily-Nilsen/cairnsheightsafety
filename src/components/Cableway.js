@@ -20,7 +20,7 @@ const resources = [
             duration: 0.8,
             type: 'fade',
           }}
-          className="absolute inset-0 flex items-center justify-center bg-t"
+          className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591550/Cairns%20Height%20Safety/IMMOOS/IMG_1899_cvfenl.jpg"
@@ -49,7 +49,7 @@ const resources = [
             duration: 0.8,
             type: 'fade',
           }}
-          className="absolute inset-0 flex items-center justify-center bg-t"
+          className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591553/Cairns%20Height%20Safety/IMMOOS/Tower_head_tn30fn.jpg"
@@ -66,7 +66,7 @@ const resources = [
               href="https://youtu.be/WdVBxRvtQwY"
             >
               <PlayIcon
-                className="w-12 h-12 text-white transition duration-300 ease-in-out cursor-pointer opacity-80 hover:text-orange-500 hover:opacity-100"
+                className="h-12 w-12 cursor-pointer text-white opacity-80 transition duration-300 ease-in-out hover:text-orange-500 hover:opacity-100"
                 aria-hidden="true"
               />
             </a>
@@ -89,7 +89,7 @@ const resources = [
             duration: 0.8,
             type: 'fade',
           }}
-          className="absolute inset-0 flex items-center justify-center bg-t"
+          className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
             src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591535/Cairns%20Height%20Safety/IMMOOS/IMG_2341_ajjoek.jpg"
@@ -110,13 +110,13 @@ export function Cableway() {
     <section
       id="cableway"
       aria-labelledby="cableway-title"
-      className="py-16 scroll-mt-14 sm:scroll-mt-32 sm:py-20 lg:py-32"
+      className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="3" id="cableway-title">
+        <SectionHeading number="2" id="cableway-title">
           IMMOOS Cableway
         </SectionHeading>
-        <p className="mt-8 text-4xl font-bold tracking-tight font-display text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           Cairns Height Safety is the Australian supplier of IMMOOS cable
           carriages.
         </p>
@@ -160,7 +160,7 @@ export function Cableway() {
         </p>
       </Container>
       <Container size="lg" className="mt-16">
-        <ol className="grid grid-cols-1 -mx-3 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20">
+        <ol className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20">
           {resources.map((resource, i) => (
             <motion.li
               initial={{
@@ -177,9 +177,9 @@ export function Cableway() {
               }}
               key={i}
               // key={resource.title}
-              className="grid items-center grid-cols-1 gap-8 px-3 auto-rows-min sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
+              className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
             >
-              <div className="relative h-48 overflow-hidden shadow-lg rounded-2xl sm:h-60 lg:h-40">
+              <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
                 <resource.image />
               </div>
               <div>

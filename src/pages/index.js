@@ -53,8 +53,8 @@ export default function Home() {
       <LogoCloud />
       <Introduction />
       <NavBar />
-      <Courses />
-      <CallToAction
+      {/* <Courses /> */}
+      {/* <CallToAction
         href="/#enrol"
         passHref
         id="courses-call-to-action"
@@ -66,7 +66,7 @@ export default function Home() {
           Are you interested in taking an ASTRA Group Services nationally
           accredited training course with Cairns Height Safety?
         </p>
-      </CallToAction>
+      </CallToAction> */}
       <Services />
       <CallToAction
         href="/#enrol"

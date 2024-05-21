@@ -348,20 +348,20 @@ export function ContactForm() {
                   />
                 </div>
               </div>
-              <legend className="block text-sm font-medium text-slate-700 sm:col-span-2">
+              {/* <legend className="block text-sm font-medium text-slate-700 sm:col-span-2">
                 Would you like to enrol in one of our upcoming courses?
               </legend>
               <p className="-mt-5 text-sm italic text-slate-500 sm:col-span-2">
                 Payment is due on confirmation of booking.
-              </p>
+              </p> */}
 
               {/* Collapsible section for Work Safely at Heights */}
-              <fieldset className="sm:col-span-2">
+              {/* <fieldset className="sm:col-span-2">
                 <details>
-                  <summary className="cursor-pointer text-sm font-normal text-slate-700">
+                  <summary className="text-sm font-normal cursor-pointer text-slate-700">
                     Work Safely at Heights
                   </summary>
-                  <div className="mt-4 grid grid-cols-1 gap-y-4">
+                  <div className="grid grid-cols-1 mt-4 gap-y-4">
                     {sortedWorkSafelyAtHeights.map((course, index) => (
                       <div key={index} className="flex items-center">
                         <input
@@ -369,7 +369,7 @@ export function ContactForm() {
                           name="course-selected"
                           value={`Work Safely at Heights - ${course.date}`}
                           type="radio"
-                          className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
+                          className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
                         />
                         <label
                           htmlFor={`course-WorkSafelyAtHeights-${course.date}`}
@@ -383,15 +383,15 @@ export function ContactForm() {
                     ))}
                   </div>
                 </details>
-              </fieldset>
+              </fieldset> */}
 
               {/* Collapsible section for Tower Rescue */}
-              <fieldset className="sm:col-span-2">
+              {/* <fieldset className="sm:col-span-2">
                 <details>
-                  <summary className="cursor-pointer text-sm font-normal text-slate-700">
+                  <summary className="text-sm font-normal cursor-pointer text-slate-700">
                     Tower Rescue - Advanced Operator
                   </summary>
-                  <div className="mt-4 grid grid-cols-1 gap-y-4">
+                  <div className="grid grid-cols-1 mt-4 gap-y-4">
                     {sortedTowerRescueDates.map((course, index) => (
                       <div key={index} className="flex items-center">
                         <input
@@ -399,7 +399,7 @@ export function ContactForm() {
                           name="course-selected"
                           value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
                           type="radio"
-                          className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
+                          className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
                         />
                         <label
                           htmlFor={`course-TowerRescue-${course.startDate}-${course.endDate}`}
@@ -415,24 +415,24 @@ export function ContactForm() {
                     ))}
                   </div>
                 </details>
-              </fieldset>
+              </fieldset> */}
 
               {/* Course Selection */}
-              <fieldset id="other-courses" className="sm:col-span-2">
+              {/* <fieldset id="other-courses" className="sm:col-span-2">
                 <legend className="block text-sm font-medium text-slate-700">
                   Are you interested in enrolling in one of our other CHS
                   courses?
                 </legend>
-                <div className="mt-4 grid grid-cols-1 gap-y-4">
+                <div className="grid grid-cols-1 mt-4 gap-y-4">
                   {renderRadioOptions(filteredUnits, 'course')}
                 </div>
-              </fieldset>
+              </fieldset> */}
               {/* <PickServices /> */}
-              <fieldset id="CHS-services" className="sm:col-span-2">
+              {/* <fieldset id="CHS-services" className="sm:col-span-2">
                 <legend className="block text-sm font-medium text-slate-700">
                   Would you like a free quote for one our rope access services?
                 </legend>
-                <div className="mt-4 grid grid-cols-1 gap-y-4">
+                <div className="grid grid-cols-1 mt-4 gap-y-4">
                   {services.map((service) => (
                     <div key={service.title} className="flex items-center">
                       <input
@@ -440,20 +440,20 @@ export function ContactForm() {
                         name="service-selected"
                         defaultValue={service.title}
                         type="radio"
-                        className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
+                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
                       />
                       <label
                         htmlFor={`service-${service.title}`}
                         className="ml-3 cursor-pointer "
                       >
-                        <span className="block cursor-pointer text-sm text-slate-700">
+                        <span className="block text-sm cursor-pointer text-slate-700">
                           {service.title}
                         </span>
                       </label>
                     </div>
                   ))}
                 </div>
-              </fieldset>
+              </fieldset> */}
               <div className="text-right sm:col-span-2">
                 <div className="flex justify-end">
                   <button

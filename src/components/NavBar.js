@@ -3,15 +3,6 @@ import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
 
 const sections = [
-  {
-    id: 'courses',
-    title: (
-      <>
-        <span className="hidden lg:inline">Training Courses</span>
-        <span className="lg:hidden">Courses</span>
-      </>
-    ),
-  },
   { id: 'services', title: 'Services' },
   { id: 'cableway', title: 'IMMOOS Cableway' },
   { id: 'contact', title: 'Contact Us' },
@@ -65,7 +56,7 @@ export function NavBar() {
         {({ open }) => (
           <>
             <div
-              className={clsx('relative flex items-center py-3 px-4', {
+              className={clsx('relative flex items-center px-4 py-3', {
                 'bg-white/95 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-white/80 [@supports(backdrop-filter:blur(0))]:backdrop-blur':
                   !open,
               })}
@@ -115,7 +106,7 @@ export function NavBar() {
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="flex items-center py-1.5 px-4"
+                    className="flex items-center px-4 py-1.5"
                     onClick={close}
                   >
                     <span

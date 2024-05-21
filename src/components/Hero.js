@@ -4,9 +4,12 @@ import { ButtonLink } from '../components/Button'
 import { GridPattern } from '../components/GridPattern'
 import { StarRating } from '../components/StarRating'
 import { motion } from 'framer-motion'
-import { AstraGroupLogo } from './AstraGroupLogo'
+import { ImmoosLogo } from './ImmoosLogo'
+import calculateYearsOfExperience from '../../utils/calculateYears'
 
 export function Hero() {
+  const yearsOfExperience = calculateYearsOfExperience(1996)
+
   return (
     <header className="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
       {/* Text svg */}
@@ -70,14 +73,14 @@ export function Hero() {
             </div>
             <blockquote className="mt-2">
               <p className="font-display text-xl font-medium text-slate-900">
-                All participants receive an ASTRA Group Services – RTO 31544
-                Statement of Attainment for any of our completed nationally
-                recognised units of competency.
+                At Cairns Height Safety, we specialize in providing top-tier
+                Rope Access Services and IMMOOS cable system solutions to meet
+                all your height safety needs.
               </p>
             </blockquote>
             <figcaption className="mt-2 text-sm text-slate-500">
               <div className="relative flex h-10 w-40 items-center justify-start">
-                <AstraGroupLogo className="h-12 w-12" />
+                <ImmoosLogo className="h-auto w-20" />
               </div>
             </figcaption>
           </figure>
@@ -85,18 +88,18 @@ export function Hero() {
         <div className="bg-white pt-16 lg:col-span-7 lg:bg-transparent lg:pl-16 lg:pt-0 xl:pl-20">
           <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
             <h1 className="font-display text-5xl font-extrabold text-slate-900 sm:text-6xl">
-              We provide nationally accredited Height Safety and Rescue
-              training.
+              We provide Industrial Rope Access services.
             </h1>
             <p className="mt-4 text-3xl text-slate-600">
-              Cairns Height Safety also offers Industrial Rope Access services.
+              Cairns Height Safety has over {yearsOfExperience} years of
+              experience within the Rope Access industry.
             </p>
             <div className="mt-8 flex space-x-4">
-              <ButtonLink href="#courses" color="orange">
-                Training Courses
-              </ButtonLink>
-              <ButtonLink href="#services" variant="outline" color="orange">
+              <ButtonLink href="#services" color="orange">
                 Rope Access Services
+              </ButtonLink>
+              <ButtonLink href="#contact" variant="outline" color="orange">
+                Contact Us
               </ButtonLink>
             </div>
           </div>

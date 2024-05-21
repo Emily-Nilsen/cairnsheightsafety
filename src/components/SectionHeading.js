@@ -1,7 +1,7 @@
 export function SectionHeading({ number, children, ...rest }) {
   return (
     <h2
-      className="inline-flex items-center px-4 py-1 text-orange-600 rounded-full ring-1 ring-inset ring-orange-600"
+      className="inline-flex items-center rounded-full px-4 py-1 text-orange-600 ring-1 ring-inset ring-orange-600"
       {...rest}
     >
       <span className="font-mono text-sm" aria-hidden="true">

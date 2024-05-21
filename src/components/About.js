@@ -39,7 +39,7 @@ export function About() {
             />
           </motion.div>
           <div className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
-            <SectionHeading number="5" id="about-title">
+            <SectionHeading number="4" id="about-title">
               About Us
             </SectionHeading>
             <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
@@ -47,19 +47,19 @@ export function About() {
               Owner of Cairns Height Safety.
             </p>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-              Cairns Height Safety (CHS) can conduct Height Safety and Vertical
-              Rescue Training for all areas of industry. CHS offers training
-              courses ranging from Basic Working Safely at Heights to Advanced
-              Vertical Rescue.
+              With over {yearsOfExperience} years of experience in the Height
+              Safety and Rope Access industry, Dave Whitfield leads Cairns
+              Height Safety in providing top-notch Rope Access Services and
+              IMMOOS cable system solutions.
             </p>
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            {/* <p className="mt-4 text-lg tracking-tight text-slate-700">
               CHS owner, Dave Whitfield, has been involved in the Height Safety
               and Rope access industry for over {yearsOfExperience} years,
               training local businesses and interstate and overseas customers.
-            </p>
+            </p> */}
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-              Contact us to learn more about the course syllabus, assessment and
-              training outcomes.
+              Contact us to learn more about our expert services and how we can
+              support your safety requirements.
             </p>
             <motion.p
               whileInView={{ opacity: 1 }}

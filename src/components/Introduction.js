@@ -17,25 +17,22 @@ export function Introduction() {
       </h2>
       <Container>
         <p className="font-display text-4xl font-bold tracking-tight text-slate-900">
-          Cairns Height Safety (CHS) is a commercial and industrial safety
-          equipment supplier and offers nationally accredited safety training
-          courses.
+          Cairns Height Safety (CHS) is a leading provider of Rope Access
+          Services and IMMOOS cable system solutions.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Are you interested in getting a job working at heights? Cairns Height
-          Safety has over {yearsOfExperience} years of experience within the
-          Rope Access and Training industry.
+          With over {yearsOfExperience} years of experience in the industry, CHS
+          is dedicated to ensuring the highest standards of safety and
+          efficiency for your projects.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          CHS offers a wide range of tailored ASTRA Group Services nationally
-          accredited training courses to suit your requirements. We proudly
-          support our students in the classroom and when applying their new
-          skills in practice.
+          Explore our comprehensive range of Rope Access Services and innovative
+          IMMOOS cable systems, designed to meet all your height safety needs.
         </p>
 
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Book your training course today to get yourself one step closer to
-          your future career working at heights.
+          Contact us today to learn how we can support your safety requirements
+          with our expert solutions.
         </p>
         <motion.p
           initial={{
@@ -58,7 +55,7 @@ export function Introduction() {
         >
           <Link href="#contact">
             <a className="text-base font-medium tracking-tight text-orange-600 hover:text-orange-800">
-              Get in touch with our team to enrol today &rarr;
+              Get in touch with our team today &rarr;
             </a>
           </Link>
         </motion.p>
