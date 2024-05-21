@@ -41,8 +41,7 @@ export default function Home() {
         <meta property="og:title" content="Cairns Height Safety" />
         <meta
           property="og:description"
-          content="We provide nationally accredited Height Safety
-          and Rescue training and Rope Access services"
+          content="Cairns Height Safety - Expert Rope Access Services"
         />
         <meta
           property="og:image"
