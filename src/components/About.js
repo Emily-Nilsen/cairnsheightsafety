@@ -30,7 +30,7 @@ export function About() {
             className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-slate-200 md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72"
           >
             <Image
-              src="https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/David_profile_large_zyofff.webp"
+              src="/images/David_profile_large_zyofff.webp"
               layout="fill"
               alt="Dave Whitfield"
               objectFit="cover"

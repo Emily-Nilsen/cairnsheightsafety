@@ -4,12 +4,12 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "logo": [
-    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1657676863/Cairns%20Height%20Safety/original_logo_lasdft.svg"
+    "/images/original_logo_lasdft.svg"
     ],
   "image": [
-    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1661329360/Cairns%20Height%20Safety/David_Whitfield_o4k4c7-Circle_kweiq8.jpg",
-    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1657313729/Cairns%20Height%20Safety/3M_long_logo_o23jpc.svg",
-    "https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591399/Cairns%20Height%20Safety/Broadcast_Aust_0062_ozzu32.jpg"
+    "/images/David_profile_large_zyofff.webp",
+    
+    "/images/Contact_Form_mobile_v5nmim.webp"
   ],
   "@id": "https://cairnsheightsafety.com/",
   "name": "Cairns Height Safety",

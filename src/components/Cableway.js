@@ -22,7 +22,7 @@ const resources = [
           className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
-            src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591550/Cairns%20Height%20Safety/IMMOOS/IMG_1899_cvfenl.jpg"
+            src="/images/IMG_1899_cvfenl.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
@@ -51,7 +51,7 @@ const resources = [
           className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
-            src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591553/Cairns%20Height%20Safety/IMMOOS/Tower_head_tn30fn.jpg"
+            src="/images/Tower_head_tn30fn.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
@@ -91,7 +91,7 @@ const resources = [
           className="bg-t absolute inset-0 flex items-center justify-center"
         >
           <Image
-            src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657591535/Cairns%20Height%20Safety/IMMOOS/IMG_2341_ajjoek.jpg"
+            src="/images/IMG_2341_ajjoek.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
