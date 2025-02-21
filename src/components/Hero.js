@@ -13,7 +13,7 @@ export function Hero() {
       {/* Text svg */}
       <div className="absolute -left-6 -top-12 z-30 w-64 overflow-hidden p-14 md:-left-0 md:w-80 lg:left-0 lg:p-8">
         <Image
-          src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1658987037/Cairns%20Height%20Safety/chs-text_tu1pwu.svg"
+          src="/svgs/chs-text_tu1pwu.svg"
           alt="Cairns Height Safety logo"
           layout="intrinsic"
           width={207}
@@ -52,7 +52,7 @@ export function Hero() {
             className="shadow-none relative -top-40 left-10 z-20 mx-auto flex w-64 overflow-hidden rounded-none md:-left-0 md:w-80 lg:absolute lg:-left-28 lg:w-auto"
           >
             <Image
-              src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1658997057/Cairns%20Height%20Safety/chs-logo-long_e4sorl.svg"
+              src="/svgs/chs-logo-long_e4sorl.svg"
               alt="Cairns Height Safety logo"
               layout="intrinsic"
               width={414}

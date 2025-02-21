@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export function ContactForm() {
   const [isLargeScreen, setIsLargeScreen] = useState(false)
   const [imageSrc, setImageSrc] = useState(
-    'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Contact_Form_mobile_v5nmim.webp'
+    '/images/Contact_Form_mobile_v5nmim.webp'
   )
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export function ContactForm() {
   useEffect(() => {
     setImageSrc(
       isLargeScreen
-        ? 'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Contact_Form_destop_HD_bx0bfi.webp'
-        : 'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Contact_Form_mobile_v5nmim.webp'
+        ? '/images/Contact_Form_destop_HD_bx0bfi.webp'
+        : '/images/Contact_Form_mobile_v5nmim.webp'
     )
   }, [isLargeScreen])
 
