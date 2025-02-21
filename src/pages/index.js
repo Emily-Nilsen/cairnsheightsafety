@@ -10,10 +10,7 @@ import { NavBar } from '../components/NavBar'
 import { Contact } from '../components/Contact'
 import { Cableway } from '../components/Cableway'
 import { Services } from '../components/Services'
-import { Courses } from '../components/Courses'
 import { CallToAction } from '../components/CallToAction'
-
-import { ContactForm } from '../components/ContactForm'
 
 export default function Home() {
   return (
@@ -52,20 +49,7 @@ export default function Home() {
       <LogoCloud />
       <Introduction />
       <NavBar />
-      {/* <Courses /> */}
-      {/* <CallToAction
-        href="/#enrol"
-        passHref
-        id="courses-call-to-action"
-        about={{
-          name: 'Enrol today',
-        }}
-      >
-        <p>
-          Are you interested in taking an ASTRA Group Services nationally
-          accredited training course with Cairns Height Safety?
-        </p>
-      </CallToAction> */}
+
       <Services />
       <CallToAction
         href="/#enrol"

@@ -1,14 +1,7 @@
-import { useContext, useState, useEffect, useRef } from 'react'
-import { useRouter } from 'next/router'
-import { CourseDataContext } from './CommonParent' // Adjust the import path as needed
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import { motion } from 'framer-motion'
-import units from '../../assets/units'
-import services from '../../assets/services'
-
-units.map((course) => ({}))
-services.map((service) => ({}))
 
 export function ContactForm() {
   const [isLargeScreen, setIsLargeScreen] = useState(false)
@@ -37,10 +30,6 @@ export function ContactForm() {
     )
   }, [isLargeScreen])
 
-  // for useEffect
-  const [data, setData] = useState({})
-  const [error, setError] = useState(null)
-
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch('/api/fetchNotionData')
@@ -54,68 +43,6 @@ export function ContactForm() {
 
     fetchData()
   }, [])
-
-  const { workSafelyAtHeights = [], towerRescueDates = [] } =
-    useContext(CourseDataContext) || {}
-
-  const renderRadioOptions = (items, name) =>
-    items.map((item) => (
-      <div key={item.name} className="flex items-center">
-        <input
-          id="course-selected"
-          name="course-selected"
-          defaultValue={item.name}
-          type="radio"
-          className="h-4 w-4 cursor-pointer border-slate-300 text-orange-600 focus:ring-orange-500"
-        />
-        <label htmlFor={`${name}-${item.name}`} className="ml-3 cursor-pointer">
-          <span className="block text-sm text-slate-700">{item.name}</span>
-        </label>
-      </div>
-    ))
-
-  // Helper function to format date
-  function formatDate(dateString) {
-    const date = new Date(dateString)
-    const formattedDate = date.toLocaleDateString('en-AU', {
-      month: 'short',
-      day: 'numeric',
-    })
-    const year = date.getFullYear()
-    return (
-      <>
-        <span className="font-semibold">{formattedDate}</span>, {year}
-      </>
-    )
-  }
-
-  // Helper function to format date without year
-  function formatDateWithoutYear(dateString) {
-    const date = new Date(dateString)
-    return (
-      <span className="font-semibold">
-        {date.toLocaleDateString('en-AU', { month: 'short', day: 'numeric' })}
-      </span>
-    )
-  }
-
-  const today = new Date()
-
-  // Sort and filter Work Safely at Heights courses
-  const sortedWorkSafelyAtHeights = [...workSafelyAtHeights]
-    .filter((course) => new Date(course.date) >= today)
-    .sort((a, b) => new Date(a.date) - new Date(b.date))
-
-  // Sort and filter Tower Rescue courses
-  const sortedTowerRescueDates = [...towerRescueDates]
-    .filter((course) => new Date(course.endDate) >= today)
-    .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
-
-  // Filter units to only include "Post Fall Recovery" and "Poletop Rescue"
-  const filteredUnits = units.filter(
-    (unit) =>
-      unit.name === 'Post Fall Recovery' || unit.name === 'Poletop Rescue'
-  )
 
   const formRef = useRef(null)
 
@@ -348,112 +275,7 @@ export function ContactForm() {
                   />
                 </div>
               </div>
-              {/* <legend className="block text-sm font-medium text-slate-700 sm:col-span-2">
-                Would you like to enrol in one of our upcoming courses?
-              </legend>
-              <p className="-mt-5 text-sm italic text-slate-500 sm:col-span-2">
-                Payment is due on confirmation of booking.
-              </p> */}
 
-              {/* Collapsible section for Work Safely at Heights */}
-              {/* <fieldset className="sm:col-span-2">
-                <details>
-                  <summary className="text-sm font-normal cursor-pointer text-slate-700">
-                    Work Safely at Heights
-                  </summary>
-                  <div className="grid grid-cols-1 mt-4 gap-y-4">
-                    {sortedWorkSafelyAtHeights.map((course, index) => (
-                      <div key={index} className="flex items-center">
-                        <input
-                          id="course-selected"
-                          name="course-selected"
-                          value={`Work Safely at Heights - ${course.date}`}
-                          type="radio"
-                          className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
-                        />
-                        <label
-                          htmlFor={`course-WorkSafelyAtHeights-${course.date}`}
-                          className="ml-3 cursor-pointer"
-                        >
-                          <span className="block text-sm text-slate-700">
-                            {formatDate(course.date)}
-                          </span>
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                </details>
-              </fieldset> */}
-
-              {/* Collapsible section for Tower Rescue */}
-              {/* <fieldset className="sm:col-span-2">
-                <details>
-                  <summary className="text-sm font-normal cursor-pointer text-slate-700">
-                    Tower Rescue - Advanced Operator
-                  </summary>
-                  <div className="grid grid-cols-1 mt-4 gap-y-4">
-                    {sortedTowerRescueDates.map((course, index) => (
-                      <div key={index} className="flex items-center">
-                        <input
-                          id="course-selected"
-                          name="course-selected"
-                          value={`Tower Rescue - ${course.startDate} - ${course.endDate}`}
-                          type="radio"
-                          className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
-                        />
-                        <label
-                          htmlFor={`course-TowerRescue-${course.startDate}-${course.endDate}`}
-                          className="ml-3 cursor-pointer"
-                        >
-                          <span className="block text-sm text-slate-700">
-                            {formatDateWithoutYear(course.startDate)} -{' '}
-                            {formatDateWithoutYear(course.endDate)},{' '}
-                            {new Date(course.endDate).getFullYear()}
-                          </span>
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                </details>
-              </fieldset> */}
-
-              {/* Course Selection */}
-              {/* <fieldset id="other-courses" className="sm:col-span-2">
-                <legend className="block text-sm font-medium text-slate-700">
-                  Are you interested in enrolling in one of our other CHS
-                  courses?
-                </legend>
-                <div className="grid grid-cols-1 mt-4 gap-y-4">
-                  {renderRadioOptions(filteredUnits, 'course')}
-                </div>
-              </fieldset> */}
-              {/* <PickServices /> */}
-              {/* <fieldset id="CHS-services" className="sm:col-span-2">
-                <legend className="block text-sm font-medium text-slate-700">
-                  Would you like a free quote for one our rope access services?
-                </legend>
-                <div className="grid grid-cols-1 mt-4 gap-y-4">
-                  {services.map((service) => (
-                    <div key={service.title} className="flex items-center">
-                      <input
-                        id="service-selected"
-                        name="service-selected"
-                        defaultValue={service.title}
-                        type="radio"
-                        className="w-4 h-4 text-orange-600 cursor-pointer border-slate-300 focus:ring-orange-500"
-                      />
-                      <label
-                        htmlFor={`service-${service.title}`}
-                        className="ml-3 cursor-pointer "
-                      >
-                        <span className="block text-sm cursor-pointer text-slate-700">
-                          {service.title}
-                        </span>
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </fieldset> */}
               <div className="text-right sm:col-span-2">
                 <div className="flex justify-end">
                   <button
