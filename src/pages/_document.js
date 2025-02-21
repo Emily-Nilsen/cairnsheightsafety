@@ -23,7 +23,7 @@ export default function Document() {
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap"
         />
-        <link rel="icon" href="/media/original_logo_lasdft.svg" />
+        <link rel="icon" href="/images/original_logo_lasdft.svg" />
       </Head>
       <body>
         <Main />
