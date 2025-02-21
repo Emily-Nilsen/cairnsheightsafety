@@ -52,11 +52,7 @@ export function About() {
               Height Safety in providing top-notch Rope Access Services and
               IMMOOS cable system solutions.
             </p>
-            {/* <p className="mt-4 text-lg tracking-tight text-slate-700">
-              CHS owner, Dave Whitfield, has been involved in the Height Safety
-              and Rope access industry for over {yearsOfExperience} years,
-              training local businesses and interstate and overseas customers.
-            </p> */}
+
             <p className="mt-4 text-lg tracking-tight text-slate-700">
               Contact us to learn more about our expert services and how we can
               support your safety requirements.

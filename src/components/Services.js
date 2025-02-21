@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { Container } from './Container'
-import { ButtonLink } from './Button'
 import { SectionHeading } from './SectionHeading'
-import { ServicesCTA } from './ServicesCTA'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import calculateYearsOfExperience from '../../utils/calculateYears'
 import services from '../../assets/services'
 

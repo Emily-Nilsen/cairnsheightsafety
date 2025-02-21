@@ -1,5 +1,3 @@
-import { Button } from '@/components/Button'
-
 export function GoBackButton() {
   return (
     <div className="inline-block">

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { ButtonLink } from './Button'
 import { Container } from './Container'
 import { SectionHeading } from './SectionHeading'
 import { motion } from 'framer-motion'

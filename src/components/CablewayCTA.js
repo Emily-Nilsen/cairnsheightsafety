@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Button } from './Button'
 import { Container } from './Container'
 import { Pattern } from './Pattern'
 import { motion } from 'framer-motion'

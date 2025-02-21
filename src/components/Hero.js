@@ -1,8 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { ButtonLink } from '../components/Button'
 import { GridPattern } from '../components/GridPattern'
-import { StarRating } from '../components/StarRating'
 import { motion } from 'framer-motion'
 import { ImmoosLogo } from './ImmoosLogo'
 import calculateYearsOfExperience from '../../utils/calculateYears'
@@ -44,7 +42,6 @@ export function Hero() {
               opacity: 1,
               y: 0,
             }}
-            // viewport={{ once: true }}
             transition={{
               duration: 5,
               delay: 0.7,
@@ -68,9 +65,7 @@ export function Hero() {
         <div className="relative px-4 sm:px-6 lg:col-span-7 lg:pb-14 lg:pl-16 lg:pr-0 xl:pl-20">
           <div className="hidden lg:absolute lg:-top-32 lg:bottom-0 lg:left-[-100vw] lg:right-[-100vw] lg:block lg:bg-slate-100" />
           <figure className="relative mx-auto max-w-md text-left lg:mx-0 lg:text-left">
-            <div className="flex justify-center text-orange-600 lg:justify-start">
-              {/* <StarRating /> */}
-            </div>
+            <div className="flex justify-center text-orange-600 lg:justify-start"></div>
             <blockquote className="mt-2">
               <p className="font-display text-xl font-medium text-slate-900">
                 At Cairns Height Safety, we specialize in providing top-tier

@@ -1,8 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Container } from './Container'
 import { GridPattern } from './GridPattern'
-import { StarRating } from './StarRating'
 
 export function CallToAction({ id, about, children, href }) {
   return (
@@ -19,9 +17,7 @@ export function CallToAction({ id, about, children, href }) {
       </div>
       <Container size="xs" className="relative">
         <figure>
-          <div className="flex text-slate-900 sm:justify-center">
-            {/* <StarRating /> */}
-          </div>
+          <div className="flex text-slate-900 sm:justify-center"></div>
           <blockquote className="mt-10 font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-center">
             {children}
           </blockquote>

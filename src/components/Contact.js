@@ -1,6 +1,4 @@
-import { ButtonLink } from './Button'
 import { Container } from './Container'
-import { GridPattern } from './GridPattern'
 import { SectionHeading } from './SectionHeading'
 import { ContactForm } from './ContactForm'
 
