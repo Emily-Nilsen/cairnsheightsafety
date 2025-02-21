@@ -58,63 +58,51 @@ const topRow = [
 
 const bottomRow = [
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657531808/Cairns%20Height%20Safety/Courthouse_guj7fr.svg',
+    image: '/svgs/Courthouse_guj7fr.svg',
     alt: 'Cairns Courthouse',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657531208/Cairns%20Height%20Safety/mantra_gzdlrq.svg',
+    image: '/svgs/mantra_gzdlrq.svg',
     alt: 'Mantra',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657531206/Cairns%20Height%20Safety/peppers_tlhvuv.svg',
+    image: '/svgs/peppers_tlhvuv.svg',
     alt: 'Peppers',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659079818/Cairns%20Height%20Safety/Aquarius_ba3hle.svg',
+    image: '/svgs/Aquarius_ba3hle.svg',
     alt: 'Aquarius',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659128898/Cairns%20Height%20Safety/Ramsay_Health_v8sfyx.svg',
+    image: '/svgs/Ramsay_Health_v8sfyx.svg',
     alt: 'Ramsay Health Care',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659129216/Cairns%20Height%20Safety/Doubletree_by_Hilton_segaj8.svg',
+    image: '/svgs/Doubletree_by_Hilton_segaj8.svg',
     alt: 'Doubletree by Hilton',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659092796/Cairns%20Height%20Safety/Shantara_kuzgdw.svg',
+    image: '/svgs/Shantara_kuzgdw.svg',
     alt: 'Shantara Port Douglas',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659096003/Cairns%20Height%20Safety/Cairns_Regional_Council_qz6wow.svg',
+    image: '/svgs/Cairns_Regional_Council_qz6wow.svg',
     alt: 'Cairns Regional Council',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659177708/Cairns%20Height%20Safety/Cairns_Tower_mn3wj5.svg',
+    image: '/svgs/Cairns_Tower_mn3wj5.svg',
     alt: 'Cairns Corporate Tower',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659302698/Cairns%20Height%20Safety/Crystalbrook_Collection_egckyv.svg',
+    image: '/svgs/Crystalbrook_Collection_egckyv.svg',
     alt: 'Crystalbrook Collection - Hotels and Resorts',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659303319/Cairns%20Height%20Safety/DPI_mstpof.svg',
+    image: '/svgs/DPI_mstpof.svg',
     alt: 'Department of Agriculture & Fisheries',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657531808/Cairns%20Height%20Safety/Courthouse_guj7fr.svg',
+    image: '/svgs/Courthouse_guj7fr.svg',
     alt: 'Cairns Courthouse',
   },
 ]
