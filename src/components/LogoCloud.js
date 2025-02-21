@@ -7,63 +7,51 @@ import { useAnimation } from 'framer-motion'
 
 const topRow = [
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657315548/Cairns%20Height%20Safety/JCU_slate_logo_u2v3tg.svg',
+    image: '/svgs/JCU_slate_logo_u2v3tg.svg',
     alt: 'James Cook University',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657315537/Cairns%20Height%20Safety/Zoom_slate_logo_qokjpj.svg',
+    image: '/svgs/Zoom_slate_logo_qokjpj.svg',
     alt: 'Zoom',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657315533/Cairns%20Height%20Safety/Skyrail_slate_logo_kojct2.svg',
+    image: '/svgs/Skyrail_slate_logo_kojct2.svg',
     alt: 'Skyrail Rainforest Cableway',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659092005/Cairns%20Height%20Safety/Taronga_Zoo_1_w90zxl.svg',
+    image: '/svgs/Taronga_Zoo_1_w90zxl.svg',
     alt: 'Taronga Zoo Sky Safari',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659080752/Cairns%20Height%20Safety/Worley_xmgzxp.svg',
+    image: '/svgs/Worley_xmgzxp.svg',
     alt: 'Worley Power Services',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659084498/Cairns%20Height%20Safety/Hilton_n258r5.svg',
+    image: '/svgs/Hilton_n258r5.svg',
     alt: 'Hilton Hotels & Resorts',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659129518/Cairns%20Height%20Safety/Holiday_Inn_1_yplpjv.svg',
+    image: '/svgs/Holiday_Inn_1_yplpjv.svg',
     alt: 'Holiday Inn',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659096824/Cairns%20Height%20Safety/AMSA_hj8tnj.svg',
+    image: '/svgs/AMSA_hj8tnj.svg',
     alt: 'Australian Maritime Safety Authority',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659094766/Cairns%20Height%20Safety/Oasis_cz2hbx.svg',
+    image: '/svgs/Oasis_cz2hbx.svg',
     alt: 'Oasis at Palm Cove',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659096488/Cairns%20Height%20Safety/Capta_Group_j64ahf.svg',
+    image: '/svgs/Capta_Group_j64ahf.svg',
     alt: 'Capta Group',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1659174211/Cairns%20Height%20Safety/Paradise_On_The_Beach_i0gsqc.svg',
+    image: '/svgs/Paradise_On_The_Beach_i0gsqc.svg',
     alt: 'Paradise on the Beach',
   },
   {
-    image:
-      'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657315548/Cairns%20Height%20Safety/JCU_slate_logo_u2v3tg.svg',
+    image: '/svgs/JCU_slate_logo_u2v3tg.svg',
     alt: 'James Cook University',
   },
 ]
@@ -181,12 +169,12 @@ export function LogoCloud() {
     <div className="bg-white">
       <div
         ref={ref}
-        className="px-0 py-12 mx-auto overflow-hidden max-w-7xl lg:py-16"
+        className="mx-auto max-w-7xl overflow-hidden px-0 py-12 lg:py-16"
       >
-        <p className="text-base font-semibold tracking-wider text-center uppercase text-slate-600">
+        <p className="text-center text-base font-semibold uppercase tracking-wider text-slate-600">
           Trusted by local and national businesses
         </p>
-        <div className="relative w-screen mx-auto overflow-hidden overflow-x-hidden bg-white rounded-none h-60 md:h-64">
+        <div className="relative mx-auto h-60 w-screen overflow-hidden overflow-x-hidden rounded-none bg-white md:h-64">
           <motion.div
             animate={topReel}
             viewport={{ once: true }}
@@ -195,7 +183,7 @@ export function LogoCloud() {
             {topRow.map((logo, i) => (
               <div
                 key={i}
-                className="flex justify-center col-span-1 px-8 py-8 bg-slate-50"
+                className="col-span-1 flex justify-center bg-slate-50 px-8 py-8"
               >
                 <motion.div
                   whileInView={{ opacity: 1 }}
@@ -221,12 +209,12 @@ export function LogoCloud() {
           <motion.div
             animate={bottomReel}
             viewport={{ once: true }}
-            className="absolute left-10 bottom-0 grid h-1/2 w-[600vw] grid-cols-12 gap-0.5 overflow-hidden overflow-y-hidden pt-0.5 pb-6 md:w-[400vw]"
+            className="absolute bottom-0 left-10 grid h-1/2 w-[600vw] grid-cols-12 gap-0.5 overflow-hidden overflow-y-hidden pb-6 pt-0.5 md:w-[400vw]"
           >
             {bottomRow.map((logo, i) => (
               <div
                 key={i}
-                className="flex justify-center col-span-1 px-8 py-8 bg-slate-50"
+                className="col-span-1 flex justify-center bg-slate-50 px-8 py-8"
               >
                 <motion.div
                   whileInView={{ opacity: 1 }}
