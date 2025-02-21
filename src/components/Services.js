@@ -159,7 +159,7 @@ export function Services() {
                       >
                         <div className="">
                           <Image
-                            src="https://res.cloudinary.com/dt3k2apqd/image/upload/v1657133828/Cairns%20Height%20Safety/chs_img_38_iv2ggz.jpg"
+                            src="/images/chs_img_38_iv2ggz.jpg"
                             alt=""
                             layout="fill"
                             objectFit="cover"
