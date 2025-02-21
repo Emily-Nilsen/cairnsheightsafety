@@ -45,28 +45,22 @@ export function Services() {
 
   const turbineImages = [
     {
-      image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1657133828/Cairns%20Height%20Safety/chs_img_38_iv2ggz.jpg',
+      image: '/images/chs_img_38_iv2ggz.jpg',
     },
     {
-      image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789460/Cairns%20Height%20Safety/image_02_fljfvj.webp',
+      image: '/images/image_02_fljfvj.webp',
     },
     {
-      image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/CHS_replacement_2_katy6b.webp',
+      image: '/images/CHS_replacement_2_katy6b.webp',
     },
     {
-      image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789459/Cairns%20Height%20Safety/image_01_xtdfuf.webp',
+      image: '/images/image_01_xtdfuf.webp',
     },
     {
-      image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/CHS_replacement_1_u8mzsc.webp',
+      image: '/images/CHS_replacement_1_u8mzsc.webp',
     },
     {
-      image:
-        'https://res.cloudinary.com/dt3k2apqd/image/upload/v1668789459/Cairns%20Height%20Safety/image_05_rz8yf5.webp',
+      image: '/images/image_05_rz8yf5.webp',
     },
   ]
 
