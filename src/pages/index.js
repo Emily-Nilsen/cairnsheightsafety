@@ -42,7 +42,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dt3k2apqd/image/upload/q_auto/Cairns%20Height%20Safety/Website_link_image_yomgye.webp" // Replace with the URL of your desired image
+          content="/images/Website_link_image_yomgye.webp" // Replace with the URL of your desired image
         />
       </Head>
       <Hero />
